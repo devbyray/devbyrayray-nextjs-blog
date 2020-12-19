@@ -25,47 +25,54 @@ const components = {
   img: (props) => <Image layout="responsive" width={700} height={475} {...props} />
 }
 
+const date = new Date()
+const latestUpdate = new Intl.DateTimeFormat('en-US').format(date)
+
 export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components })
   return (
     <Layout>
-      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-3xl">
+      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-3xl relative">
 
         <div className="">
-      <header>
-        <nav>
-          <Link href="/">
-            <a>👈 Go back home</a>
-          </Link>
-        </nav>
-      </header>
+          <header>
+            <nav>
+              <Link href="/">
+                <a>👈 Go back home</a>
+              </Link>
+            </nav>
+          </header>
           <header className="bg-yellow-400 p-8 mt-8 rounded-t-3xl text-center">
 
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
-          )}
+            <h1 className="text-white">{frontMatter.title}</h1>
+            {frontMatter.description && (
+              <p className="text-white">{frontMatter.description}</p>
+            )}
           </header>
-          <figure className="mb-8 rounded-b-3xl overflow-hidden">
+          <figure className=" rounded-b-3xl overflow-hidden">
             <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
-          <main className="px-8">{content}</main>
-      <footer className="footer">
-        <img
-          height="0"
-          width="0"
-          src="https://skillshare.eqcm.net/i/2339544/300218/4650"
-          border="0"
-        />
-      </footer>
-
+          <main className="px-8 pt-12 pb-5 -mt-5 mb-8 rounded-b-3xl bg-white">{content}</main>
+        </div>
       </div>
-      <style jsx>{`
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
+      <footer className="footer">
+        <span>Copyright &copy; by DevByRayRay | Last updated at: {latestUpdate}</span>
+          <img
+            height="0"
+            width="0"
+            src="https://skillshare.eqcm.net/i/2339544/300218/4650"
+            border="0"
+          />
+      </footer>
+        <style jsx>{`
+        .footer {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 100%; height: 50px;
+          background: var(--color-darkyello);
+          font-size: 80%;
+          text-align: center;
+          line-height:50px;
         }
         .footer img {
           display: none;
@@ -73,7 +80,6 @@ export default function PostPage({ source, frontMatter }) {
           visibility:hidden;
         }
       `}</style>
-      </div>
     </Layout>
   )
 }

@@ -10,12 +10,10 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      gray: colors.coolGray,
-      blue: '#120078',
-      purple: '#9d0191',
-      red: colors.rose,
-      pink: '#fd3a69',
-      yellow: '#fecd1a'
+      primary: 'var(--color-darkblue)',
+      secondary: 'var(--color-deeppurple)',
+      skin: 'var(--color-pinky)',
+      yelloww: 'var(--color-darkyellow)'
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
