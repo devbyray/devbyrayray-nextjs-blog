@@ -5,7 +5,7 @@ import path from 'path'
 import Layout from '../components/Layout'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import Image from 'next/image'
-import { formatDate } from '../lib'
+import { formatDate } from '../lib/index'
 
 export default function Index({ posts }) {
   return (

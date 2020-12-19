@@ -250,6 +250,7 @@ For your UI framework, you have to make sure this type is supported. I know Angu
 
 We can give the select options manually to the select or via a defined `enum` . In order to get all the information from the enum, we have to store them in the `ProductTypeNames` which output an `Array` from the `enum` .
 
+```typescript
 export enum ProductType {  
   PRODUCT\_A,  
   PRODUCT\_B,  
@@ -262,6 +263,8 @@ export const ProductTypeNames: any\[\] = Object.keys(ProductType)
         return ProductType\[x\].toLowerCase()  
       }  
    }).filter((x) => x !== undefined)
+
+```
 
 **Field config  
 **In the field config, we can choose to use the enum or define the options manually.
