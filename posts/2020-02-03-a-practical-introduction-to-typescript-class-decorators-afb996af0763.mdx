@@ -18,7 +18,7 @@ Currently, the Decorator is a stage 2 proposal for JavaScript and is available a
 
 If you want to read more about the specifications, which are pretty interesting and it is well-written, check it out in the GitHub repo: [JavaScript Decorators](https://github.com/tc39/proposal-decorators).
 
-### What Is a Decorator?
+## What Is a Decorator?
 
 What are Decorators? Well, think about the meaning of the word “decoration” and you are pretty close.
 
@@ -28,7 +28,7 @@ The TypeScript website describes it as:
 
 I would describe it as “a special declaration to add extra features on an existing class declaration, method, accessor, property, or parameter.”
 
-### JavaScript Classes
+## JavaScript Classes
 
 To use a decorator, you need to be familiar with JavaScript classes. Classes are super useful to know!
 
@@ -36,7 +36,7 @@ If you don’t know what a JavaScript class is and how they work, I highly recom
 
 If you are using Angular, chances are that you are already using Decorators like `@Component`, `@NgModule`, `@Input`, `@Output`, or `@Inject`. This will help a bit with getting a better understanding of Decorators.
 
-### Which Decorators Are There?
+## Which Decorators Are There?
 
 To describe what Decorators do in TypeScript, we need to dive deeper into each type. There are a few different types of decorators.
 
@@ -46,7 +46,7 @@ To describe what Decorators do in TypeScript, we need to dive deeper into each t
 4.  Accessor @ Decorator (will come later).
 5.  Parameter Decorator (will come later).
 
-### Class Decorator
+## Class Decorator
 
 ![](https://cdn-images-1.medium.com/max/800/0*gRbnQWKc5n8C5T_l)
 
@@ -60,11 +60,11 @@ In the LOTR, you have a wide variety of characters. We are going to use the clas
 
 Both of the classes extend the `Character` class we defined on top because the Elf and Hobbit both have their own strengths, weaknesses, and capabilities.
 
-#### **Hobbit class**
+### **Hobbit class**
 
-#### Elf class
+### Elf class
 
-#### **Hobbit Decorator**
+### **Hobbit Decorator**
 
 In the Hobbit Decorator, we override some properties that are specific if our player is a Hobbit. The same for the Elf.
 
@@ -76,7 +76,7 @@ When you want to add the Decorator to a class, you define it as `@hobbitDec` abo
 
 When you console log that in the browser, you should see the information combined with the information from the `PlayerCharacter`.
 
-#### **Elf decorator**
+### **Elf decorator**
 
 If we want our player to be an Elf, we do the same thing as for the Hobbit.
 
@@ -86,7 +86,7 @@ Log the information in the console and you see that the correct information is a
 
 Now we know how to use a class Decorator in TypeScript. If you want to check my whole code of the class Decorator, visit the [TypeScript playground](https://www.typescriptlang.org/play/index.html?experimentalDecorators=true&emitDecoratorMetadata=true#code/GYVwdgxgLglg9mABACzgIzTKARAphAHgBVFcAPKXMAEwGdEBvRMXAdwAoA6bgQwCcA5rQBciHmACeAbQC6ASlEMAvoiUA+dhAS0ofENDh9RROYwBQiS4i1gdKdJiiIAvMzaIAEg6zs5FqwH+ljZ2TKww1FDIADQouDACyFCxrPGJyWJ8ALZwIHyxUBIADrgqrqgYWEEBiNV8uFB5SBAANjy09OSUNPQhuvpQhuY1VuGRyC6IY1HVAchpSZPzCUmzowtOrqkrUGuW-Dl5kwe5fHuIhSWTl7jVSmb3ZqCQsAikLcB4hCRdVHSMbg43E4-CEonE0nkihU6k02n6BiMiBMwysfXewEmLFYiAAoh9fOdquiwhEorFlukUhtYic8gViqVJrgPkSAvVGnxmm0OqQKH9evC9IjUSNphMtmTkOdKYtyhtztt0pMlasRvtsqdjpq8ucbtdGXcHmYzFQQFlEABhZD8HjQXB8IiM0WIAByAHlXbjJgByMAIXA+6LVDzugBCYYAkiRXD6Ko4g9VcQAZABivpZwETj1a7Xo1tt9r4LqKIDQLRgEEyhyRYHNaAdkwAjAAGFsAbmqpfLlbiO1EdayDeLrhbXbLFar4oH9cbo-HPanGxnQ7niDHAW7k4ujNEBb4dsojudrn3h4dTpKnA9XuNZlzvK8lScvx6VptB6LJYnvdlUBXw7Ngu27Tsws4jogABMwG9qq-5gauEEACwblYW69jce4fuex5XKe2FFpeuCcKGEbRiaAR9MKgx8L4LoBLQIAlLRfgBPcOY8vQ+KYq+-xnl+DAwVWdK1uBzZth2Ql9ukAFrq2qGWOhU5SrJEGQQpiBKVMy4IYBrgAJwaVpmHvoWR5EZM-HmYynApqmFFokKAyGHRgnqogjHMYSbF3gA9L5iAAAptBIjYQARR5mAAAvGWBfPenFBSFDpWY2bloT+VZgDwWS4KIOh8DAYACL6wU8KFxbZblPqdjm8KaclEHYkl5UpRFDq+J297aHALTES0cACOwPpFI1ohBg1rV8HIQA) where you can also see what the compiled JavaScript looks like.
 
-#### Decorator factory
+### Decorator factory
 
 If you want to give your Decorator some options, conditionals, or other extra data, you need to use a Decorator factory.
 
@@ -96,11 +96,11 @@ If we want to use that Decorator with an option, we add it like `@hobbitDecorato
 
 If we try to get the data from the player to the console, we see that the `condition` attribute is added to the result.
 
-### When Would You Use the Class Decorator?
+## When Would You Use the Class Decorator?
 
 Well, I think it’s pretty simple. When you want to overwrite or add a bunch of properties/methods to a class, it can be a good idea to use the class Decorator.
 
-#### **What is the difference between Decorator and extending a class?**
+### **What is the difference between Decorator and extending a class?**
 
 Maybe you’re thinking that you could also extend the `Hobbit` or `Elf` class at the `PlayerCharacter` class. Yes, that is also possible!
 
@@ -110,7 +110,7 @@ In contrast to extending a class, the class Decorator will always be on top of t
 
 So, if you use a class Decorator, know that you can cause some major side-effects you didn’t think of.
 
-### Thanks
+## Thanks
 
 I hope that your now up-to-date with the TypeScript class Decorator and that you learned how to use it. But also what is not possible with it.
 
@@ -118,7 +118,7 @@ In the next post, I’m going to show you how to use the TypeScript property Dec
 
 If you have any questions, please post them in the comments 👍.
 
-### Read my other posts
+## Read my other posts
 
 [**Thoughts About Micro-Frontends in 2020**  
 _Why it could be good to break up your monolithic front-end codebase_medium.com](https://medium.com/better-programming/thoughts-about-micro-frontends-in-2020-dd95eb7216f "https://medium.com/better-programming/thoughts-about-micro-frontends-in-2020-dd95eb7216f")[](https://medium.com/better-programming/thoughts-about-micro-frontends-in-2020-dd95eb7216f)

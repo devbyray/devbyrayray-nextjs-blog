@@ -10,7 +10,9 @@ import { formatDate } from '../lib/index'
 export default function Index({ posts }) {
   return (
     <Layout>
-      <header>
+      <div className="container mx-auto px-4 flex justify-center flex-col">
+        <header className="bg-yellow-400 p-8 my-8 rounded-3xl text-center">
+
         <h1>Dev By RayRay</h1>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -18,23 +20,27 @@ export default function Index({ posts }) {
           <div className="bg-white rounded-xl shadow-md overflow-hidden " key={post.filePath}>
             <div className="grid-cols-2">
               <div className="md:flex-shrink-0">
-                <Image width={480} height={325} layout="responsive" className="h-48 w-full object-cover md:w-48" src={post.data.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+                <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={post.data.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
               </div>
               <div className="p-8">
-                <time>{post.data.date}</time>
-                <h3>
+                <time>{post.data.date}</time> <br />
+                <strong>
                   <Link
                   as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
                   href={`/posts/[slug]`}
                 >
                   <a>{post.data.title}</a>
                 </Link>
-                </h3>
+                </strong>
 
               </div>
             </div>
           </div>
         ))}
+      </div>
+        <style jsx>{`
+
+      `}</style>
       </div>
     </Layout>
   )

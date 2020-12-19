@@ -12,7 +12,7 @@ In a previous piece, we explored the TypeScript class decorators. This time, we�
 
 If you haven’t read [my piece on class decorators](https://medium.com/better-programming/a-practical-introduction-to-typescript-class-decorators-afb996af0763), I recommend doing so first. It contains essential information to help you follow along.
 
-### Decorator Types
+## Decorator Types
 
 To describe what decorators do in TypeScript, we need to dive deeper into each type. There are a few different ones:
 
@@ -22,13 +22,13 @@ To describe what decorators do in TypeScript, we need to dive deeper into each t
 *   Accessor decorator (will come later)
 *   Parameter decorator (will come later)
 
-### Property Decorator
+## Property Decorator
 
 With a property decorator, you can change the value that is in a property at runtime. The property decorator is declared before the property declaration. It cannot be used in a declaration file or used in combination with a `declare` [statement](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html).
 
 This is how you would use a property decorator:
 
-### How To Create a Property Decorator
+## How To Create a Property Decorator
 
 When you create a property decorator function, you need to have two arguments.
 
@@ -41,7 +41,7 @@ The `Class decorator` function has no access to any property value. That’s why
 
 Let’s create our player name emoji decorator to add an emoji after the player’s name based on the player type:
 
-### Getter
+## Getter
 
 The `getter` function is for getting the property value of the class where you used the property decorator.
 
@@ -49,13 +49,13 @@ Inside this function, we have access to the instance of the class. In the return
 
 If we tried to access `this` inside the `getEmoji()` function without passing the `this` variable, we would get an error. This is because we only have access to the instance of `PlayerCharacter` in the `getter` function.
 
-### Setter
+## Setter
 
 With the `setter`, we can change the value of the class property’s instance. In this case, I didn’t change it but added an emoji to it.
 
 When we try to add the emoji there, which sounds very logical to me, we would get an error. This is because we don't have access to the whole instance of the class in the `setter`.
 
-### defineProperty
+## defineProperty
 
 Finally, we have an accessor descriptor `Object.defineProperty()` in the property decorator. This descriptor will describe how our property will behave inside a class. Note: I highly recommend reading about this because it's very powerful.
 
@@ -63,11 +63,11 @@ Inside the descriptor, we have a `getter` and `setter` method. They will be exec
 
 According to [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty), “An accessor descriptor is a property described by a getter-setter pair of functions.”
 
-### Errors
+## Errors
 
 I guess a lot of you gonna have some error’s down the road. (_Like me_ 😉) Hopefully, these solutions gonna help you further.
 
-#### noImplicitThis
+### noImplicitThis
 
 It can happen that you get an error like this. [Nathaniel May](https://medium.com/u/dd2a1653ff14) asked this question in the [comments](https://medium.com/@nathaniel.may22/any-idea-how-to-handle-the-errors-related-to-the-noimplicitthis-tsconfig-json-complieroption-62b527add101).
 
@@ -83,13 +83,13 @@ The solution to this is using a Arrow function because they don’t have their o
 
 Hopefully this would fix your error.
 
-### Conclusion
+## Conclusion
 
 Thanks for reading!
 
 Now you’re ready to use the full functionality of a property decorator in your classes. If you have any questions, please let me know so I can help you out.
 
-### Read More From Me
+## Read More From Me
 
 [**2 Ways to Resolve Duplication in JavaScript Arrays and Objects**  
 _Do you know how to deal with duplication?_medium.com](https://medium.com/better-programming/2-ways-to-resolve-duplication-in-javascript-arrays-and-objects-e377e1bdc5e1 "https://medium.com/better-programming/2-ways-to-resolve-duplication-in-javascript-arrays-and-objects-e377e1bdc5e1")[](https://medium.com/better-programming/2-ways-to-resolve-duplication-in-javascript-arrays-and-objects-e377e1bdc5e1)

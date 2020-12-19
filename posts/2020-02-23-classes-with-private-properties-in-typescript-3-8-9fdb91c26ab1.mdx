@@ -5,11 +5,8 @@ date: '2020-02-23T23:42:56.432Z'
 categories: []
 published: true
 tags: []
-slug: /@devbyrayray/classes-with-private-properties-in-typescript-3-8-9fdb91c26ab1
+image: https://cdn-images-1.medium.com/max/800/1*bmoWRyvZ_5bMlJpIWEA1VQ.jpeg
 ---
-
-![Photo by [sergio souza](https://unsplash.com/@serjosoza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/container-rotterdam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://cdn-images-1.medium.com/max/800/1*bmoWRyvZ_5bMlJpIWEA1VQ.jpeg)
-Photo by [sergio souza](https://unsplash.com/@serjosoza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/container-rotterdam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I have the feeling this was not on the radar of a lot of JavaScript developers, but for a while, we had the possibility to use private properties in our JavaScript classes (check the _support_ section below).
 
@@ -17,7 +14,7 @@ In this post, I want to show you how useful private properties are in classes. W
 
 Side note: Private properties and methods are part of a [stage 3 proposal for the ECMAScript spec](https://github.com/tc39/proposal-class-properties/#private-properties) so it is possible this will change in the future. It is likely to be added to ES2019 (ES10).
 
-### Pre ES2015 Classes, Module Pattern
+## Pre ES2015 Classes, Module Pattern
 
 Let’s go back to the ES5 days of JavaScript.
 
@@ -31,7 +28,7 @@ But we could make use of private properties and methods. To make it public you h
 
 A lot of developers were very used to the fact of private properties and methods by default in this type of module. Check out the post by Todd Motto for more information about the [module pattern](https://ultimatecourses.com/blog/mastering-the-module-pattern).
 
-### ES2015 Classes
+## ES2015 Classes
 
 The launch of ES2015 (ES6) brought us a massive upgrade for the JavaScript language. I was very happy with this upgrade just like my fellow JavaScript developers.
 
@@ -45,7 +42,7 @@ JavaScript classes mostly behave like classes in other languages. They are great
 
 I like them more than the module pattern, but I miss my private properties…
 
-### Use TypeScript Classes With Private Properties
+## Use TypeScript Classes With Private Properties
 
 But we don’t have to be sad anymore. Private properties are coming to TypeScript classes! To use them in TypeScript, you have to install version 3.8, which was [released Feb the 20th](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/).
 
@@ -57,7 +54,7 @@ npm install typescript
 
 > In contrast, TypeScript’s `private`\-declared properties work with all targets — even ECMAScript 3!” — [Microsoft DevBlog](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/)
 
-### How to Make Private Class Properties
+## How to Make Private Class Properties
 
 Simply by prefixing them with a `#`. It is that simple!
 
@@ -69,11 +66,11 @@ But we can make it available by returning it via a public method. Like with ever
 
 Play with the new private properties in classes in the [TypeScript playground](https://www.typescriptlang.org/v2/en/play?ts=3.8.0-beta#code/MYGwhgzhAEBiD29oG8BQ0PQMQDNHQF5oAmABgG51MAjMAJ0OgEZTUqMBzAUwBcF4AFAEoU7TBjq8ArnQB20HgAsAlhAB0uRGIC+qXW2DxZEeCC5qQ8DgNlcA7nETC1tOiID075q0PHT5y2tbB35nbj4nIQ8vMlRfEzMLKxt7R0EhDTx4aOguOjp4OiA).
 
-### Why Set Private Class Properties
+## Why Set Private Class Properties
 
 The reason I would use private properties is to use the information only locally. If you’re doing all kinds of calculations inside your class, but don’t need to share it publicly, then make it private.
 
-### Browser Support
+## Browser Support
 
 At this moment, the only browsers that support these private properties are **Chrome** (>74) and **Opera** (>66).
 
@@ -84,7 +81,7 @@ If you want to use the private properties in **Node.js**, you have to use versio
 
 If you want to read more about the awesome features in TypeScript 3.8, check out the [Microsoft DevBlog](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/).
 
-### Angular
+## Angular
 
 Using private class properties inside your Angular application sounds pretty nice, but the Angular team [doesn’t officially support TypeScript 3.8](https://github.com/angular/angular/issues/35204) in Angular 9.0. They say we have to wait until Angular 10.
 
@@ -92,7 +89,7 @@ But I did a small test with the TypeScript 3.8 with an Angular 9 application and
 
 If you have issues using Angular 9 with TypeScript 3.8, please let me know in the comments so we can update others who want to try this.
 
-### Conclusion
+## Conclusion
 
 As you can see, setting private class properties can be pretty useful and can give a feeling of privacy. But be honest, we are at a very early stage, so it is possible that the specs will change a bit.
 
@@ -100,7 +97,7 @@ Thanks for reading all this way! I hope you are as on-fire about this feature as
 
 If you have any questions, please let me know in the comments.
 
-### Read more from me
+## Read more from me
 
 [**The Number 1 Skill You Need to Grow as a Developer**  
 _Be helpfull to anyone in everything, it’s a WIN-WIN!_medium.com](https://medium.com/@devbyrayray/the-number-1-skill-you-need-to-grow-as-a-person-7d1a6f34afb5 "https://medium.com/@devbyrayray/the-number-1-skill-you-need-to-grow-as-a-person-7d1a6f34afb5")[](https://medium.com/@devbyrayray/the-number-1-skill-you-need-to-grow-as-a-person-7d1a6f34afb5)

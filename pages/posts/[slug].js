@@ -29,7 +29,9 @@ export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components })
   return (
     <Layout>
-      <div className="md:max-w-2xl">
+      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-3xl">
+
+        <div className="">
       <header>
         <nav>
           <Link href="/">
@@ -37,13 +39,17 @@ export default function PostPage({ source, frontMatter }) {
           </Link>
         </nav>
       </header>
-      <div className="post-header">
+          <header className="bg-yellow-400 p-8 mt-8 rounded-t-3xl text-center">
+
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
           <p className="description">{frontMatter.description}</p>
-        )}
-      </div>
-      <main>{content}</main>
+          )}
+          </header>
+          <figure className="mb-8 rounded-b-3xl overflow-hidden">
+            <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+          </figure>
+          <main className="px-8">{content}</main>
       <footer className="footer">
         <img
           height="0"
@@ -67,6 +73,7 @@ export default function PostPage({ source, frontMatter }) {
           visibility:hidden;
         }
       `}</style>
+      </div>
     </Layout>
   )
 }
@@ -77,6 +84,7 @@ export const getStaticProps = async ({ params }) => {
 
   const { content, data } = matter(source)
   data.date = formatDate(data.date)
+  console.log('data: ', data)
 
   const mdxSource = await renderToString(content, {
     components,

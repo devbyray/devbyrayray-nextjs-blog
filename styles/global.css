@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+    font-family: 'JetBrains Mono';
+    src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 @layer base {
 	body {
 		font-size: 20px;
@@ -12,22 +22,36 @@
 	h3,
 	h4,
 	h5,
+	h6,
+	code {
+		-webkit-font-feature-settings: "liga" on, "calt" on;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		font-family: 'JetBrains Mono';
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
 	h6 {
         margin: 2rem 0 1.2rem 0;
-        font-weight: bold;
+		font-weight: bold;
 	}
 	h1 {
-		@apply text-5xl;
+		@apply text-4xl;
 		margin-bottom: 1rem
 	}
 	h2 {
-		@apply text-4xl;
+		@apply text-3xl;
+		border-top: 1px solid tomato;
+		padding-top:2rem
 	}
 	h3 {
-		@apply text-3xl;
+		@apply text-2xl;
     }
     h4 {
-		@apply text-2xl;
+		@apply text-xl;
     }
 	a {
 		text-decoration: underline;
@@ -37,5 +61,13 @@
 	}
 	h1 + p {
 		@apply text-2xl;
+		font-weight: bold;
+	}
+	ul {
+		list-style: disc;
+	}
+	li {
+		padding-left: 1rem;
+		margin-left: 1rem;
 	}
 }

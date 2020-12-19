@@ -11,13 +11,11 @@ slug: /@devbyrayray/graphql-microservices-architecture-by-apollo-8b6eb557c5e2
 image: https://cdn-images-1.medium.com/max/1200/1*toEWBcbiUAFslVsZUNyACA.jpeg
 ---
 
-![](https://cdn-images-1.medium.com/max/1200/1*toEWBcbiUAFslVsZUNyACA.jpeg)
-
-### Why use GraphQL and not REST
+## Why use GraphQL and not REST
 
 If you look from the perspective of the client (the frontend) there are a few challenges with REST API’s when getting the data.
 
-### Challenges with REST
+## Challenges with REST
 
 For years we are using REST API’s because they were more convenient than getting the data from the server and render it simultaneously with the HTML which caused in continuously reloading the page of your application.
 
@@ -27,7 +25,7 @@ But with all the pros of REST, there is also a couple of cons.
 2.  The data structure of a REST endpoint is not predictable in the frontend application
 3.  Calling multiple endpoints to merge data before showing screens to the user
 
-### GraphQL to the rescue
+## GraphQL to the rescue
 
 > _GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data_
 
@@ -69,7 +67,7 @@ function Query_me(request) {      return request.auth.user;    }
     function User_name(user) {      return user.getName();    }
 ```
 
-### What problems does GraphQL solves
+## What problems does GraphQL solves
 
 1.  Giving only the data back to the client, which is asked for
 2.  Only 1 request to get data from multiple data sources.
@@ -80,7 +78,7 @@ function Query_me(request) {      return request.auth.user;    }
 
 Well that’s quite some challenges we can tackle with GraphQL 🙌
 
-### Apollo the default way to talk GraphQL
+## Apollo the default way to talk GraphQL
 
 You can use GraphQL without a library, but most organizations will use a library to do the heavy lifting and make it much easier for developers to use GraphQL
 
@@ -88,7 +86,7 @@ One of the biggest or maybe the biggest is [Apollo](https://www.apollographql.co
 
 If you do a couple of Google searches you soon discover that Apollo is almost the default way to use GraphQL, so that’s why I choose to dive deeper into it.
 
-### Apollo client
+## Apollo client
 
 The Apollo Client is a tool that helps you use GraphQL in the frontend. It helps with writing queries as part of the UI components and lets you write the queries in a declarative style.
 
@@ -98,7 +96,7 @@ Apollo Client integrates with multiple JavaScript libraries and frameworks. Reac
 
 The Apollo Client works with any GraphQL server, so it doesn’t have to be the Apollo Server, it just understands GraphQL.
 
-### Apollo Server (API Gateway)
+## Apollo Server (API Gateway)
 
 ![](https://cdn-images-1.medium.com/max/800/0*l2UZCuUv0v-KIIBp.png)
 
@@ -114,7 +112,7 @@ Via this API Gateway, no service needs to understand GraphQL. The positive side 
 
 Even Apollo is recommending using [Apollo Server as Gateway](https://principledgraphql.com/operations#10-separate-the-graphql-layer-from-the-service-layer).
 
-### GraphQL native microservices
+## GraphQL native microservices
 
 Depending on the needs of the organization and architecture, it could also be a great fit to create GraphQL (micro)services.
 
@@ -133,23 +131,23 @@ Depending on the language you use, there are a couple of libraries that help you
 
 You can find a larger list on [GrapQL.org](https://graphql.org/code/).
 
-### GraphQL backend in a world of microservices
+## GraphQL backend in a world of microservices
 
 More and more companies choose microservices architecture for their applications for multiple reasons. It works great for scalability but comes with quite some challenges.
 
 But what if you want to use GraphQL in microservices architecture? Apollo has a solution for that “[Apollo Federation](https://www.apollographql.com/docs/apollo-server/federation/introduction/)”, and it works with more languages than JavaScript 👍
 
-#### The challenge with GraphQL and microservices
+### The challenge with GraphQL and microservices
 
 With GraphQL you only want to have [1 graph](https://principledgraphql.com/integrity#1-one-graph) with 1 endpoint that the client can call to get the data from. But working with multiple people or even multiple teams it can be quite hard to work on the same Graph repository. I foresee great amounts of merge conflicts all over the place.
 
-#### How to have one Graph spread over multiple teams
+### How to have one Graph spread over multiple teams
 
 Well, we can split our graph over the multiple domains which will eventually come together in 1 graph, so-called [Federated Implementation](https://principledgraphql.com/integrity#2-federated-implementation).
 
 Apollo Federation comes with that solution.
 
-#### Apollo Federation Core Concepts
+### Apollo Federation Core Concepts
 
 For example, we have 2 microservices for our imaginary application.
 
@@ -158,7 +156,7 @@ For example, we have 2 microservices for our imaginary application.
 
 With these services, we have 2 types of data `User` and `Review`. But they need to share parts of their data even though they are 2 separate services.
 
-#### Type references
+### Type references
 
 With Apollo federation, we can reference types that live in different schemas.
 
@@ -182,7 +180,7 @@ query GetReviews {  reviews {    author {      username    }  }}
 
 With the type reference, we can separate all our schemas from each other but still share them where we need it.
 
-#### Type extensions
+### Type extensions
 
 If you want to extend a type defined in a different service to add new fields in it, then you can do that with `extend`.
 
@@ -198,7 +196,7 @@ Via this way, the client can request the reviews by a user via a query like this
 query GetReviewsByUser($userId: String!) {  user(id: $userId) {    reviews(first: 10) {        edges {        node {          id          text        }      }    }  }}
 ```
 
-### Apollo Federation Architecture
+## Apollo Federation Architecture
 
 ![](https://cdn-images-1.medium.com/max/800/0*bDKGeD6wqSQeQ5vo.png)
 
@@ -211,11 +209,11 @@ Using Apollo Server as federation will happen in no-time. Just include `@apollo/
 
 The best thing of all is, this gives a high level of flexibility for developing the graph with multiple teams, but the GraphQL client will just see a single schema.
 
-### Thanks
+## Thanks
 
 Thanks for reading all the way down to here 🙌. I hope it gave you some new knowledge on using GraphQL via [Apollo](https://medium.com/u/9360eb7d79eb).
 
-### Read my other posts
+## Read my other posts
 
 [**Dive into GraphQL w/ Apollo Client by building a SpaceX 🚀 app in Angular 8**  
 _I know that this sounds odder than it is, but using GraphQL in an Angular 8 application with Apollo Client feels like…_itnext.io](https://itnext.io/dive-into-graphql-w-apollo-client-by-building-a-spacex-app-in-angular-8-20e703c93f0a "https://itnext.io/dive-into-graphql-w-apollo-client-by-building-a-spacex-app-in-angular-8-20e703c93f0a")[](https://itnext.io/dive-into-graphql-w-apollo-client-by-building-a-spacex-app-in-angular-8-20e703c93f0a)

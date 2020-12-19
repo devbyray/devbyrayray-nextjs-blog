@@ -16,7 +16,7 @@ I know that this sounds odder than it is, but using GraphQL in an Angular 9 appl
 
 In this tutorial, I’m not gonna tell you how to steer the GraphQL rocket, but I’m going to help you get your engine started so you can learn to fly.
 
-### Rocket members that will help you start this tutorial smoothly
+## Rocket members that will help you start this tutorial smoothly
 
 Of course, I mean that it will help you to follow this tutorial if you have basic knowledge of:
 
@@ -29,15 +29,15 @@ Of course, I mean that it will help you to follow this tutorial if you have basi
 *   NodeJS (_Latest version preferable_)
 *   Typescript (_Latest version preferable_)
 
-### What will you learn from it
+## What will you learn from it
 
 You will learn how to fly the GraphQL rocket with the Apollo Client in an Angular 8 application. As real Angular astronauts, there is one way to learn this rocket at best, to build our own SpaceX explorer 👨‍🚀
 
-### Let’s start the Angular engine
+## Let’s start the Angular engine
 
 The Apollo client supports Angular Router, Ionic, NativeScript. But thank God they support Angular Schematics, which make our life so much easier in the first step 🚀.
 
-### 1: Create Angular application with CLI
+## 1: Create Angular application with CLI
 
 Make sure you installed the Angular CLI on your computer. Then run the command to create a new Angular.
 
@@ -45,17 +45,17 @@ _you want to use your existing Angular app, then you can skip this step._
 
 Go with the terminal to the `spacexGraphQL` folder, or open Visual Studio Code (or other IDE you like) and open the terminal in that.
 
-### 2: Add apollo client
+## 2: Add apollo client
 
 Apollo is the most popular tool to use GraphQL in the industry. Let’s install the Apollo Client via the Angular CLI so it can automatically set up the stuff you need.
 
-### 3: Add spacex GraphQL url
+## 3: Add spacex GraphQL url
 
 Go to the [SpaceX GraphQL page,](https://api.spacex.land/graphql/) copy the URL `[https://api.spacex.land/graphql/](https://api.spacex.land/graphql/)` and paste it in the `uri` const variable in the `src/app/graphql.module.ts`.
 
 After adding the SpaceX URL, start the application by the following command `npm start` to see if it runs correctly.
 
-### 4: Auto-generate types from API schema
+## 4: Auto-generate types from API schema
 
 Each GraphQL API will show it’s a schema. So instead of writing all those models and types by hand, we can automatically generate them 🙌.
 
@@ -85,7 +85,7 @@ Now we only have to run `npm run codegen` to generate the schemas based on the c
 
 But we are not there yet, because this command currently fails because we don’t have any `.graphql` files in our project yet.
 
-### 5: Create the first GraphQL file
+## 5: Create the first GraphQL file
 
 To generate all our type files from the GraphQL API we need to create a GraphQL file. In this file we define which data we are gonna use in our application, so we can leave the data we don’t want.
 
@@ -125,7 +125,7 @@ To see what has been generated, open the file. When scrolling through this you s
 
 When you scroll to the bottom you will see something like this. This is what has been generated based on our `rockets.graphql` file. Our query name has the name `getRockets` so we find that back in the generated file 🙌.
 
-### 6: Show list of rockets
+## 6: Show list of rockets
 
 Now let’s show the data from the awesome SpaceX API 🚀. First, we need to take a few steps to do this.
 
@@ -153,7 +153,7 @@ Which looks like
 
 ![](https://cdn-images-1.medium.com/max/800/1*veEmZu713brm4tbx_p6Ekw.png)
 
-### Final: What did we learn?
+## Final: What did we learn?
 
 I know, it isn’t a good looking app that you want to show your users 😉. But I leave that up to you!
 
@@ -163,11 +163,11 @@ I could go on and on with more GraphQL tips and tricks, but to learn it deeper y
 
 If you want to see my source of this application because something is not working? Please check out the [Angular SpaceX GraphQL Github repo](https://github.com/mrfrontend-development/angular-spacexGraphQL).
 
-### Thanks
+## Thanks
 
 Thanks for reading all the way down to here 🙌. I hope you found this tutorial useful! If you prefer a video, please add in the comments so I can consider that.
 
-### Read my other posts
+## Read my other posts
 
 [**GraphQL (microservices) architecture by Apollo**  
 _GraphQL is fantastic! Apollo build tooling around it to make our life easier, to use it at scale_itnext.io](https://itnext.io/graphql-microservices-architecture-by-apollo-8b6eb557c5e2 "https://itnext.io/graphql-microservices-architecture-by-apollo-8b6eb557c5e2")[](https://itnext.io/graphql-microservices-architecture-by-apollo-8b6eb557c5e2)

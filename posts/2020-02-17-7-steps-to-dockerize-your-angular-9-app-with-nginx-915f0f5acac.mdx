@@ -5,11 +5,8 @@ date: '2020-02-17T01:01:51.855Z'
 categories: []
 published: true
 tags: []
-slug: /@devbyrayray/7-steps-to-dockerize-your-angular-9-app-with-nginx-915f0f5acac
+image: https://cdn-images-1.medium.com/max/800/1*ybCApnyoJFfRYkBEkGniUA.jpeg
 ---
-
-![Photo by [Derek Torsani](https://unsplash.com/@dmtors?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/seven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://cdn-images-1.medium.com/max/800/1*ybCApnyoJFfRYkBEkGniUA.jpeg)
-Photo by [Derek Torsani](https://unsplash.com/@dmtors?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/seven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 In this tutorial, I want to show you how you can dockerize your Angular 9 application and put it online in no time!
 
@@ -17,7 +14,7 @@ It will be useful to have some basic knowledge of Angular and Docker, since I wo
 
 I will show you a practical way to dockerize your Angular 9 application so you can deploy it on your web hosting of choice.
 
-### Tooling
+## Tooling
 
 In this tutorial, we are going to use the following tools. If you haven’t installed them, I will walk you through it, but it will be faster if you have them already on your machine.
 
@@ -27,19 +24,19 @@ In this tutorial, we are going to use the following tools. If you haven’t inst
 4.  Code editor of your choice. (I favor Visual Studio Code.)
 5.  Docker
 
-### 1\. Install Angular CLI
+## 1\. Install Angular CLI
 
 If you haven’t installed the Angular CLI, I would recommend doing so.
 
 Open your terminal and run `npm install -g @angular/cli` or if you use Yarn, run `yarn global add @angular/cli`.
 
-### 2\. Create a New Angular Project With CLI
+## 2\. Create a New Angular Project With CLI
 
 If you’ve already created an Angular project, you can skip this step.
 
 Run the `ng new` command to create a new Angular 9 project. Make sure you answer all the questions you get in the terminal because this is going to make the setup very easy.
 
-#### Commands
+### Commands
 
 *   npm: `ng new project-name`
 *   Yarn: `ng new project-name --packageManager=yarn`
@@ -48,7 +45,7 @@ To test if everything works, navigate in the terminal to your `project-name` fol
 
 Of course, you’re going to build an awesome Angular application that is very useful for its users. But you can do that later.
 
-### 3\. Install Docker
+## 3\. Install Docker
 
 When we want to use Docker to build our Docker image and run our container, we have to install Docker.
 
@@ -58,21 +55,21 @@ If you have Docker already installed, you can continue to the next step.
 
 To test if the installation succeeds, run the command `docker -version`. If you see a version number, everything is good to go to the next step.
 
-### 4\. Create a Multi-Stage Docker Image
+## 4\. Create a Multi-Stage Docker Image
 
 If you have a bit of experience with Docker, you know what a Docker image is and what you can do with it. For those who don’t know it, let me explain it in short.
 
-#### What is a Docker image?
+### What is a Docker image?
 
 A Docker image is the blueprint for the application you want to run in a Docker container. In the blueprint, you have to decide what kind of steps Docker needs to take to build your application, get dependencies, and copy the needed files.
 
 With the Docker image, you can spin up a Docker container to run it and make it visible in the browser, for example.
 
-#### What is a Docker container?
+### What is a Docker container?
 
 A Docker container is a sort of virtual (mini) server that you can start, stop, or remove with a single command. A Docker container makes it easy to spin up multiple instances of that container so you can divide the traffic between them.
 
-#### Let’s build the first part of the Docker image
+### Let’s build the first part of the Docker image
 
 Create a file, `Dockerfile`, notice there is no file extension. (That's correct.)
 
@@ -112,7 +109,7 @@ Copy all the other Angular files to be able to run the `ng build --prod`. It is 
 
 Most Docker images will stop here. But this will make your Docker image bigger than needed.
 
-#### Build the second part of the Docker image
+### Build the second part of the Docker image
 
 To run our Angular app, we don’t need to run it with Node.js, we can choose a more lightweight variant to run it.
 
@@ -130,11 +127,11 @@ We copy the built Angular app from the `/dist` folder in the `compile-image` to 
 
 The reason for using NGINX is that it will make it possible to run the Angular app without the need for the big `node_modules` folder. We only use the files of our application. This will save some bytes on the Docker image.
 
-#### Final Docker image
+### Final Docker image
 
 This is how the final Docker image should look.
 
-### 5\. Build a Docker Image
+## 5\. Build a Docker Image
 
 Now we have created the `Dockerimage` file. We are ready to run the command to build our image.
 
@@ -162,7 +159,7 @@ The result should be something similar to this. On the top, you will find your n
 REPOSITORY     TAG     IMAGE ID      CREATED             SIZE angular-9-app  latest  1c40cf9e92e3  About a minute ago  130MB
 ```
 
-### 6\. Run Docker Container With Docker Image
+## 6\. Run Docker Container With Docker Image
 
 To get our Angular app running, we have to start a Docker container that uses our Docker image.
 
@@ -190,7 +187,7 @@ Use this command to stop and remove your Docker container. (If you don’t know 
 
 When the new Docker image is created, you can start a new Docker container with the `docker run` command above.
 
-### 7\. Add Docker Image to GitHub
+## 7\. Add Docker Image to GitHub
 
 Now that we have created a Docker image and used it to run in a Docker container on your local computer, we have tested that this worked.
 
@@ -198,7 +195,7 @@ If you want to use this app on your hosting (it has to be a hosting platform tha
 
 A Docker registry is a storage provider for Docker images. GitHub is a great way to store private and public Docker images.
 
-#### Login to GitHub Docker Registry
+### Login to GitHub Docker Registry
 
 Before we can push our images, we need to login to the Github Docker Registry on your computer.
 
@@ -214,7 +211,7 @@ Copy the token and past it in the command.
 
 To push a Docker image, you have to create a GitHub repo. If you host your code on GitHub, you have probably done that already. If you haven’t, do that first.
 
-#### Publish Docker Image
+### Publish Docker Image
 
 The Docker image we created from our Angular app is going to be published to the registry.
 
@@ -242,7 +239,7 @@ docker run --name ng-app-container -d -p 8080:80 angular-9-app
 
 When you want to run it in a container, you can run the same command as before.
 
-### Thanks
+## Thanks
 
 Hopefully, this tutorial helped you create a Docker image with Angular 9, run it inside a Docker container, and publish it in the GitHub Docker registry.
 
@@ -252,7 +249,7 @@ If you have any questions about it, please let me know in the comments. If not, 
 
 > I’ve gathered a couple of [aspiring developers around the world on a Discord server](https://mailchi.mp/fb82491d03f8/dev-by-rayray-discord-community), feel free if you like to join in.
 
-### Read more
+## Read more
 
 [**4 Steps to Get Started With Serverless Functions on Netlify**  
 _The most powerful tool for front-end developers_medium.com](https://medium.com/better-programming/4-steps-to-get-started-with-serverless-functions-on-netlify-a6942bf071ca "https://medium.com/better-programming/4-steps-to-get-started-with-serverless-functions-on-netlify-a6942bf071ca")[](https://medium.com/better-programming/4-steps-to-get-started-with-serverless-functions-on-netlify-a6942bf071ca)
