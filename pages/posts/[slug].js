@@ -5,6 +5,7 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import path from 'path'
 import CustomLink from '../../components/CustomLink'
 import Layout from '../../components/Layout'
@@ -19,8 +20,8 @@ const components = {
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
-  TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
+  img: (props) => <Image layout="responsive" width={700} height={475} {...props} />
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -41,6 +42,14 @@ export default function PostPage({ source, frontMatter }) {
         )}
       </div>
       <main>{content}</main>
+      <footer className="footer">
+        <img
+          height="0"
+          width="0"
+          src="https://skillshare.eqcm.net/i/2339544/300218/4650"
+          border="0"
+        />
+      </footer>
 
       <style jsx>{`
         .post-header h1 {
@@ -52,6 +61,11 @@ export default function PostPage({ source, frontMatter }) {
         }
         .description {
           opacity: 0.6;
+        }
+        .footer img {
+          display: none;
+          position:absolute;
+          visibility:hidden;
         }
       `}</style>
     </Layout>
