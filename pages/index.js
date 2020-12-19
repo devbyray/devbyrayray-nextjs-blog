@@ -5,6 +5,7 @@ import path from 'path'
 import Layout from '../components/Layout'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import Image from 'next/image'
+import { formatDate } from '../lib'
 
 export default function Index({ posts }) {
   return (
@@ -53,13 +54,4 @@ export function getStaticProps() {
   })
 
   return { props: { posts } }
-}
-
-function formatDate(input) {
-  const date = Date.parse(input)
-  if (!isNaN(date)) {
-    return new Intl.DateTimeFormat('en-US').format(date)
-  } else {
-    return input
-  }
 }
