@@ -55,10 +55,6 @@ export default function PostPage({ source, frontMatter }) {
 
       </div>
       <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-
         .post-header {
           margin-bottom: 2rem;
         }
