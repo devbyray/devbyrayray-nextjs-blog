@@ -29,6 +29,7 @@ export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components })
   return (
     <Layout>
+      <div className="md:max-w-2xl">
       <header>
         <nav>
           <Link href="/">
@@ -52,6 +53,7 @@ export default function PostPage({ source, frontMatter }) {
         />
       </footer>
 
+      </div>
       <style jsx>{`
         .post-header h1 {
           margin-bottom: 0;
