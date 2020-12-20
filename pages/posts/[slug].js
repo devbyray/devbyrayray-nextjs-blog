@@ -22,7 +22,13 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Head,
-  img: (props) => <Image layout="responsive" width={700} height={475} {...props} />
+  img: (props) => <Image layout="responsive" width={700} height={475} {...props} />,
+  h1: (props) => <h1 className="text-2xl sm:text-3xl md:text-4xl" {...props} />,
+  h2: (props) => <h2 className="text-xl sm:text-2xl md:text-3xl" {...props} />,
+  h3: (props) => <h3 className="text-lg sm:text-xl md:text-2xl" {...props} />,
+  h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
+  h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
+  h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
 }
 
 const date = new Date()
@@ -42,21 +48,21 @@ export default function PostPage({ source, frontMatter }) {
               </Link>
             </nav>
           </header>
-          <header className="bg-yellow-400 p-8 mt-8 rounded-t-3xl text-center">
+          <header className="px-16 py-16 mt-8 -mb-10 rounded-t-3xl text-center post__header">
 
-            <h1 className="text-white">{frontMatter.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-white">{frontMatter.title}</h1>
             {frontMatter.description && (
-              <p className="text-white">{frontMatter.description}</p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl italic">{frontMatter.description}</p>
             )}
           </header>
-          <figure className=" rounded-b-3xl overflow-hidden">
+          <figure className=" rounded-3xl overflow-hidden">
             <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
-          <main className="px-8 pt-12 pb-5 -mt-5 mb-8 rounded-b-3xl bg-white">{content}</main>
+          <main className="px-8 pt-12 pb-12 -mt-5 mb-8 rounded-b-3xl bg-white">{content}</main>
         </div>
       </div>
       <footer className="footer">
-        <span>Copyright &copy; by DevByRayRay | Last updated at: {latestUpdate}</span>
+        <span>Copyright &copy; by <a href="https://twitter.com/devbyrayray" title="" target="_blank">DevByRayRay</a> | Last updated at: {latestUpdate}</span>
           <img
             height="0"
             width="0"
@@ -65,6 +71,9 @@ export default function PostPage({ source, frontMatter }) {
           />
       </footer>
         <style jsx>{`
+        .post__header {
+          background: var(--color-pinky);
+        }
         .footer {
           position: absolute;
           bottom: 0; left: 0;

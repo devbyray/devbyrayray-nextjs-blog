@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face{
-    font-family: 'JetBrains Mono';
-    src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2')
+			format('woff2'),
+		url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf')
+			format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 :root {
@@ -21,7 +23,6 @@
 
 @layer base {
 	body {
-		font-size: 20px;
 		line-height: 1.8;
 		background-color: var(--color-darkgray);
 	}
@@ -32,19 +33,20 @@
 	h5,
 	h6,
 	code {
-		-webkit-font-feature-settings: "liga" on, "calt" on;
+		-webkit-font-feature-settings: 'liga' on, 'calt' on;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 		font-family: 'JetBrains Mono';
 	}
-	code, pre {
+	code,
+	pre {
 		text-rendering: optimizeLegibility;
 		font-family: 'JetBrains Mono';
 	}
 	code {
 		background-color: var(--color-darkgrey-border);
 		color: var(--color-darkyello);
-		padding: .3rem .5rem;
+		padding: 0.3rem 0.5rem;
 		font-size: 80%;
 	}
 	pre {
@@ -61,33 +63,35 @@
 	h4,
 	h5,
 	h6 {
-        margin: 2rem 0 1.2rem 0;
+		margin: 2rem 0 1.2rem 0;
 		font-weight: bold;
 	}
 	h1 {
-		@apply text-4xl;
-		margin-bottom: 1rem
+		margin-bottom: 1rem;
 	}
 	h2 {
-		@apply text-3xl;
 		border-top: 1px solid tomato;
-		padding-top:2rem
+		padding-top: 2rem;
 	}
-	h3 {
-		@apply text-2xl;
-    }
-    h4 {
-		@apply text-xl;
-    }
 	a {
+		color: var(--color-pinky);
 		text-decoration: underline;
-    }
-    p {
-        margin-bottom: 1rem;
+		transition: .3s ease;
+	}
+	a:hover {
+		background: var(--color-deeppurple);
+		color: #ffffff;
+	}
+	p {
+		margin-bottom: 1rem;
 	}
 	h1 + p {
-		@apply text-2xl;
+		border-top: 2px solid #fff;
+		padding-top: 1rem;
 		font-weight: bold;
+	}
+	ul, ol {
+		margin-bottom: 1rem;
 	}
 	ul {
 		list-style: disc;
@@ -99,7 +103,7 @@
 		margin-left: 1.5rem;
 	}
 	ol li {
-		padding-left:1.5rem;
+		padding-left: 1.5rem;
 	}
 	ul li {
 		padding-left: 1rem;

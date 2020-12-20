@@ -9,6 +9,12 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
+    fontSize: {
+      sm: ['18px', '24px'],
+      base: ['16px', '28px'],
+      lg: ['20px', '32px'],
+      xl: ['24px', '36px'],
+    },
     colors: {
       primary: 'var(--color-darkblue)',
       secondary: 'var(--color-deeppurple)',
