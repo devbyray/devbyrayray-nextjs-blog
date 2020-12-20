@@ -6,16 +6,17 @@ import Layout from '../components/Layout'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import Image from 'next/image'
 import { formatDate } from '../lib/index'
+import { data } from 'autoprefixer'
 
 export default function Index({ posts }) {
   return (
     <Layout>
       <div className="container mx-auto px-4 flex justify-center flex-col">
-        <header className="bg-yellow-400 p-8 my-8 rounded-3xl text-center flex flex-col justify-center items-center">
+        <header className="p-8 my-8 rounded-3xl text-center flex flex-col justify-center items-center">
           <div className="w-32">
             <Image width={100} height={100} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/upload/v1608474678/byrayray/06BAB646-9D15-4D2D-AAEE-84403CE8BB4A.png'} className="object-cover " />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4x">Dev By RayRay</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-white">Dev By RayRay</h1>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {posts.map((post) => (
@@ -59,7 +60,7 @@ export function getStaticProps() {
       data,
       filePath,
     }
-  })
+  }).filter((postItem) => postItem.data.published)
 
   return { props: { posts } }
 }
