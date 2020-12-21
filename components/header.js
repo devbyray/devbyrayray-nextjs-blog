@@ -14,6 +14,7 @@ const Header = () => {
                     <Image width={100} height={100} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/upload/v1608535079/byrayray/IMG_2811.png'} className="object-cover " />
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl text-white">Dev By RayRay</h1>
+                <p className="text-white text-xl">Building awesome projects with HTML, CSS, JavaScript and a lot more</p>
             </header>
             <style jsx>{`
                 .navigation {
