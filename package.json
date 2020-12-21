@@ -14,6 +14,8 @@
     "next-mdx-remote": "^1.0.0",
     "next-remote-watch": "0.2.0",
     "postcss": "^8.2.1",
+    "postcss-color-function": "^4.1.0",
+    "probe-image-size": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tailwindcss": "^2.0.2"

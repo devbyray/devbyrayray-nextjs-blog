@@ -9,8 +9,11 @@ import Image from 'next/image'
 import path from 'path'
 import CustomLink from '../../components/CustomLink'
 import Layout from '../../components/Layout'
+import Footer from '../../components/footer'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
+import Header from '../../components/header'
+import { useRouter } from 'next/router'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -22,7 +25,7 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Head,
-  img: (props) => <Image layout="responsive" width={700} height={475} {...props} />,
+  img: (props) => <img className="" loading="lazy" src={props?.src} alt={props?.alt} />,
   h1: (props) => <h1 className="text-2xl sm:text-3xl md:text-4xl" {...props} />,
   h2: (props) => <h2 className="text-xl sm:text-2xl md:text-3xl" {...props} />,
   h3: (props) => <h3 className="text-lg sm:text-xl md:text-2xl" {...props} />,
@@ -31,14 +34,30 @@ const components = {
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
 }
 
-const date = new Date()
-const latestUpdate = new Intl.DateTimeFormat('en-US').format(date)
-
 export default function PostPage({ source, frontMatter }) {
+  const router = useRouter()
+  console.log("🚀 ~ file: [slug].js ~ line 39 ~ PostPage ~ router", router)
+
   const content = hydrate(source, { components })
   return (
     <Layout>
-      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-3xl relative">
+      <Head>
+        <title>{frontMatter.title} | Dev By RayRay</title>
+        <meta property="og:url" content={router.asPath} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`${frontMatter.title} | Dev By RayRay`}
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:description"
+          content={frontMatter.description}
+        />
+        <meta property="og:image" content={frontMatter.image} />
+      </Head>
+      <Header />
+      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">
 
         <div className="">
           <header>
@@ -56,39 +75,19 @@ export default function PostPage({ source, frontMatter }) {
             )}
           </header>
           <figure className=" rounded-3xl overflow-hidden">
-            <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+            <Image width={672} height={400} layout="responsive" loading="lazy" className="h-56 w-full object-cover md:w-56" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
           <main className="px-8 pt-12 pb-12 -mt-5 mb-8 rounded-b-3xl bg-white">{content}</main>
         </div>
       </div>
-      <footer className="footer">
-        <span>Copyright &copy; by <a href="https://twitter.com/devbyrayray" title="" target="_blank">DevByRayRay</a> | Last updated at: {latestUpdate}</span>
-          <img
-            height="0"
-            width="0"
-            src="https://skillshare.eqcm.net/i/2339544/300218/4650"
-            border="0"
-          />
-      </footer>
-        <style jsx>{`
+      <Footer />
+      <style jsx>{
+        `
         .post__header {
           background: var(--color-pinky);
         }
-        .footer {
-          position: absolute;
-          bottom: 0; left: 0;
-          width: 100%; height: 50px;
-          background: var(--color-darkyello);
-          font-size: 80%;
-          text-align: center;
-          line-height:50px;
-        }
-        .footer img {
-          display: none;
-          position:absolute;
-          visibility:hidden;
-        }
-      `}</style>
+        `
+      }</style>
     </Layout>
   )
 }
@@ -99,7 +98,7 @@ export const getStaticProps = async ({ params }) => {
 
   const { content, data } = matter(source)
   data.date = formatDate(data.date)
-  console.log('data: ', data)
+  console.log('params: ', params)
 
   const mdxSource = await renderToString(content, {
     components,
@@ -115,6 +114,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: params.slug
     },
   }
 }

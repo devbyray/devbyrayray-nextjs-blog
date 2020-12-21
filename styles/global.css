@@ -15,10 +15,12 @@
 :root {
 	--color-darkgray: #1e2128;
 	--color-darkgrey-border: #2b3038;
-	--color-darkblue: #120078;
+	--color-darkblue: #002478;
+	--color-blue: #2358d5;
 	--color-deeppurple: #9d0191;
 	--color-pinky: #fd3a69;
 	--color-darkyello: #fecd1a;
+	--color-white: #fff;
 }
 
 @layer base {
@@ -70,7 +72,7 @@
 		margin-bottom: 1rem;
 	}
 	h2 {
-		border-top: 1px solid tomato;
+		border-top: 1px solid var(--color-darkyello);
 		padding-top: 2rem;
 	}
 	a {
@@ -107,5 +109,17 @@
 	}
 	ul li {
 		padding-left: 1rem;
+	}
+
+	button, .button {
+		@apply py-2 px-4 bg-white text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75;
+		transition: .3s ease;
+		background: var(--color-blue);
+		color: var(--color-white);
+		text-decoration: none;
+	}
+
+	button:hover, .button:hover {
+		background: var(--color-darkblue);
 	}
 }

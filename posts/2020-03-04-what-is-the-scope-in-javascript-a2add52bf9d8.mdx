@@ -18,7 +18,7 @@ Scope is a very important concept to understand. When you own this concept in yo
 
 > If you are the type of person who likes a presentation, then I recommend one of my slides I made a couple years ago: [JavaScript essentials presentation](http://slides.com/raymonschouwenaar-1/javascript-essentials#/8)
 
-### What Is a Scope
+## What Is a Scope
 
 For developers that speak English as their native language this is a no-brainer. But for those English is not their native language it’s not so obvious.
 
@@ -31,7 +31,7 @@ That made sense right!
 
 In my own I would define it as _an area which can be hidden for outside but visible from the inside_.
 
-### Scope Types
+## Scope Types
 
 In JavaScript we have 2 types of scope. A Global scope and local scopes.
 
@@ -40,14 +40,14 @@ In JavaScript we have 2 types of scope. A Global scope and local scopes.
 
 Let’s dive into the both types of scope. Learn what you can and can’t do with it, and how you can use it.
 
-### 1\. Global Scope
+## 1\. Global Scope
 
 1.  Var
 2.  Function
 3.  Class
 4.  Const & Let
 
-### 1\. Global scope
+## 1\. Global scope
 
 ![Photo by [NASA](https://unsplash.com/@nasa?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/800/0*WtZrVKOkaDEr2-kK)
 Photo by [NASA](https://unsplash.com/@nasa?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
@@ -58,34 +58,34 @@ In the browser we have the `window` object, and in NodeJS we have `global` the o
 
 One thing you need to remember about the global scope, Is that you don’t need to store to much information in it. It is recommended to store information in your local scopes.
 
-#### 1.1 Var
+### 1.1 Var
 
 When you define a `var` in the global scope it’s publicly available in the global object.
 
 The `var` you store in the global scope or in any other scope can be overwritten. It is recommended to make use of `let` or `const` instead of the `var` . Because the `var` doesn’t have behaviour for being “block scoped”.
 
-#### 1.2 Function
+### 1.2 Function
 
 When you define a `function` in the global scope it’s publicly available in the global object.
 
-#### 1.4 Class
+### 1.4 Class
 
 When you define a `class` it’s publicly available but not bound to the global object.
 
 There is quite a difference in what is bound to the global object and what not, but still available in the global scope.
 
-#### 1.3 Const & Let
+### 1.3 Const & Let
 
 When you define a `let` or `const` variable, it’s publicly available but not bound to the global object.
 
-### 2\. Local Scope
+## 2\. Local Scope
 
 1.  Var
 2.  Function
 3.  Const & Let
 4.  Class
 
-### 2\. Local scope
+## 2\. Local scope
 
 ![Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/800/0*g0ubFhE7-MSEWoUH)
 Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
@@ -94,7 +94,7 @@ When you define `function` , `if` or `class` , basiclly everything between a `
 
 Everything that is declared inside a local scope is only available inside. An other scope or even the global scope can’t reach it.
 
-### 2.1 Var
+## 2.1 Var
 
 When you define a `var` in the local scope it is only available inside that scope. So a `var` is what we call `function`scoped. If you try to reach it outside of that scope, you will get error’s that it is `undefined` .
 
@@ -112,13 +112,13 @@ As you can see, after we defined `globalScope` variable the value is like we def
 
 This is gonna lead to unpredictable behaviour for the application your building. You definitly gonna end up with error’s.
 
-### 2.2 Function
+## 2.2 Function
 
 A `function` on it’s own is called a _function_, a `function` attached to a `Object` or `Class` is called a _method_. A `function` defined in a function is a normal function but hidden from the outer scope.
 
 When you define a `function` in the global scope it’s publicly available in the global object.
 
-#### 2.2.2 Methods Inside an Object
+### 2.2.2 Methods Inside an Object
 
 When you define a method or property in an `Object` it is bound to that scope, but still available through that Object. If you define variables in that method it stays hidden.
 
@@ -132,39 +132,39 @@ As you can see, we can overwrite the `globalScope` variable from the `Object`. W
 
 While these things are nog protected, the variables inside our methods can’t be change nor are visible from the global scope.
 
-#### 2.2.3 Function In a Function
+### 2.2.3 Function In a Function
 
 With a function inside a function
 
 **Please click on the console to see the results 😉**
 
-### 2.3 Const & Let
+## 2.3 Const & Let
 
 The `const` and `let` variables are block scoped. Where a `var` is bound to the scope of a `function`, the `const` and `let` are scoped between every `{}` .
 
 The `const` and `let` variables can be protected by a `function` , `if-statment` , `for-loop` (or any other loop). Outside it’s scope it can not be reached.
 
-#### 2.3.1 Let
+### 2.3.1 Let
 
 If you want to overwriter information in the same scope, you have to declare a `let` variable because it the information can be changed. The `let` variable can’t be redeclared.
 
-#### 2.3.2 Const
+### 2.3.2 Const
 
 Information that needs to be the same during the execution of your JavaScript can find it’s home in the `const` variable. The const variable can’t be overritten nor be re-declared.
 
 If the `const` variable has a `Object` or `Array` you have the posibility to add and remove properties. But if you store single type values in it, it remains the same.
 
-### 2.4 Classes
+## 2.4 Classes
 
 A `function` on it’s own is called a _function_, a `function` attached to a `Object` or `Class` is called a _method_. A `function` defined in a function is a normal function but hidden from the outer scope.
 
-#### 2.4.1 Methods Inside a Class
+### 2.4.1 Methods Inside a Class
 
 In this example you can see, variables declared in a method are not available on the outside. The `globalScope` variable is available in all local scopes. Properties and methods are available outside the class when creating a `new` instance of it.
 
 In side our class we can modify the `globalScope` variable. Outside our class we can modify our `name` property. But this will only be in that instance. If we would make another instance the name would be what is defined in the `class`.
 
-### Conclusion
+## Conclusion
 
 I hope you have a better understanding of the scope in JavaScript and also know what to do with it and how to implement this in your own code! If not, please add questions in the comments! I will be happy to help you figure it out!
 
@@ -176,7 +176,7 @@ You can follow me on [Twitter](https://twitter.com/devbyrayray) and [Instagram](
 
 _Happy Coding 🚀_
 
-### Read More From Me
+## Read More From Me
 
 [**Build Fast, JSON-Powered Forms on Angular With NGX Formly**  
 _Forms can be a nightmare — let’s make them better_medium.com](https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e "https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e")[](https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e)

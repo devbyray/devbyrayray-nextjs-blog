@@ -13,7 +13,7 @@ In this article, I’ll show you how you can build JSON-powered forms in Angular
 
 We’re going to dive into what types of input fields we can use and how we can integrate Formly with a UI framework like Material, Bootstrap, Ionic, PrimeNG, Kendo, and NativeScript. In this article, I’ll use the integration with Angular Material.
 
-### Forms Are a Developer’s Worst Nightmare
+## Forms Are a Developer’s Worst Nightmare
 
 Every developer that’s using Angular to build cool web applications knows forms are among the most common things to build. We are building by hand with all the tools Angular gives us.
 
@@ -35,13 +35,13 @@ This post is the first part of a two-parts series called “JSON-Powered Forms o
 4\. [Reset Form](https://medium.com/@devbyrayray/77aeed406f73)  
 5\. [Submit Form](https://medium.com/@devbyrayray/77aeed406f73)
 
-### 1\. What’s Ngx Formly?
+## 1\. What’s Ngx Formly?
 
 NGX Formly was built as an open-source project, which you can find on [GitHub](https://github.com/ngx-formly/ngx-formly). The tool lets you create forms based on a JSON structure. This makes it super easy and fast to build small and advanced forms in no time.
 
 It’s no problem when you use Angular with Material, Bootstrap, Ionic, PrimeNG, Kendo, and NativeScript. They have a plugin for all of them.
 
-### 2\. Install Dependencies
+## 2\. Install Dependencies
 
 To set up an Angular project, we need a few dependencies.
 
@@ -51,7 +51,7 @@ To set up an Angular project, we need a few dependencies.
 
 When the dependencies are all installed on your computer, you have to check if the Angular CLI works on your computer. With `ng --version` you can do that. If you don’t get an error from your terminal, you’re good to go.
 
-### 3\. Set Up an Angular Project
+## 3\. Set Up an Angular Project
 
 In your terminal, navigate to the directory where you put all your projects.
 
@@ -64,11 +64,11 @@ I’ve chosen the following answers:
 
 When the CLI is done, navigate to your project folder and open your IDE. I’m personally a big fan of [Visual Studio Code](https://code.visualstudio.com/).
 
-### 4\. Add Ngx Formly and Your UI Framework
+## 4\. Add Ngx Formly and Your UI Framework
 
 Let’s add Ngx Formly to our Angular project to see how easy it is to build forms with it.
 
-#### 4.1 Install Ngx Formly with your UI framework
+### 4.1 Install Ngx Formly with your UI framework
 
 If you started a blank Angular project, I assume you didn’t install a UI framework yet. With the command below, you can install Ngx Formly together with a UI framework.
 
@@ -76,7 +76,7 @@ If you started a blank Angular project, I assume you didn’t install a UI frame
 ng add @ngx-formly/schematics --ui-theme={material|bootstrap|etc}
 ```
 
-#### 4.2 Add modules to ‘AppModule’
+### 4.2 Add modules to ‘AppModule’
 
 If you installed Ngx Formly together with your UI framework, then you can skip this step because that command already added the needed modules to your `AppModule`.
 
@@ -96,7 +96,7 @@ Now, I recommend starting your Angular application by running `npm start` to che
 
 Let’s build a form in the next step.
 
-#### 4.3 Add your UI framework
+### 4.3 Add your UI framework
 
 If you’re working on an existing project, you can probably skip this step.
 
@@ -150,7 +150,7 @@ If you have trouble with running the application because of an error in your ter
 
 Run `npm install @angular/material @angular/cdk --save`. I had some issues with that, too.
 
-### 5\. Create a Simple Form
+## 5\. Create a Simple Form
 
 Now, we’re at the point where we can make a form with all kinds of input fields.
 
@@ -162,7 +162,7 @@ Now, we’re at the point where we can make a form with all kinds of input field
 *   Date
 *   Text area
 
-#### 5.1 Add a form to a component
+### 5.1 Add a form to a component
 
 Now, we’re going to build a form with any possible type of input to see how it works.
 
@@ -192,29 +192,29 @@ Let’s break this down to understand why we define all the properties and metho
 2.  `model = { email: 'email@gmail.com' }`: In the model, we want to have all the information we want as values in our form. In the next step, you’ll see in the `email` field that the value is going to be `'email@gmail.com'`.
 3.  `fields: FormlyFieldConfig[] = []`: In this `Array` of `FormlyFieldConfig[]`, we’re going to add objects that’ll represent our form. In those objects, we define the key, type, label, placeholder, and other information we need for our forms.
 
-#### 5.2 Let’s add more input fields
+### 5.2 Let’s add more input fields
 
 A form in our applications will, most of the time, have a lot of input-field types. So let’s add a bunch of input types so we can see which are supported.
 
-#### 5.2.1 Add text field
+### 5.2.1 Add text field
 
 ```
 {    key: 'name',    type: 'input',    templateOptions: {      label: 'Name',      placeholder: 'Enter name',    }  },
 ```
 
-#### 5.2.2 Add email field
+### 5.2.2 Add email field
 
 ```
   {    key: 'email',    type: 'input',    templateOptions: {            type: 'email',      label: 'Email',      placeholder: 'Enter email',    }  },
 ```
 
-#### 5.2.3 Add number field
+### 5.2.3 Add number field
 
 ```
   {    key: 'amount',    type: 'input',    templateOptions: {            type: 'number',      label: 'Amount',      placeholder: 'Enter amount',    }  },
 ```
 
-#### 5.2.4 Add date field
+### 5.2.4 Add date field
 
 ```
   {    key: 'date_of_birth',    type: 'datepicker',        templateOptions: {      label: 'Datepicker',      placeholder: 'Placeholder',      description: 'Description',      required: true,    },  },
@@ -222,31 +222,31 @@ A form in our applications will, most of the time, have a lot of input-field typ
 
 For your UI framework, you have to make sure this type is supported. I know Angular Material does support this after installing the Ngx Formly UI framework-specific plugin.
 
-#### 5.2.5 Add checkbox field
+### 5.2.5 Add checkbox field
 
 ```
   {    key: 'terms',        type: 'checkbox',    templateOptions: {      label: 'Accept terms',      description: 'Please accept our terms',      required: true,    },  },
 ```
 
-#### 5.2.6 Add toggle field
+### 5.2.6 Add toggle field
 
 ```
   {    key: 'terms',    type: 'toggle',    templateOptions: {      label: 'Accept terms',      description: 'Please accept our terms',      required: true,    },  },
 ```
 
-#### 5.2.7 Add textarea field
+### 5.2.7 Add textarea field
 
 ```
   {    key: 'description',    type: 'textarea',    templateOptions: {      label: 'Description',      placeholder: 'Enter description',    }  },
 ```
 
-#### 5.2.8 Add radio buttons
+### 5.2.8 Add radio buttons
 
 ```
   {    key: 'gender',    type: 'radio',    templateOptions: {      label: 'Gender',      placeholder: 'Placeholder',      description: 'Fill in your gender',      options: [        { value: 1, label: 'Male' },        { value: 2, label: 'Femail' },        { value: 3, label: 'I don\'t want to share that' },      ],    },  },
 ```
 
-#### 5.2.10 Add select or multiselect field
+### 5.2.10 Add select or multiselect field
 
 We can give the select options manually to the select or via a defined `enum` . In order to get all the information from the enum, we have to store them in the `ProductTypeNames` which output an `Array` from the `enum` .
 
@@ -281,7 +281,7 @@ export const ProductTypeNames: any\[\] = Object.keys(ProductType)
 {  key: 'product_types',  type: 'select',  templateOptions: {    label: 'Product type',    placeholder: 'Product type',    description: 'Select the product type',    required: true,    multiple: true,    selectAllOption: 'Select All',    options: [      { value: 'single', label: 'Single product'  },      { value: 'bulk', label: 'Bulk product'  },    ],  },},
 ```
 
-#### 5.3 Combine all the types of fields
+### 5.3 Combine all the types of fields
 
 Now that we know all the input types there are available, we can fill the array with all the input objects.
 
@@ -297,7 +297,7 @@ Paste this array into your app component or the component you have put in your f
 
 You can also check out [my demo](https://ngx-formly.mrfrontend.org). Or check the code on [GitHub](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example).
 
-### 6\. Check the Data From the Form
+## 6\. Check the Data From the Form
 
 Now that we have our form ready, we want to be able to see what data is in the form fields.
 
@@ -311,7 +311,7 @@ But since this data is updated in real time, we can also show it in our applicat
 
 Add this to the HTML of your component, and you can see it update in real time.
 
-### Continue to Part 2
+## Continue to Part 2
 
 Now that we’ve built a cool form in less time than we normally would , we also want to add validation, repeatable sections, and conditional fields, and we want to submit our form to an API endpoint. In Part 2, I’m going to show you all of that.
 
@@ -328,7 +328,7 @@ Happy coding!
 
 > I’ve gathered a couple of [aspiring developers around the world on a Discord server](https://mailchi.mp/fb82491d03f8/dev-by-rayray-discord-community), feel free if you like to join in.
 
-### Read more
+## Read more
 
 [**Jump Start Your Developer Career From Zero To Hero**  
 _A Method So Simple It Will Blow Your Mind!_levelup.gitconnected.com](https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829 "https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829")[](https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829)

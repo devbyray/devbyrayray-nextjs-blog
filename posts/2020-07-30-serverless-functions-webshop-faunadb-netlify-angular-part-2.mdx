@@ -8,17 +8,13 @@ tags: ['TypeScript', 'JavaScript', 'Angular', 'FaunaDB', 'Serverless functions']
 image: https://miro.medium.com/max/1280/0*cAnIYaAnz3zzWt5t
 ---
 
-## cover_image: <https://miro.medium.com/max/1280/0*cAnIYaAnz3zzWt5t>
-
-# How To Build A Serverless Webshop — part 2
-
 ## Product list and detail view with Angular
 
 This is a 6 parts series to build a webshop application with [Angular](https://angular.io), [Netlify](https://www.netlify.com) Serverless functions in combination with [FaunaDB](https://dashboard.fauna.com/accounts/register?utm_source=ByRayRay&utm_medium=referral&utm_campaign=WritewithFauna_BuildServerlessWebshopWorkshop_part2_Raymon).
 
-### **Series**
+## **Series**
 
-1.  Connect Angular and [FaunaDB](https://dashboard.fauna.com/accounts/register?utm_source=ByRayRay&utm_medium=referral&utm_campaign=WritewithFauna_BuildServerlessWebshopWorkshop_part2_Raymon) with Netlify Serverless functions
+1.  [Connect Angular and FaunaDB with Netlify Serverless functions](/post/2020-07-08-serverless-functions-webshop-faunadb-netlify-angular)
 2.  Product list and detail view with Angular
 3.  Create crud for products and show products on an Angular page.
 4.  Setup Authentication to register and log in (so people can shop)
@@ -140,7 +136,7 @@ See it in the [Github repository](https://github.com/DevByRayRay/ng-faunadb-netl
 
 Thanks to the function that refilled the data of the [FaunaDB](https://dashboard.fauna.com/accounts/register?utm_source=ByRayRay&utm_medium=referral&utm_campaign=WritewithFauna_BuildServerlessWebshopWorkshop_part2_Raymon) database we already have some data to visualize our list of products.
 
-### Product model
+## Product model
 
 To get the most out of TypeScript, we have to make a product model that is the same as we get back from the FaunaDB API.
 
@@ -187,7 +183,7 @@ export class ProductData {
 }
 ```
 
-### Environment
+## Environment
 
 To make sure we can call our serverless function locally and on our staging environment, we have to use the Angular environment file. Make sure you import the environment file in every service which calls the API.
 
@@ -231,7 +227,7 @@ In the Netlify settings, you can configure that command to be used.
 
 [](Screenshot%202020-07-03%20at%2022.26.19.png)
 
-### Product Service
+## Product Service
 
 Now we can create a service that we can call from our component. This endpoint is going to retrieve the product data from the database.
 
@@ -307,7 +303,7 @@ We created the products function in the previous post. If you miss that, check i
 
 Create a `<product-list>` component to call the ProductService from there. Run the following command to have it created for you.
 
-### Product List Component
+## Product List Component
 
 ng generate component products_components_product-list
 
@@ -340,7 +336,7 @@ export class ProductListComponent implements OnInit {
 }
 ```
 
-### Routing
+## Routing
 
 To make sure that everything we show in the product-list.component.html will be shown on our home view, we have to configure the app-routing.module.ts.
 
@@ -367,7 +363,7 @@ const routes: Routes = [
 export class AppRoutingModule {}
 ```
 
-### Show Product Data
+## Show Product Data
 
 Let’s put a pre tag in our product-list.component.ts to show how the product data from the API.
 
@@ -379,7 +375,7 @@ Let’s put a pre tag in our product-list.component.ts to show how the product d
 </pre>
 ```
 
-### 3. Visualize the products
+## 3. Visualize the products
 
 We are receiving all our products from the database. If this would be a webshop for a client to build you might want to consider pagination. But in this tutorial, I leave that up to you.
 
@@ -479,7 +475,7 @@ See it in the [Github repository](https://github.com/DevByRayRay/ng-faunadb-netl
 
 To visit every product detail page we need to create a product-item component and define a route in our app.routes.ts.
 
-### Product item component
+## Product item component
 
 Run the command below to create the product-item component in the correct directory.
 
@@ -524,7 +520,7 @@ We define a new route for product/:id. The :id will become our product ID which 
 
 In our product-item component we can hook into the router and get that Id. This ID will be used in our service to call our serverless function.
 
-### Product By Id Function
+## Product By Id Function
 
 Open the lib/product-service.js to add another method getProductById for getting a product by id.
 
@@ -650,7 +646,7 @@ In the function, we first check if we have a product ID in the URL. The call we 
 
 Before you commit this, I highly recommend testing this locally first.
 
-### Call API on Product Item
+## Call API on Product Item
 
 Let’s add a method to our product.service.ts for getting the information in our product-item component.
 
@@ -869,7 +865,7 @@ Next time we are gonna focus on the CRUD views to manage our products. If you ca
 
 _Happy Coding 🚀_
 
-### **Conclusion**
+## **Conclusion**
 
 Now we have learned how to make a serverless function, get data from the [FaunaDB](https://dashboard.fauna.com/accounts/register?utm_source=ByRayRay&utm_medium=referral&utm_campaign=WritewithFauna_BuildServerlessWorkshop_Raymon) and retrieve it in the Angular application.
 

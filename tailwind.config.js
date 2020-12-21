@@ -43,5 +43,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('postcss-color-function')
+  ],
 }

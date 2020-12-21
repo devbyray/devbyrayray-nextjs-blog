@@ -5,7 +5,7 @@ date: '2020-07-08'
 categories: []
 published: true
 tags: ['TypeScript', 'JavaScript', 'Angular', 'FaunaDB', 'Serverless functions']
-cover_image: https://miro.medium.com/max/1280/0*cAnIYaAnz3zzWt5t
+image: https://miro.medium.com/max/1280/0*cAnIYaAnz3zzWt5t
 ---
 
 # Connect Angular and FaunaDB with Netlify Serverless functions
@@ -31,7 +31,7 @@ If you want to learn more about serverless functions, than check my introduction
 
 _Let’s get started and Happy coding! 🚀_
 
----
+
 
 ## **1\. Install dependencies**
 
@@ -43,7 +43,7 @@ Before we start we have to make sure we have a couple of things installed on our
 
 Now that we installed every dependency on our computer, we will set up the project.
 
----
+
 
 ## **2\. Create a Github project**
 
@@ -51,7 +51,7 @@ First, we are going to create a project on Github so we can store our code safel
 
 If you want to check for my code, please check the [Github repo](https://github.com/DevByRayRay/ng-faunadb-netlify-serverless-functions) I will use throughout the whole series.
 
----
+
 
 ## **3\. Make an account on Netlify and FaunaDB**
 
@@ -67,7 +67,7 @@ Go to the Netlify website, log in or register if you don’t have an account yet
 
 Go to the [FaunaDB](https://dashboard.fauna.com/accounts/register?utm_source=Medium&utm_medium=referral&utm_campaign=WritewithFauna_BuildServerlessWorkshop_Raymon) website, login or register if you don’t have an account yet.
 
----
+
 
 ## **4\. Link Github Project to Netlify**
 
@@ -89,7 +89,7 @@ If you are using a clean project don’t fill in any of the input fields. Only i
 
 Now your project is ready to get started!
 
----
+
 
 ## **5\. Create Angular Project**
 
@@ -113,7 +113,7 @@ This is how it [should look](https://5ecd6416a9751a7f6ebdc7ad--ng-serverless-fau
 
 > [The branch](https://github.com/DevByRayRay/ng-faunadb-netlify-serverless-functions/tree/add-angular-material) can be found on Github.
 
----
+
 
 ## **6\. Create functions folder with Netlify config**
 
@@ -130,7 +130,7 @@ To make sure we can call the serverless function we have to tell the Netlify sys
    functions = “.netlify/functions/”
 ```
 
----
+
 
 ## **7\. Serverless function example**
 
@@ -164,7 +164,7 @@ Now push this to GitHub. The Netlify build will start and make your function vis
 
 > In [this branch, you can check this function](https://github.com/DevByRayRay/ng-faunadb-netlify-serverless-functions/tree/add-first-serverless-function) on Github.
 
----
+
 
 ## **8\. Create Fauna DB collection**
 
@@ -180,7 +180,7 @@ This option fills your database with a couple of collections, indexes, and data.
 
 ![](https://cdn-images-1.medium.com/max/800/0*lSZ7sPu__tcMyVkC)
 
----
+
 
 ## **9\. Create a Security Key**
 
@@ -196,7 +196,7 @@ Find the “Environment variables” section and create your environment variabl
 
 ![](https://cdn-images-1.medium.com/max/800/0*a9v9VEFuE45P7vWd)
 
----
+
 
 ## **10\. Create a Config File**
 
@@ -226,7 +226,7 @@ To have a local environment variable `FAUNADB_SERVER_SECRET` we create a `.env` 
 FAUNADB\_SERVER\_SECRET=type-code-here
 ```
 
----
+
 
 ## **11\. Get product data from FaunaDB**
 
@@ -248,7 +248,7 @@ Push the changes to Github, wait until the build finished and test the URL from 
 
 In [this branch, you can check the product function](https://github.com/DevByRayRay/ng-faunadb-netlify-serverless-functions/tree/add-first-serverless-function) on Github. You can also check the [preview URL](https://deploy-preview-5--ng-serverless-faunadb.netlify.app/.netlify/functions/products) from my application.
 
----
+
 
 ## 12\. Call serverless function from Angular and show results.
 
@@ -274,10 +274,3 @@ _Happy Coding 🚀_
 
 > I’ve gathered a couple of [aspiring developers around the world on a Discord server](https://mailchi.mp/fb82491d03f8/dev-by-rayray-discord-community), feel free if you like to join in.
 
----
-
-## Read more
-
-1. [TypeScript’s New Top-Level Await](https://byrayray.dev/type-script-s-new-top-level-await/)
-2. [4 Steps to Get Started With Serverless Functions on Netlify](https://byrayray.dev/4-steps-to-get-started-with-serverless-functions-on-netlify/)
-3. [Native Lazy Loading in the Browser](https://byrayray.dev/native-lazy-loading-in-the-browser/)

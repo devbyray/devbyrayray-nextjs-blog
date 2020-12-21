@@ -14,7 +14,7 @@ There’s nothing more annoying than duplicated data in your JavaScript. So let�
 
 I highly suggest not simply copying and pasting my code. Of course, you can — but please follow my explanation to understand how it works.
 
-### 1\. Array With Duplicated Strings or Numbers
+## 1\. Array With Duplicated Strings or Numbers
 
 const dupStrings = \['Angular', 'React', 'VueJS', 'Svelte', 'React'\]  
 const dupNumbers = \[1,2,3,4,5,6,2,4,6,7,8,9,0\]
@@ -43,11 +43,11 @@ But now, we turned it into a `Set`, and we need the cleaned array back so we can
 
 The easiest way to do this is by using the `...` [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) inside the array brackets `[...]`. Let’s put that into a function so we can reuse it everywhere in our application.
 
-#### Create a function
+### Create a function
 
 Now we need to create a function from it so we can reuse it on other places.
 
-#### How does the function work?
+### How does the function work?
 
 In our function, we define a parameter, `array`, which we expect to be an array. We check this in the `if` statement.
 
@@ -63,13 +63,13 @@ Finally, we need to call the function.
 
 unDuplicateArraySingleValues(array)
 
-#### Test the function
+### Test the function
 
 Check in the example below if everything works correctly.
 
 Check the [CodeSandbox](https://codesandbox.io/s/array-with-duplicated-strings-ornumbers-with-function-jwrj9)
 
-### 2\. Array With Duplicated Objects
+## 2\. Array With Duplicated Objects
 
 Let’s define an example array of objects with duplicate information
 
@@ -84,13 +84,13 @@ You can see there are a few property values that are duplicated.
 
 I think it sounds obvious that you don’t want any duplicated information in your array of objects.
 
-#### Create a function
+### Create a function
 
 So we need a function that checks our array and, based on a given property, checks if there’s an other object that has a property with the same information.
 
 This `function` starts the same as in the previous example. So it’d be a good idea to make a new `function` for that. In this example, we keep it the same.
 
-#### How does the function work?
+### How does the function work?
 
 In our `function`, we define a parameter, `array,` which we expect to be an array. We check this in the `if` statement.
 
@@ -109,13 +109,13 @@ Finally, we need to call the function.
 
 unDuplicateArrayObjects(dupObjects, "id")
 
-#### Test the function
+### Test the function
 
 In the example below, check changing the property names in the function so we can verify everything works correctly.
 
 Check out the [CodeSandbox](https://codesandbox.io/s/array-with-duplicated-objects-with-function-44pdz)
 
-### Conclusion
+## Conclusion
 
 I hope you learned how to get rid of duplicated data in your array with single values or an array with objects.
 
@@ -129,7 +129,7 @@ You can follow me on [Twitter](https://twitter.com/devbyrayray) and [Instagram](
 
 _Happy Coding 🚀_
 
-### Read More From Me
+## Read More From Me
 
 [**Build Fast, JSON-Powered Forms on Angular With NGX Formly**  
 _Forms can be a nightmare — let’s make them better_medium.com](https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e "https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e")[](https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e)

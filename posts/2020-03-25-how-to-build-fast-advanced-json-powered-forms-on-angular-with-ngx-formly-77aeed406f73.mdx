@@ -7,11 +7,10 @@ date: '2020-03-25T17:15:17.082Z'
 categories: []
 published: true
 tags: []
-slug: >-
-  /@devbyrayray/how-to-build-fast-advanced-json-powered-forms-on-angular-with-ngx-formly-77aeed406f73
+image: https://cdn-images-1.medium.com/max/800/0*ObTlBymPfhHxX6en
 ---
 
-![Photo by [Kelly Sikkema](https://unsplash.com/@kellysikkema?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/800/0*ObTlBymPfhHxX6en)
+![Photo by [Kelly Sikkema](https://unsplash.com/@kellysikkema?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)]()
 Photo by [Kelly Sikkema](https://unsplash.com/@kellysikkema?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
 
 This article is the second installment of a two-part series called “JSON Powered Forms in Angular.” If you didn't check [the first part](https://medium.com/better-programming/build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e), I recommend doing that first.
@@ -33,13 +32,13 @@ Sit back and get yourself some drinks because we are going to dive into the rabb
 **Part 2**  
 **1\.** [**Validation**](https://medium.com/@devbyrayray/77aeed406f73)**2\.** [**Repeating Sections**](https://medium.com/@devbyrayray/77aeed406f73)**3\.** [**Conditional Fields**](https://medium.com/@devbyrayray/77aeed406f73)**4\.** [**Reset Form**](https://medium.com/@devbyrayray/77aeed406f73)**5\.** [**Submit Form**](https://medium.com/@devbyrayray/77aeed406f73)
 
-### 1\. Validation
+## 1\. Validation
 
 Let's start with validation. Every form should have some validation to help its users fill in the correct information.
 
 Adding basic validation is super easy by only adding some properties to the object. If you want to have custom validation, you only have to create two functions and add them to the formly module.
 
-#### 1.1 Basic validation
+### 1.1 Basic validation
 
 There are a few validations you can add by only adding properties to the input objects.
 
@@ -57,7 +56,7 @@ With the parameter `field`, you can get access to the values that have been fill
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/d8a1f15ffd82f3505a06fe947f643e588fc0a276) on GitHub.
 
-#### 1.2 Custom validation
+### 1.2 Custom validation
 
 If you want to have custom validation for your field, you need to add two functions. One function (`IpValidator`) does the validation and another (`IpValidatorMessage`) function handles the validation message. Those functions need to be included in `FormlyModule`.
 
@@ -69,7 +68,7 @@ In the field config of the field you want to have the custom validation, you hav
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/0571ff48b5e396f9622d14ab7ff8269de9b83c92) on GitHub.
 
-### 2\. Add Repeatable Sections
+## 2\. Add Repeatable Sections
 
 Not all the applications would need this. But when you need it, this feature becomes very handy.
 
@@ -83,7 +82,7 @@ If you output your model in `<pre>{{model | json }}</pre>`, click on the + butto
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/100723445ab5308651e9dde890f7fd02efa13039) on GitHub.
 
-### 3\. Add Conditional Fields
+## 3\. Add Conditional Fields
 
 If you're building a big application with Angular, you probably need conditional fields. With formly, we can do that in a very easy way.
 
@@ -93,7 +92,7 @@ The great thing about this is that the `email` property is also not visible in t
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/575b4febae9758ace7894ba657edfbaeab048822) on GitHub.
 
-### **4\. Reset Form**
+## **4\. Reset Form**
 
 With formly, it is also very easy to add a reset button to clear all the values in the form.
 
@@ -103,7 +102,7 @@ It’s important to know that if your model is already filled with values, this 
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/10852832404b515b216ac4fceb9374c2b6335eb4) on GitHub.
 
-### **5\. Submit Form**
+## **5\. Submit Form**
 
 Submitting our forms is also very easy with formly.
 
@@ -131,7 +130,7 @@ It is better to do the request via an Angular service off-course, but I’ll lea
 
 Check the [commit in the example project](https://github.com/raymonschouwenaar/angular-ngx-formly-material-example/tree/15e0f3800da0825c36585d8da37e2c1dcb548a7b) on GitHub.
 
-### **Conclusion**
+## **Conclusion**
 
 I hope that this second part of the tutorial helped you to build more advanced forms with ngx-formly. If you still have questions on how to do certain things, please add them to the comments.
 
@@ -143,7 +142,7 @@ If you need help setting up your forms, check the [example repo on GitHub](https
 
 > I’ve gathered a couple of [aspiring developers around the world on a Discord server](https://mailchi.mp/fb82491d03f8/dev-by-rayray-discord-community), feel free if you like to join in.
 
-### Read more
+## Read more
 
 [**Jump Start Your Developer Career From Zero To Hero**  
 _A Method So Simple It Will Blow Your Mind!_levelup.gitconnected.com](https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829 "https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829")[](https://levelup.gitconnected.com/jump-start-your-developer-career-from-zero-to-hero-89cb62a1829)
