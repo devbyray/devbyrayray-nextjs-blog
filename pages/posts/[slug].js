@@ -36,8 +36,6 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
   const router = useRouter()
-  console.log("🚀 ~ file: [slug].js ~ line 39 ~ PostPage ~ router", router)
-
   const content = hydrate(source, { components })
   return (
     <Layout>
@@ -98,7 +96,6 @@ export const getStaticProps = async ({ params }) => {
 
   const { content, data } = matter(source)
   data.date = formatDate(data.date)
-  console.log('params: ', params)
 
   const mdxSource = await renderToString(content, {
     components,
@@ -114,7 +111,6 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
-      slug: params.slug
     },
   }
 }
