@@ -27,11 +27,11 @@ export default function Index({ posts }) {
           content="Building awesome projects with HTML, CSS, JavaScript and a lot more"
         />
         <meta property="og:image" content="https://res.cloudinary.com/raymons/image/upload/v1608535079/byrayray/IMG_2811.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
-        <link rel="manifest" href="/site.webmanifest"></link>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fecd1a"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"></link>
+        <link rel="manifest" href="/static/site.webmanifest"></link>
+        <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#fecd1a"></link>
         <meta name="msapplication-TileColor" content="#fecd1a"></meta>
         <meta name="theme-color" content="#fecd1a"></meta>
       </Head>
