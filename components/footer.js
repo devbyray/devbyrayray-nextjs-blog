@@ -1,5 +1,5 @@
 const date = new Date()
-const latestUpdate = new Intl.DateTimeFormat('en-US').format(date)
+const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
 
 export default function Footer() {
   return (
