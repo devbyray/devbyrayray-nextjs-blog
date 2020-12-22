@@ -14,6 +14,7 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
 import { useRouter } from 'next/router'
+import Youtube from '../../components/Youtube'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -32,6 +33,7 @@ const components = {
   h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
+  Youtube: (props) => Youtube
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -101,7 +103,9 @@ export const getStaticProps = async ({ params }) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [[require('remark-prism'), {
+        transformInlineCode: true,
+      }]],
       rehypePlugins: [],
     },
     scope: data,

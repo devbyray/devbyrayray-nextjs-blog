@@ -33,31 +33,11 @@
 	h3,
 	h4,
 	h5,
-	h6,
-	code {
+	h6{
 		-webkit-font-feature-settings: 'liga' on, 'calt' on;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 		font-family: 'JetBrains Mono';
-	}
-	code,
-	pre {
-		text-rendering: optimizeLegibility;
-		font-family: 'JetBrains Mono';
-	}
-	code {
-		background-color: var(--color-darkgrey-border);
-		color: var(--color-darkyello);
-		padding: 0.3rem 0.5rem;
-		font-size: 80%;
-	}
-	pre {
-		background-color: var(--color-darkgrey-border);
-		color: var(--color-darkyello);
-		width: 100%;
-		padding: 1rem;
-		margin-bottom: 1rem;
-		overflow: auto;
 	}
 	h1,
 	h2,
