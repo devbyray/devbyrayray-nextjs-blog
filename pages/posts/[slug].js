@@ -14,7 +14,7 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
 import { useRouter } from 'next/router'
-import Youtube from '../../components/Youtube'
+//import Youtube from '../../components/Youtube'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
