@@ -29,6 +29,9 @@ export default class CustomDocument extends Document {
                     <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#fecd1a"></link>
                     <meta name="msapplication-TileColor" content="#fecd1a"></meta>
                     <meta name="theme-color" content="#fecd1a"></meta>
+                    <meta name="twitter:card" content="summary" key="twcard" />
+                    <meta name="twitter:creator" content="@devbyrayray" key="twhandle" />
+                    <meta property="og:site_name" content="Dev By RayRay" key="ogsitename" />
 
                     {/* We only want to add the scripts if in production */}
                     {isProduction && (

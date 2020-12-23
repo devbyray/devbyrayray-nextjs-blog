@@ -14,7 +14,7 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
 import { useRouter } from 'next/router'
-//import Youtube from '../../components/Youtube'
+import Youtube from '../../components/Youtube'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -33,7 +33,6 @@ const components = {
   h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
-  Youtube: (props) => Youtube
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -49,12 +48,13 @@ export default function PostPage({ source, frontMatter }) {
           property="og:title"
           content={`${frontMatter.title} | Dev By RayRay`}
         />
-        <meta name="twitter:card" content="summary" />
         <meta
           property="og:description"
           content={frontMatter.description}
         />
         <meta property="og:image" content={frontMatter.image} />
+        <meta name="description" content={frontMatter.description} />
+
       </Head>
       <Header />
       <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">

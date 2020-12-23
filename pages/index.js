@@ -26,6 +26,7 @@ export default function Index({ posts }) {
           property="og:description"
           content="Building awesome projects with HTML, CSS, JavaScript and a lot more"
         />
+        <meta name="description" content="Building awesome projects with HTML, CSS, JavaScript and a lot more" />
         <meta property="og:image" content="https://res.cloudinary.com/raymons/image/upload/v1608535079/byrayray/IMG_2811.png" />
       </Head>
       <Header />
