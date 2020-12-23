@@ -13,7 +13,11 @@ import Footer from '../../components/footer'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
+import { SOCIAL_IMAGE } from '../../components/social-image'
 import { useRouter } from 'next/router'
+import getShareImage from '@jlengstorf/get-share-image';
+
+
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -37,6 +41,18 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   const router = useRouter()
   const content = hydrate(source, { components })
+
+  const socialImage = (title, desc) => {
+    const newTitle = title.length > 80 ? `${title.substring(0, 80)}...` : title
+    const newDesc = desc.length > 80 ? `${desc.substring(0, 80)}...` : desc
+    return getShareImage({
+      title: newTitle,
+      tagline: newDesc,
+      ...SOCIAL_IMAGE
+    });
+  }
+
+
   return (
     <Layout>
       <Head>
@@ -59,17 +75,16 @@ export default function PostPage({ source, frontMatter }) {
       <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">
 
         <div className="">
-          <header className="p-12 bg-white rounded-t-3xl">
+          <header className="px-12 py-8 bg-gray-100 rounded-t-3xl">
 
             <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">{frontMatter.title}</h1>
-            {frontMatter.description && (
-              <p className=" text-3xl text-black text-opacity-75 italic">{frontMatter.description}</p>
-            )}
           </header>
           <figure className="overflow-hidden">
-            <Image width={672} height={400} layout="responsive" loading="lazy" className="h-56 w-full object-cover md:w-56" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+            <Image width={1800} height={1100} unoptimized={true} layout="responsive" loading="lazy" className="h-56 w-full object-cover 
+            md:w-56" src={socialImage(frontMatter.title, frontMatter.description) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
-          <main className="px-8 pt-12 pb-12 -mt-5 mb-8 rounded-b-3xl bg-white">
+          <main className="px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100">
+            <p>{frontMatter.description}</p>
             {content}
           </main>
         </div>

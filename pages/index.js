@@ -9,8 +9,23 @@ import Image from 'next/image'
 import { formatDate } from '../lib/index'
 import Footer from '../components/footer'
 import Header from '../components/header'
+import { SOCIAL_IMAGE } from '../components/social-image'
+
+import getShareImage from '@jlengstorf/get-share-image';
+
+const socialImage = (title, desc) => {
+  const newTitle = title.length > 80 ? `${title.substring(0, 80)}...` : title
+  const newDesc = desc.length > 80 ? `${desc.substring(0, 80)}...` : desc
+  return getShareImage({
+    title: newTitle,
+    tagline: newDesc,
+    ...SOCIAL_IMAGE
+  });
+}
 
 export default function Index({ posts }) {
+
+
   return (
     <Layout>
       <Head>
@@ -33,10 +48,10 @@ export default function Index({ posts }) {
       <div className="container mx-auto px-4 mb-16 flex justify-center flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div className="bg-white rounded-xl overflow-hidden " key={post.filePath}>
+            <div className="bg-gray-100 rounded-xl overflow-hidden " key={post.filePath}>
               <div className="grid-cols-2">
                 <div className="md:flex-shrink-0">
-                  <Image width={672} height={400} layout="responsive" loading="lazy" className="h-56 w-full object-cover md:w-56" src={post.data.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+                  <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
                 </div>
                 <div className="p-8">
                   <time>{post.data.date}</time> <br />
