@@ -10,10 +10,10 @@ const Header = () => {
                 </Link>
             </nav>
             <header className="header p-8 pt-32 mb-8 rounded-3xl text-center flex flex-col justify-center items-center">
-                <div className="w-32">
-                    <Image width={100} height={100} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/upload/v1608535079/byrayray/IMG_2811.png'} className="object-cover " />
+                <div className="w-72">
+                    <Image width={800} height={612} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png'} className="object-cover " />
                 </div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl text-white">Dev By RayRay</h1>
+                <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl text-white">Dev By RayRay</h1>
                 <p className="text-white text-xl">Building awesome projects with HTML, CSS, JavaScript and a lot more</p>
             </header>
             <style jsx>{`
