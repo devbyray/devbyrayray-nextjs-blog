@@ -59,31 +59,26 @@ export default function PostPage({ source, frontMatter }) {
       <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">
 
         <div className="">
-          <header>
-            <nav>
-              <Link href="/">
-                <a>👈 Go back home</a>
-              </Link>
-            </nav>
-          </header>
-          <header className="px-16 py-16 mt-8 -mb-10 rounded-t-3xl text-center post__header">
+          <header className="p-12 bg-white rounded-t-3xl">
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl text-white">{frontMatter.title}</h1>
+            <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">{frontMatter.title}</h1>
             {frontMatter.description && (
-              <p className="text-white text-lg sm:text-xl md:text-2xl italic">{frontMatter.description}</p>
+              <p className=" text-3xl text-black text-opacity-75 italic">{frontMatter.description}</p>
             )}
           </header>
-          <figure className=" rounded-3xl overflow-hidden">
+          <figure className="overflow-hidden">
             <Image width={672} height={400} layout="responsive" loading="lazy" className="h-56 w-full object-cover md:w-56" src={frontMatter.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
-          <main className="px-8 pt-12 pb-12 -mt-5 mb-8 rounded-b-3xl bg-white">{content}</main>
+          <main className="px-8 pt-12 pb-12 -mt-5 mb-8 rounded-b-3xl bg-white">
+            {content}
+          </main>
         </div>
       </div>
       <Footer />
       <style jsx>{
         `
         .post__header {
-          background: var(--color-pinky);
+          background: var(--color-blue);
         }
         `
       }</style>

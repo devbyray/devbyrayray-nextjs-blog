@@ -36,7 +36,7 @@ export default function Index({ posts }) {
             <div className="bg-white rounded-xl overflow-hidden " key={post.filePath}>
               <div className="grid-cols-2">
                 <div className="md:flex-shrink-0">
-                  <Image width={480} height={325} layout="responsive" loading="lazy" className="h-48 w-full object-cover md:w-48" src={post.data.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+                  <Image width={672} height={400} layout="responsive" loading="lazy" className="h-56 w-full object-cover md:w-56" src={post.data.image || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
                 </div>
                 <div className="p-8">
                   <time>{post.data.date}</time> <br />
