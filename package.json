@@ -11,6 +11,7 @@
     "@jlengstorf/get-share-image": "^0.8.0",
     "autoprefixer": "^10.1.0",
     "gray-matter": "^4.0.2",
+    "jsdom": "^16.4.0",
     "next": "latest",
     "next-mdx-remote": "^1.0.0",
     "next-remote-watch": "0.2.0",
