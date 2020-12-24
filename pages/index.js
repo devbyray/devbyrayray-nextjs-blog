@@ -10,6 +10,7 @@ import { formatDate } from '../lib/index'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import { SOCIAL_IMAGE } from '../components/social-image'
+import { ArticleJsonLd } from 'next-seo';
 
 import getShareImage from '@jlengstorf/get-share-image';
 
@@ -24,7 +25,9 @@ const socialImage = (title, desc) => {
 }
 
 export default function Index({ posts }) {
-
+  const date = new Date()
+  const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
+  
 
   return (
     <Layout>
@@ -44,6 +47,19 @@ export default function Index({ posts }) {
         <meta name="description" content="Building awesome projects with HTML, CSS, JavaScript and a lot more" />
         <meta property="og:image" content="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png" />
       </Head>
+      <ArticleJsonLd
+        url="https://byrayray.dev"
+        title="Dev By RayRay | Building awesome projects with HTML, CSS, JavaScript and a lot more"
+        images={[
+          'https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png'
+        ]}
+        datePublished={latestUpdate}
+        dateModified={latestUpdate}
+        authorName={['Dev By RayRay']}
+        publisherName="Dev By RayRay"
+        publisherLogo="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png"
+        description="Building awesome projects with HTML, CSS, JavaScript and a lot more."
+      />
       <Header />
       <div className="container mx-auto px-4 mb-16 flex justify-center flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">

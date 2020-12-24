@@ -17,7 +17,7 @@ import { SOCIAL_IMAGE } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
 import Youtube from '../../components/Youtube'
-
+import { BlogJsonLd } from 'next-seo';
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -72,6 +72,21 @@ export default function PostPage({ source, frontMatter }) {
         <meta name="description" content={frontMatter.description} />
 
       </Head>
+      <LogoJsonLd
+        logo="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png"
+        url="https://byrayray.dev"
+      />
+      <BlogJsonLd
+        url={`https://byrayray.dev/${router.asPath}`}
+        title={`${frontMatter.title} | Dev By RayRay`}
+        images={[
+          socialImage
+        ]}
+        datePublished={latestUpdate}
+        dateModified={latestUpdate}
+        authorName={['Dev By RayRay']}
+        description={frontMatter.description}
+      />
       <Header />
       <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">
 
@@ -91,13 +106,6 @@ export default function PostPage({ source, frontMatter }) {
         </div>
       </div>
       <Footer />
-      <style jsx>{
-        `
-        .post__header {
-          background: var(--color-blue);
-        }
-        `
-      }</style>
     </Layout>
   )
 }
