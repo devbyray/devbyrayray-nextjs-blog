@@ -5,5 +5,5 @@ module.exports = {
         loader: 'cloudinary',
         path: 'https://res.cloudinary.com/raymons/image/fetch/',
     },
-
+    target: "serverless",
 }
