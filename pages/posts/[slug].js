@@ -16,7 +16,7 @@ import Header from '../../components/header'
 import { SOCIAL_IMAGE } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
-import Youtube from '../../components/youtube'
+import Youtube from '../../components/Youtube'
 
 
 // Custom components/renderers to pass to MDX.
