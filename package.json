@@ -5,7 +5,6 @@
     "dev": "next -- -p 3002",
     "dev:watch": "next-remote-watch ./posts",
     "build": "next build",
-    "postbuild": "next-on-netlify",
     "start": "next start"
   },
   "dependencies": {
