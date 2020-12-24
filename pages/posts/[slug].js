@@ -17,7 +17,7 @@ import { SOCIAL_IMAGE } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
 import Youtube from '../../components/Youtube'
-import { BlogJsonLd } from 'next-seo';
+import { BlogJsonLd, LogoJsonLd } from 'next-seo';
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -53,6 +53,8 @@ export default function PostPage({ source, frontMatter }) {
     });
   }
 
+  const date = new Date()
+  const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
 
   return (
     <Layout>
