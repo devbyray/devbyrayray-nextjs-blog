@@ -14,7 +14,6 @@
     "gray-matter": "^4.0.2",
     "next": "latest",
     "next-mdx-remote": "^1.0.0",
-    "next-on-netlify": "^2.6.3",
     "next-remote-watch": "0.2.0",
     "next-seo": "^4.17.0",
     "nextjs-sitemap-generator": "^1.1.3",
