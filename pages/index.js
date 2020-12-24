@@ -42,7 +42,7 @@ export default function Index({ posts }) {
           content="Building awesome projects with HTML, CSS, JavaScript and a lot more"
         />
         <meta name="description" content="Building awesome projects with HTML, CSS, JavaScript and a lot more" />
-        <meta property="og:image" content="https://res.cloudinary.com/raymons/image/upload/v1608535079/byrayray/IMG_2811.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png" />
       </Head>
       <Header />
       <div className="container mx-auto px-4 mb-16 flex justify-center flex-col">

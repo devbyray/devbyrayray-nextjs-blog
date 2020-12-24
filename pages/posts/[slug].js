@@ -16,7 +16,7 @@ import Header from '../../components/header'
 import { SOCIAL_IMAGE } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
-
+import Youtube from '../../components/youtube'
 
 
 // Custom components/renderers to pass to MDX.
@@ -36,6 +36,7 @@ const components = {
   h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
+  Youtube,
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -67,7 +68,7 @@ export default function PostPage({ source, frontMatter }) {
           property="og:description"
           content={frontMatter.description}
         />
-        <meta property="og:image" content={frontMatter.image} />
+        <meta property="og:image" content={socialImage} />
         <meta name="description" content={frontMatter.description} />
 
       </Head>
