@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next -- -p 3002",
     "dev:watch": "next-remote-watch ./posts",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
