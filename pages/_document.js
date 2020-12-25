@@ -61,6 +61,9 @@ export default class CustomDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
+
+<script data-ad-client="ca-pub-2864143898937854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
                 </body>
             </Html>
         )
