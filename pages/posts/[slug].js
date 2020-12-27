@@ -102,7 +102,7 @@ export default function PostPage({ source, frontMatter }) {
             md:w-56" src={socialImage(frontMatter.title, frontMatter.description) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
           </figure>
           <main className="px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100">
-            <p>{frontMatter.description}</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl">{frontMatter.description}</h2>
             {content}
           </main>
         </div>
