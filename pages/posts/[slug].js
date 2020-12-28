@@ -13,7 +13,7 @@ import Footer from '../../components/footer'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
-import { SOCIAL_IMAGE } from '../../components/social-image'
+import { socialImage } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
 import Youtube from '../../components/Youtube'
@@ -43,15 +43,7 @@ export default function PostPage({ source, frontMatter }) {
   const router = useRouter()
   const content = hydrate(source, { components })
 
-  const socialImage = (title, desc) => {
-    const newTitle = title.length > 80 ? `${title.substring(0, 80)}...` : title
-    const newDesc = desc.length > 80 ? `${desc.substring(0, 80)}...` : desc
-    return getShareImage({
-      title: newTitle,
-      tagline: newDesc,
-      ...SOCIAL_IMAGE
-    });
-  }
+  const imageUrl = socialImage(frontMatter.title, frontMatter.description, frontMatter.image)
 
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
@@ -70,7 +62,7 @@ export default function PostPage({ source, frontMatter }) {
           property="og:description"
           content={frontMatter.description}
         />
-        <meta property="og:image" content={socialImage} />
+        <meta property="og:image" content={imageUrl} />
         <meta name="description" content={frontMatter.description} />
 
       </Head>
@@ -82,7 +74,7 @@ export default function PostPage({ source, frontMatter }) {
         url={`https://byrayray.dev/${router.asPath}`}
         title={`${frontMatter.title} | Dev By RayRay`}
         images={[
-          socialImage
+          imageUrl
         ]}
         datePublished={latestUpdate}
         dateModified={latestUpdate}
@@ -99,10 +91,10 @@ export default function PostPage({ source, frontMatter }) {
           </header>
           <figure className="overflow-hidden">
             <Image width={1800} height={1100} unoptimized={true} layout="responsive" loading="lazy" className="h-56 w-full object-cover 
-            md:w-56" src={socialImage(frontMatter.title, frontMatter.description) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+            md:w-56" src={`${imageUrl}` || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
+            {/* https://res.cloudinary.com/raymons/image/upload/c_fill,d_devbyrayray:blog:TailWind-CSS-NextJS-Web-Dev.jpg,f_webp,g_north_west,h_1100,l_devbyrayray:blog:TailWind-CSS-NextJS-Web-Dev.jpg,w_605,x_0/v1609100540/devbyrayray/blog/blog-template-3a.png */}
           </figure>
           <main className="px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100">
-            <h2 className="text-xl sm:text-2xl md:text-3xl">{frontMatter.description}</h2>
             {content}
           </main>
         </div>
