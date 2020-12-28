@@ -8,6 +8,7 @@ import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import Image from 'next/image'
 import { formatDate } from '../lib/index'
 import { generateRss } from '../lib/generate-rss'
+import { generatePostsSitemap } from '../lib/generate-posts-sitemap'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import { socialImage } from '../components/social-image'
@@ -95,9 +96,12 @@ export function getStaticProps() {
   }).filter((postItem) => postItem.data.published).reverse()
 
   const rss = generateRss(posts)
-  console.log("🚀 ~ file: index.js ~ line 97 ~ getStaticProps ~ rss", rss)
-
   fs.writeFileSync('./public/rss.xml', rss);
+
+  const postSitemap = generatePostsSitemap(posts)
+
+  fs.writeFileSync("./public/sitemap-posts.xml", postSitemap, "utf8");
+
 
   return { props: { posts } }
 }

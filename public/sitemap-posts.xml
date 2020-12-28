@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-12-21-nextjs-jamstack-getting-started</loc
+    >
+    <lastmod>Sun, 20 Dec 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-12-09-five-development-retrospective-questions-to-have-great-discussions</loc
+    >
+    <lastmod>Tue, 08 Dec 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-12-05-how-to-learn-javascript-the-easy-way</loc
+    >
+    <lastmod>Fri, 04 Dec 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-11-24-tips-to-create-developer-tutorials</loc
+    >
+    <lastmod>Mon, 23 Nov 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-11-17-five-rules-to-improve-code-readability</loc
+    >
+    <lastmod>Mon, 23 Nov 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-11-05-use-cli-tools-from-mac-and-linux-on-windows-subsytem-for-linux</loc
+    >
+    <lastmod>Wed, 04 Nov 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-10-30-three-todos-before-applying-for-a-junior-developer-job</loc
+    >
+    <lastmod>Thu, 29 Oct 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-10-28-introduction-to-angular-testing</loc
+    >
+    <lastmod>Thu, 29 Oct 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-07-30-serverless-functions-webshop-faunadb-netlify-angular-part-2</loc
+    >
+    <lastmod>Wed, 29 Jul 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-07-08-serverless-functions-webshop-faunadb-netlify-angular</loc
+    >
+    <lastmod>Tue, 07 Jul 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-06-22-typescripts-new-top-level-await</loc
+    >
+    <lastmod>Sun, 21 Jun 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-26-jump-start-your-developer-career-from-zero-to-hero-89cb62a1829</loc
+    >
+    <lastmod>Mon, 25 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-26-4-steps-to-get-started-with-serverless-functions-on-netlify-a6942bf071ca</loc
+    >
+    <lastmod>Mon, 25 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-20-native-lazy-loading-in-the-browser-85dabe6653ed</loc
+    >
+    <lastmod>Tue, 19 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-19-5-steps-give-structure-to-your-development-projects-e1348eb9f17d</loc
+    >
+    <lastmod>Mon, 18 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-18-dear-codenewbie-be-1-better-everyday-c7688a4166b5</loc
+    >
+    <lastmod>Sun, 17 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-16-javascript-concepts-you-need-before-starting-w-frameworks--libraries-25a325312b5c</loc
+    >
+    <lastmod>Fri, 15 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-13-5-tips-to-make-100daysofcode-effective-for-everyone-3695587aad64</loc
+    >
+    <lastmod>Tue, 12 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-11-4-developer-job-interview-questions-you-need-to-be-prepared-for-b10313342e75</loc
+    >
+    <lastmod>Sun, 10 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-06-3-tips-to-use-const-variable-more-often-in-javascript-9f64ef17d5cc</loc
+    >
+    <lastmod>Tue, 05 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-04-how-to-build-a-dark-mode-switcher-with-css-variables-ccb13f7441a0</loc
+    >
+    <lastmod>Sun, 03 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-04-do-you-fear-missing-the-train-of-the-next-framework-d8dc525efe1a</loc
+    >
+    <lastmod>Sun, 03 May 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-05-01-you-picked-the-wrong-side-of-the-javascript-war-583e64fe9c74</loc
+    >
+    <lastmod>Thu, 30 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-20-the-thin-line-between-flexibility-readability-and-scalability-in-software-development-35c6dd32deb6</loc
+    >
+    <lastmod>Sun, 19 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-18-the-undefined-dev-1-523cbf1b5401</loc
+    >
+    <lastmod>Fri, 17 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-13-3-tools-to-start-programming-on-a-tablet-or-mobile-phone-9dd89fc89f69</loc
+    >
+    <lastmod>Sun, 12 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-09-3-lessons-from-developer-job-rejections-334327a0c66c</loc
+    >
+    <lastmod>Wed, 08 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-07-typescript-for-beginners-97b568d3e110</loc
+    >
+    <lastmod>Mon, 06 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-07-how-to-create-gradient-titles-like-apple-s-ipad-pro-page-a0647ec83e51</loc
+    >
+    <lastmod>Mon, 06 Apr 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-04-01-testing-strategies-for-front-end-developers-a2ebbc5191a2</loc
+    >
+    <lastmod>Tue, 31 Mar 2020 22:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-25-how-to-build-fast-advanced-json-powered-forms-on-angular-with-ngx-formly-77aeed406f73</loc
+    >
+    <lastmod>Tue, 24 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-23-6-tips-to-focus-if-you-work-from-home-as-a-developer-e4e334c6fcdf</loc
+    >
+    <lastmod>Sun, 22 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-17-how-to-develop-a-positive-mindset-28b0180171b2</loc
+    >
+    <lastmod>Mon, 16 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-16-we-are-not-serious-enough-about-software-development-b9e3222f2906</loc
+    >
+    <lastmod>Sun, 15 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-15-5-visual-studio-code-extensions-to-improve-your-productivity-3f4ede63faaf</loc
+    >
+    <lastmod>Sat, 14 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-14-how-to-earn-money-as-programmer-during-the-coronavirus-a24971b15d57</loc
+    >
+    <lastmod>Fri, 13 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-10-build-fast-json-powered-forms-on-angular-with-ngx-formly-b7a00733e66e</loc
+    >
+    <lastmod>Mon, 09 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-10-3-toxic-dev-team-behaviors-5e039695860d</loc
+    >
+    <lastmod>Mon, 09 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-04-what-is-the-scope-in-javascript-a2add52bf9d8</loc
+    >
+    <lastmod>Tue, 03 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-04-5-lessons-from-writing-programming-tutorials-for-8-years-ebc10c08297b</loc
+    >
+    <lastmod>Tue, 03 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-04-2-ways-to-resolve-duplication-in-javascript-arrays-and-objects-e377e1bdc5e1</loc
+    >
+    <lastmod>Tue, 03 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-03-02-top-5-favourite-medium-javascript-posts-6549c9a5c2e1</loc
+    >
+    <lastmod>Sun, 01 Mar 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-26-you-don-t-need-a-javascript-framework-df2a36c2dd0a</loc
+    >
+    <lastmod>Tue, 25 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-24-3-tips-for-junior-developers-1327b14ede7c</loc
+    >
+    <lastmod>Sun, 23 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-23-classes-with-private-properties-in-typescript-3-8-9fdb91c26ab1</loc
+    >
+    <lastmod>Sun, 23 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-22-the-skill-you-need-to-grow-as-a-person-7d1a6f34afb5</loc
+    >
+    <lastmod>Fri, 21 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-19-5-reasons-why-you-should-write-technical-blog-posts-as-developer-30cd349ece60</loc
+    >
+    <lastmod>Tue, 18 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-17-make-your-javascript-objects-more-predictable-by-creating-maps-20ac1a795442</loc
+    >
+    <lastmod>Sun, 16 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-17-7-steps-to-dockerize-your-angular-9-app-with-nginx-915f0f5acac</loc
+    >
+    <lastmod>Sun, 16 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-11-an-introduction-to-typescript-property-decorators-1c9db23b6ca1</loc
+    >
+    <lastmod>Mon, 10 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-06-7-lessons-i-learned-while-being-a-developer-for-10-years-c0e3db2c1336</loc
+    >
+    <lastmod>Wed, 05 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-02-03-a-practical-introduction-to-typescript-class-decorators-afb996af0763</loc
+    >
+    <lastmod>Mon, 03 Feb 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-01-24-prevent-cannot-read-property-of-undefined-errors-with-javascript-classes--typescript-a388c1f0ef45</loc
+    >
+    <lastmod>Thu, 23 Jan 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-01-22-dive-into-graphql-with-apollo-client-by-building-a-spacex-app-in-angular-9-20e703c93f0a</loc
+    >
+    <lastmod>Tue, 21 Jan 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-01-15-graphql-microservices-architecture-by-apollo-8b6eb557c5e2</loc
+    >
+    <lastmod>Tue, 14 Jan 2020 23:00:00 GMT</lastmod>
+  </url>
+  <url>
+    <loc
+      >https://devbyrayray/post/2020-01-04-thoughts-about-micro-frontends-in-2020-dd95eb7216f</loc
+    >
+    <lastmod>Fri, 03 Jan 2020 23:00:00 GMT</lastmod>
+  </url>
+</urlset>
