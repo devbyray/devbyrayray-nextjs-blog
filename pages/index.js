@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import Image from 'next/image'
 import { formatDate } from '../lib/index'
+import { generateRss } from '../lib/generate-rss'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import { socialImage } from '../components/social-image'
@@ -61,7 +62,7 @@ export default function Index({ posts }) {
                   <time>{post.data.date}</time> <br />
                   <strong>
                     <Link
-                      as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
+                      as={`/posts/${post.slug}`}
                       href={`/posts/[slug]`}
                     >
                       <a>{post.data.title}</a>
@@ -89,8 +90,14 @@ export function getStaticProps() {
       content,
       data,
       filePath,
+      slug: filePath.replace(/\.mdx?$/, '')
     }
   }).filter((postItem) => postItem.data.published).reverse()
+
+  const rss = generateRss(posts)
+  console.log("🚀 ~ file: index.js ~ line 97 ~ getStaticProps ~ rss", rss)
+
+  fs.writeFileSync('./public/rss.xml', rss);
 
   return { props: { posts } }
 }
