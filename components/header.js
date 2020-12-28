@@ -4,9 +4,12 @@ import Link from 'next/link'
 const Header = () => {
     return (
         <>
-            <nav className="navigation absolute top-0 left-0 w-full flex flex-col justify-center items-center">
+            <nav className="navigation absolute top-0 left-0 w-full flex flex-row justify-center items-center">
                 <Link href="/">
-                    <a className="button">Home</a>
+                    <a className="button mx-2">Home</a>
+                </Link>
+                <Link href="/about">
+                    <a className="button mx-2">About</a>
                 </Link>
             </nav>
             <header className="header p-8 pt-32 mb-8 rounded-3xl text-center flex flex-col justify-center items-center">
