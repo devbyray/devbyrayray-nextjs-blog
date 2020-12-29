@@ -20,6 +20,9 @@
 		background-color: var(--color-darkgray);
 		font-family: 'Raleway', sans-serif;
 	}
+	blockquote {
+		@apply bg-white px-8 pt-8 pb-4 mb-8
+	}
 	h1,
 	h2,
 	h3,

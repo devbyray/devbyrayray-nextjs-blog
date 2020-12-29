@@ -11,7 +11,7 @@ export function CloudwaysSquare() {
 
 export function CloudwaysSquareGridItem() {
     return (
-        <div className="bg-gray-100 rounded-xl p-8 flex justify-center overflow-hidden">
+        <div className="bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden">
             <CloudwaysSquare></CloudwaysSquare>
         </div>
     )

@@ -16,10 +16,11 @@ import { formatDate } from '../../lib/index'
 import { GrammarlySquareGridItem } from '../../components/ads/grammarly'
 import { socialImage } from '../../components/social-image'
 import { useRouter } from 'next/router'
-import getShareImage from '@jlengstorf/get-share-image';
+import getShareImage from '@jlengstorf/get-share-image'
 import Youtube from '../../components/Youtube'
-import { BlogJsonLd, LogoJsonLd } from 'next-seo';
-
+import { BlogJsonLd, LogoJsonLd } from 'next-seo'
+import { AmazonImage } from '../../components/ads/amazon-image'
+import { NameCheapSquare2, NameCheapSquare, NameCheapSquareGridItem } from '../../components/ads/namecheap'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -30,7 +31,9 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Head,
-  img: (props) => <img className="" loading="lazy" src={props?.src} alt={props?.alt} />,
+  img: (props) => (
+    <img className="" loading="lazy" src={props?.src} alt={props?.alt} />
+  ),
   h1: (props) => <h1 className="text-2xl sm:text-3xl md:text-4xl" {...props} />,
   h2: (props) => <h2 className="text-xl sm:text-2xl md:text-3xl" {...props} />,
   h3: (props) => <h3 className="text-lg sm:text-xl md:text-2xl" {...props} />,
@@ -38,17 +41,26 @@ const components = {
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
   Youtube,
-  GrammarlySquareGridItem
+  GrammarlySquareGridItem,
+  NameCheapSquareGridItem,
+  NameCheapSquare2,
+  NameCheapSquare,
 }
 
 export default function PostPage({ source, frontMatter }) {
   const router = useRouter()
   const content = hydrate(source, { components })
 
-  const imageUrl = socialImage(frontMatter.title, frontMatter.description, frontMatter.image)
+  const imageUrl = socialImage(
+    frontMatter.title,
+    frontMatter.description,
+    frontMatter.image,
+  )
 
   const date = new Date()
-  const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
+  const latestUpdate = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'full',
+  }).format(date)
 
   return (
     <Layout>
@@ -60,13 +72,9 @@ export default function PostPage({ source, frontMatter }) {
           property="og:title"
           content={`${frontMatter.title} | Dev By RayRay`}
         />
-        <meta
-          property="og:description"
-          content={frontMatter.description}
-        />
+        <meta property="og:description" content={frontMatter.description} />
         <meta property="og:image" content={imageUrl} />
         <meta name="description" content={frontMatter.description} />
-
       </Head>
       <LogoJsonLd
         logo="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png"
@@ -75,50 +83,109 @@ export default function PostPage({ source, frontMatter }) {
       <BlogJsonLd
         url={`https://byrayray.dev/${router.asPath}`}
         title={`${frontMatter.title} | Dev By RayRay`}
-        images={[
-          imageUrl
-        ]}
+        images={[imageUrl]}
         datePublished={latestUpdate}
         dateModified={latestUpdate}
         authorName={['Dev By RayRay']}
         description={frontMatter.description}
       />
       <Header header={false} />
-      <div className="container pt-32 max-w-full px-4 lg:grid lg:grid-cols-6 relative gap-8 m-auto">
-
+      <div className="container max-w-full px-8 lg:grid lg:grid-cols-6 relative gap-8 m-auto">
         <div className="w-full lg:col-start-1 lg:col-end-5">
           <header className="px-12 py-8 bg-gray-100 rounded-t-3xl">
-
-            <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">{frontMatter.title}</h1>
+            <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">
+              {frontMatter.title}
+            </h1>
           </header>
           <figure className="overflow-hidden">
-            <Image width={1800} height={1100} unoptimized={true} layout="responsive" loading="lazy" className="h-56 w-full object-cover 
-            md:w-56" src={`${imageUrl}` || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'} alt="Man looking at item at a store" />
-            {/* https://res.cloudinary.com/raymons/image/upload/c_fill,d_devbyrayray:blog:TailWind-CSS-NextJS-Web-Dev.jpg,f_webp,g_north_west,h_1100,l_devbyrayray:blog:TailWind-CSS-NextJS-Web-Dev.jpg,w_605,x_0/v1609100540/devbyrayray/blog/blog-template-3a.png */}
+            <Image
+              width={1800}
+              height={1100}
+              unoptimized={true}
+              layout="responsive"
+              loading="lazy"
+              className="h-56 w-full object-cover 
+            md:w-56"
+              src={
+                `${imageUrl}` ||
+                'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.jpeg'
+              }
+              alt={frontMatter.title}
+            />
           </figure>
           <main className="px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100">
             {content}
           </main>
         </div>
-        <aside className="lg:col-start-5 lg:col-end-7 text-white">
-          <div className="px-8 pt-8 pb-8 mb-8 rounded-3xl bg-gray-600">
+        <aside className="lg:col-start-5 lg:col-end-7">
+          <div className="px-8 pt-8 pb-8 mb-8 rounded-3xl bg-gray-100">
             <header className="flex flex-col justify-center items-center">
               <div className="w-full px-16 mb-8">
-                <Image width={327} height={250} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/fetch/v1608749967/https://res.cloudinary.com/raymons/image/upload/co_rgb:ffffff%2Ce_make_transparent:13/v1608749347/devbyrayray/blog/dev-by-rayray-logo.png'} className="object-cover " />
+                <Image
+                  width={327}
+                  height={250}
+                  layout="responsive"
+                  loading="lazy"
+                  src={
+                    'https://res.cloudinary.com/raymons/image/fetch/v1608749967/https://res.cloudinary.com/raymons/image/upload/co_rgb:ffffff%2Ce_make_transparent:13/v1608749347/devbyrayray/blog/dev-by-rayray-logo.png'
+                  }
+                  className="object-cover "
+                />
               </div>
-              <p className="text-lg"><strong>Hi I'm Ray</strong>, <br />Building awesome projects with HTML, CSS, JavaScript and a lot more</p>
+              <p className="text-lg">
+                <strong>Hi I'm Ray</strong>, <br />
+                Building awesome projects with HTML, CSS, JavaScript and a lot
+                more
+              </p>
             </header>
+            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
+              <AmazonImage
+                title="Web Design with HTML, CSS, JavaScript and jQuery Books"
+                url={
+                  'https://www.amazon.com/gp/product/1118907442/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1118907442&linkCode=as2&tag=devbyrayray09-20&linkId=eab1691ffa86c74f779aa39aceea817d'
+                }
+                image={
+                  'http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=1118907442&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=devbyrayray09-20'
+                }
+                tracking={
+                  'http://ir-na.amazon-adsystem.com/e/ir?t=devbyrayray09-20&l=am2&o=1&a=111890744'
+                }
+              />
+            </div>
+            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
+              <AmazonImage
+                title={"JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language"}
+                url={
+                  'https://www.amazon.com/gp/product/1491952024/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491952024&linkCode=as2&tag=devbyrayray09-20&linkId=82851d38754d89040329ae7bf0f525d1'
+                }
+                image={
+                  'http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=1491952024&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=devbyrayray09-20'
+                }
+                tracking={
+                  'http://ir-na.amazon-adsystem.com/e/ir?t=devbyrayray09-20&l=am2&o=1&a=1491952024'
+                }
+              />
+
+            </div>
+            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
+
+
+            </div>
+            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
+              <NameCheapSquare2></NameCheapSquare2>
+
+            </div>
           </div>
         </aside>
       </div>
-      <ins class="adsbygoogle"
+      <ins
+        className="adsbygoogle"
         data-ad-layout="in-article"
         data-ad-format="fluid"
         data-ad-client="ca-pub-0395200862879086"
-        data-ad-slot="2227722252"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({ });
-      </script>
+        data-ad-slot="2227722252"
+      ></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({ });</script>
       <style>
         {`
           .adsbygoogle {
@@ -143,9 +210,14 @@ export const getStaticProps = async ({ params }) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [[require('remark-prism'), {
-        transformInlineCode: true,
-      }]],
+      remarkPlugins: [
+        [
+          require('remark-prism'),
+          {
+            transformInlineCode: true,
+          },
+        ],
+      ],
       rehypePlugins: [],
     },
     scope: data,

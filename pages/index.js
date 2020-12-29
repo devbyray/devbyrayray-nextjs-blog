@@ -15,6 +15,7 @@ import { socialImage } from '../components/social-image'
 import { ArticleJsonLd } from 'next-seo';
 import { CloudwaysSquareGridItem } from '../components/ads/cloudways'
 import { GrammarlySquareGridItem } from '../components/ads/grammarly'
+import { NameCheapSquareGridItem } from '../components/ads/namecheap'
 
 
 function evenOrOdd(index) {
@@ -68,7 +69,7 @@ export default function Index({ posts }) {
               <div className="bg-gray-100 rounded-xl overflow-hidden " key={post.filePath}>
                 <div className="grid-cols-2">
                   <div className="md:flex-shrink-0">
-                    <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.webp'} alt="Man looking at item at a store" />
+                    <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.webp'} alt={post.data.title} />
                   </div>
                   <div className="p-8">
                     <time>{post.data.date}</time> <br /> 
@@ -96,6 +97,9 @@ export default function Index({ posts }) {
 
               {index % 10 === 0 && index > 7 && <CloudwaysSquareGridItem key={index * 21} ></CloudwaysSquareGridItem>}
               {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem height={48} key={index * 33}></GrammarlySquareGridItem>}
+              {index % 15 === 0 && index > 6 && <>
+                <NameCheapSquareGridItem key={index * 18}></NameCheapSquareGridItem>
+              </>}
             </>
           ))}
         </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Header = (props) => {
     return (
         <>
-            <nav className="navigation absolute top-0 left-0 w-full flex flex-row justify-center items-center">
+            <nav className="navigation mb-8 w-full flex flex-row justify-center items-center">
                 <Link href="/">
                     <a className="button mx-2">Home</a>
                 </Link>

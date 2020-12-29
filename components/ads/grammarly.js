@@ -10,7 +10,7 @@ export function GrammarlySquare() {
 
 export function GrammarlySquareGridItem() {
     return (
-        <div className={'bg-white rounded-xl p-8 flex justify-center overflow-hidden'}>
+        <div className="bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden">
             <GrammarlySquare></GrammarlySquare>
         </div>
     )
