@@ -95,10 +95,10 @@ export default function Index({ posts }) {
               </div>}
               {index === 5 && <h2 className="text-xl sm:text-2xl md:text-3xl col-span-full text-white">Archive</h2>}
 
-              {index % 10 === 0 && index > 7 && <CloudwaysSquareGridItem key={index * 21} ></CloudwaysSquareGridItem>}
-              {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem height={48} key={index * 33}></GrammarlySquareGridItem>}
+              {index % 10 === 0 && index > 7 && <CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem>}
+              {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem>}
               {index % 15 === 0 && index > 6 && <>
-                <NameCheapSquareGridItem key={index * 18}></NameCheapSquareGridItem>
+                <NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem>
               </>}
             </>
           ))}

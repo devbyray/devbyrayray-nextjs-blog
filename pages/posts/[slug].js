@@ -40,6 +40,7 @@ const components = {
   h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
+  blockquote: (props) => <blockquote className="pr-8 pl-12 pt-8 pb-4 mb-8 text-white italic leading-8 text-xl" {...props} />,
   Youtube,
   GrammarlySquareGridItem,
   NameCheapSquareGridItem,
@@ -90,7 +91,7 @@ export default function PostPage({ source, frontMatter }) {
         description={frontMatter.description}
       />
       <Header header={false} />
-      <div className="container max-w-full px-8 lg:grid lg:grid-cols-6 relative gap-8 m-auto">
+      <div className="container max-w-full md:max-w-7xl px-4 lg:grid lg:grid-cols-6 relative gap-8 m-auto">
         <div className="w-full lg:col-start-1 lg:col-end-5">
           <header className="px-12 py-8 bg-gray-100 rounded-t-3xl">
             <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">
@@ -119,7 +120,7 @@ export default function PostPage({ source, frontMatter }) {
         </div>
         <aside className="lg:col-start-5 lg:col-end-7">
           <div className="px-8 pt-8 pb-8 mb-8 rounded-3xl bg-gray-100">
-            <header className="flex flex-col justify-center items-center">
+            <header className="flex flex-col justify-center items-center mb-12">
               <div className="w-full px-16 mb-8">
                 <Image
                   width={327}
@@ -138,6 +139,7 @@ export default function PostPage({ source, frontMatter }) {
                 more
               </p>
             </header>
+            <h3 className="text-lg sm:text-xl md:text-2xl mb-4">Adds 😊</h3>
             <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
               <AmazonImage
                 title="Web Design with HTML, CSS, JavaScript and jQuery Books"
@@ -153,6 +155,9 @@ export default function PostPage({ source, frontMatter }) {
               />
             </div>
             <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
+              <NameCheapSquare2></NameCheapSquare2>
+            </div>
+            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
               <AmazonImage
                 title={"JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language"}
                 url={
@@ -165,14 +170,6 @@ export default function PostPage({ source, frontMatter }) {
                   'https://ir-na.amazon-adsystem.com/e/ir?t=devbyrayray09-20&l=am2&o=1&a=1491952024'
                 }
               />
-
-            </div>
-            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
-
-
-            </div>
-            <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
-              <NameCheapSquare2></NameCheapSquare2>
 
             </div>
           </div>
