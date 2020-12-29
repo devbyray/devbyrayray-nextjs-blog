@@ -21,7 +21,12 @@
 		font-family: 'Raleway', sans-serif;
 	}
 	blockquote {
-		@apply bg-white px-8 pt-8 pb-4 mb-8
+		border-left: .8rem solid var(--color-blue);
+		background-color: var(--color-darkblue);
+		font-family: 'Lora', serif;
+	}
+	blockquote a {
+		@apply text-white;
 	}
 	h1,
 	h2,
@@ -40,13 +45,13 @@
 		margin: 2rem 0 1.3rem 0;
 	}
 	a {
-		color: var(--color-pinky);
+		color: var(--color-blue);
 		text-decoration: underline;
 		transition: .3s ease;
 	}
 	a:hover {
-		background: var(--color-deeppurple);
-		color: #ffffff;
+		color: var(--color-darkyello);
+		text-decoration: none;
 	}
 	p {
 		margin-bottom: 1.3rem;
