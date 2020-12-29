@@ -5,9 +5,17 @@
       <link>https://byrayray.dev</link>
       <description>Building awesome projects with HTML, CSS, JavaScript and a lot more</description>
       <language>en</language>
-      <lastBuildDate>Sun, 20 Dec 2020 23:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 26 Dec 2020 23:00:00 GMT</lastBuildDate>
       <atom:link href="https://byrayray.dev/rss.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://byrayray.dev/post/2020-12-27-why-use-tailwind-css-with-nextjs</guid>
+    <title>Why use Tailwind CSS with NextJS</title>
+    <link>https://byrayray.dev/post/2020-12-27-why-use-tailwind-css-with-nextjs</link>
+    <description>TailWind CSS + NextJS = Web Dev ♥️</description>
+    <pubDate>Sat, 26 Dec 2020 23:00:00 GMT</pubDate>
+  </item>
+
   <item>
     <guid>https://byrayray.dev/post/2020-12-21-nextjs-jamstack-getting-started</guid>
     <title>How To Build and Deploy a JAM-stack Website Fast With NextJS — in 5 steps</title>

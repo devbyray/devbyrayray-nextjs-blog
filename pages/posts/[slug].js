@@ -11,8 +11,9 @@ import CustomLink from '../../components/CustomLink'
 import Layout from '../../components/Layout'
 import Footer from '../../components/footer'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
-import { formatDate } from '../../lib/index'
 import Header from '../../components/header'
+import { formatDate } from '../../lib/index'
+import { GrammarlySquareGridItem } from '../../components/ads/grammarly'
 import { socialImage } from '../../components/social-image'
 import { useRouter } from 'next/router'
 import getShareImage from '@jlengstorf/get-share-image';
@@ -37,6 +38,7 @@ const components = {
   h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
   h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
   Youtube,
+  GrammarlySquareGridItem
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -81,10 +83,10 @@ export default function PostPage({ source, frontMatter }) {
         authorName={['Dev By RayRay']}
         description={frontMatter.description}
       />
-      <Header />
-      <div className="container mx-auto px-4 flex justify-center flex-col md:max-w-4xl relative">
+      <Header header={false} />
+      <div className="container pt-32 max-w-full px-4 lg:grid lg:grid-cols-6 relative gap-8 m-auto">
 
-        <div className="">
+        <div className="w-full lg:col-start-1 lg:col-end-5">
           <header className="px-12 py-8 bg-gray-100 rounded-t-3xl">
 
             <h1 className="text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight">{frontMatter.title}</h1>
@@ -98,7 +100,33 @@ export default function PostPage({ source, frontMatter }) {
             {content}
           </main>
         </div>
+        <aside className="lg:col-start-5 lg:col-end-7 text-white">
+          <div className="px-8 pt-8 pb-8 mb-8 rounded-3xl bg-gray-600">
+            <header className="flex flex-col justify-center items-center">
+              <div className="w-full px-16 mb-8">
+                <Image width={327} height={250} layout="responsive" loading="lazy" src={'https://res.cloudinary.com/raymons/image/fetch/v1608749967/https://res.cloudinary.com/raymons/image/upload/co_rgb:ffffff%2Ce_make_transparent:13/v1608749347/devbyrayray/blog/dev-by-rayray-logo.png'} className="object-cover " />
+              </div>
+              <p className="text-lg"><strong>Hi I'm Ray</strong>, <br />Building awesome projects with HTML, CSS, JavaScript and a lot more</p>
+            </header>
+          </div>
+        </aside>
       </div>
+      <ins class="adsbygoogle"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-0395200862879086"
+        data-ad-slot="2227722252"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({ });
+      </script>
+      <style>
+        {`
+          .adsbygoogle {
+            display:block; 
+            text-align:center;
+          }
+        `}
+      </style>
       <Footer />
     </Layout>
   )

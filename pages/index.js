@@ -58,7 +58,7 @@ export default function Index({ posts }) {
         publisherLogo="https://res.cloudinary.com/raymons/image/upload/c_crop,h_612,w_800,x_490,y_270/v1608750035/devbyrayray/blog/Template.png"
         description="Building awesome projects with HTML, CSS, JavaScript and a lot more."
       />
-      <Header />
+      <Header header={true} />
       <div className="container mx-auto px-4 mb-16 flex justify-center flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -95,7 +95,7 @@ export default function Index({ posts }) {
               {index === 5 && <h2 className="text-xl sm:text-2xl md:text-3xl col-span-full text-white">Archive</h2>}
 
               {index % 10 === 0 && index > 7 && <CloudwaysSquareGridItem key={index * 21} ></CloudwaysSquareGridItem>}
-              {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem key={index * 33}></GrammarlySquareGridItem>}
+              {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem height={48} key={index * 33}></GrammarlySquareGridItem>}
             </>
           ))}
         </div>
