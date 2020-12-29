@@ -139,7 +139,7 @@ export default function PostPage({ source, frontMatter }) {
                 more
               </p>
             </header>
-            <h3 className="text-lg sm:text-xl md:text-2xl mb-4">Adds 😊</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl mb-4">Ads 😊</h3>
             <div className="w-full border p-8 bg-white flex justify-center items-center flex-col text-center mb-4">
               <AmazonImage
                 title="Web Design with HTML, CSS, JavaScript and jQuery Books"
