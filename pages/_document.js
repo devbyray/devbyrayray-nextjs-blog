@@ -48,10 +48,11 @@ export default class CustomDocument extends Document {
                                         window.dataLayer = window.dataLayer || [];
                                         function gtag(){dataLayer.push(arguments);}
                                         gtag('js', new Date());
+                                        gtag('set', 'transport', 'beacon');
 
-                                        gtag('config', '${GA_TRACKING_ID}', {
-                                        page_path: window.location.pathname,
-                                        });
+                                        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
+                                        gtag('create', '${GA_TRACKING_ID}', 'auto');
+                                        gtag('send', 'pageview');
                                     `,
                                 }}
                             />
@@ -61,9 +62,6 @@ export default class CustomDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-
-<script data-ad-client="ca-pub-0395200862879086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
                 </body>
             </Html>
         )

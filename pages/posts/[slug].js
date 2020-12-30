@@ -21,6 +21,7 @@ import Youtube from '../../components/Youtube'
 import { BlogJsonLd, LogoJsonLd } from 'next-seo'
 import { AmazonImage } from '../../components/ads/amazon-image'
 import { NameCheapSquare2, NameCheapSquare, NameCheapSquareGridItem } from '../../components/ads/namecheap'
+import styles from '../../styles/post.module.css'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -175,22 +176,6 @@ export default function PostPage({ source, frontMatter }) {
           </div>
         </aside>
       </div>
-      <ins
-        className="adsbygoogle"
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-0395200862879086"
-        data-ad-slot="2227722252"
-      ></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({ });</script>
-      <style>
-        {`
-          .adsbygoogle {
-            display:block; 
-            text-align:center;
-          }
-        `}
-      </style>
       <Footer />
     </Layout>
   )
