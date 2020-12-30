@@ -1,4 +1,3 @@
-const withOffline = require('next-offline')
 
 const config = {
     images: {
@@ -10,4 +9,4 @@ const config = {
 
 }
 
-module.exports = withOffline(config)
+module.exports = config
