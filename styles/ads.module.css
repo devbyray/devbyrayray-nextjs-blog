@@ -1,0 +1,15 @@
+.square {
+    @apply object-cover;
+}
+
+.grid__item {
+    @apply bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden 2xl:mb-8 md:col-span-full h-full;
+}
+
+.link {
+    display: block;
+}
+
+.custom__image {
+    @apply h-full w-full object-cover;
+}

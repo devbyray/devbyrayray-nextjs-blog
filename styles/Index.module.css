@@ -1,0 +1,42 @@
+.posts {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center auto-rows-min;
+}
+
+.posts__container {
+    @apply container mx-auto px-4 mb-16 flex justify-center flex-col;
+}
+
+.posts__heading {
+    @apply text-xl sm:text-2xl md:text-3xl col-span-full text-white;
+}
+
+.post__item {
+    @apply bg-gray-100 rounded-xl md:col-span-2 lg:col-span-1 overflow-hidden md:h-auto lg:h-full;
+}
+
+.post__content_wrapper {
+    @apply md:grid md:grid-cols-2 lg:grid-cols-1;
+}
+
+.post__image {
+    @apply md:flex-shrink-0;
+}
+
+.post__content {
+    @apply p-8;
+}
+
+.posts__ad_item {
+    @apply md:col-span-full lg:col-span-1 lg:h-full;
+}
+
+
+.dailydev__banner {
+    @apply flex flex-col text-center text-white bg-black p-8 justify-center pb-8 col-span-full rounded-xl overflow-hidden;
+}
+.dailydev__title {
+    @apply text-xl sm:text-2xl md:text-3xl mb-8;
+}
+.dailydev__hr {
+    @apply text-white mb-8;
+}

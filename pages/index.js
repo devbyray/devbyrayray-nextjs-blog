@@ -17,10 +17,7 @@ import { CloudwaysSquareGridItem } from '../components/ads/cloudways'
 import { GrammarlySquareGridItem } from '../components/ads/grammarly'
 import { NameCheapSquareGridItem } from '../components/ads/namecheap'
 
-
-function evenOrOdd(index) {
-  return index % 1 === 1 ? 'odd' : 'even';
-}
+import styles from '../styles/Index.module.css'
 
 export default function Index({ posts }) {
   const date = new Date()
@@ -60,18 +57,25 @@ export default function Index({ posts }) {
         description="Building awesome projects with HTML, CSS, JavaScript and a lot more."
       />
       <Header header={true} />
-      <div className="container mx-auto px-4 mb-16 flex justify-center flex-col">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div className={styles.posts__container}>
+        <div className={styles.posts}>
 
           {posts.map((post, index) => (
             <>
-              {index === 0 && <h2 className="text-xl sm:text-2xl md:text-3xl col-span-full text-white">Newest posts</h2>}
-              <div className="bg-gray-100 rounded-xl overflow-hidden h-96" key={post.filePath}>
-                <div className="grid-cols-2">
-                  <div className="md:flex-shrink-0">
-                    <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image)} alt={post.data.title} />
+              {index === 0 && <h2 className={styles.posts__heading}>Newest posts</h2>}
+              <div className={styles.post__item} key={post.filePath}>
+                <div className={styles.post__content_wrapper}>
+                  <div className={styles.post__image}>
+                    <Link
+                      as={`/posts/${post.slug}`}
+                      href={`/posts/[slug]`}
+                    >
+                      <a>
+                      <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image)} alt={post.data.title} />
+                      </a>
+                    </Link>
                   </div>
-                  <div className="p-8">
+                  <div className={styles.post__content}>
                     <time>{post.data.date}</time> <br /> 
                     <strong>
                       <Link
@@ -85,20 +89,20 @@ export default function Index({ posts }) {
                   </div>
                 </div>
               </div>
-              {index === 5 && <div className="flex flex-col text-center text-white bg-black p-8 justify-center pb-8 col-span-full rounded-xl overflow-hidden h-96">
-                <h3 className="text-xl sm:text-2xl md:text-3xl mb-8">
+              {index === 5 && <div className={styles.dailydev__banner}>
+                <h3 className={styles.dailydev__title}>
                   The best Developer & Programming news
                 </h3>
-                <hr className="text-white mb-8" />
+                <hr className={styles.dailydev__hr} />
                 <a className="block" href="https://api.daily.dev/get?r=devbyrayray" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/raymons/image/upload/v1609161827/devbyrayray/blog/daily-dev.webp" width="1300" height="642" loading="lazy" />
                 </a>
               </div>}
-              {index === 5 && <h2 className="text-xl sm:text-2xl md:text-3xl col-span-full text-white">Archive</h2>}
+              {index === 5 && <h2 className={styles.posts__heading}>Archive</h2>}
 
-              {index % 10 === 0 && index > 7 && <CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem>}
-              {index % 12 === 0 && index > 6 && <GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem>}
+              {index % 10 === 0 && index > 7 && <div className={styles.posts__ad_item}><CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem></div>}
+              {index % 12 === 0 && index > 6 && <div className={styles.posts__ad_item}><GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem></div>}
               {index % 15 === 0 && index > 6 && <>
-                <NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem>
+                <div className={styles.posts__ad_item}><NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem></div>
               </>}
             </>
           ))}

@@ -1,8 +1,10 @@
+import styles from '../../styles/ads.module.css'
+
 export function NameCheapSquare() {
     return (
         <>
-            <a href="https://www.tkqlhce.com/click-100299090-13346111" target="_blank" rel="noopener noreferrer">
-                <img loading="lazy" src="https://www.awltovhc.com/image-100299090-13346111" width="300" height="250" alt="Big Discounts for Domains, Hosting, SSL and more" border="0" className="object-cover" /></a>
+            <a href="https://www.tkqlhce.com/click-100299090-13346111" target="_blank" className={styles.link} rel="noopener noreferrer">
+                <img loading="lazy" src="https://www.awltovhc.com/image-100299090-13346111" width="300" height="250" alt="Big Discounts for Domains, Hosting, SSL and more" border="0" className={styles.square} /></a>
         </>
     )
 }
@@ -25,7 +27,7 @@ export function NameCheapVertical() {
 
 export function NameCheapSquareGridItem() {
     return (
-        <div className="bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden mb-8 h-96">
+        <div className={styles.grid__item}>
             <NameCheapSquare></NameCheapSquare>
         </div>
     )
