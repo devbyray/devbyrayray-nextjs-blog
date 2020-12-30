@@ -25,7 +25,7 @@ export function NameCheapVertical() {
 
 export function NameCheapSquareGridItem() {
     return (
-        <div className="bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden mb-8">
+        <div className="bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden mb-8 h-96">
             <NameCheapSquare></NameCheapSquare>
         </div>
     )

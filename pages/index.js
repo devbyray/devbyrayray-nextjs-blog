@@ -66,10 +66,10 @@ export default function Index({ posts }) {
           {posts.map((post, index) => (
             <>
               {index === 0 && <h2 className="text-xl sm:text-2xl md:text-3xl col-span-full text-white">Newest posts</h2>}
-              <div className="bg-gray-100 rounded-xl overflow-hidden " key={post.filePath}>
+              <div className="bg-gray-100 rounded-xl overflow-hidden h-96" key={post.filePath}>
                 <div className="grid-cols-2">
                   <div className="md:flex-shrink-0">
-                    <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image) || 'https://cdn-images-1.medium.com/max/800/1*Ma0IL7DbvC2dJAN5WRXxRg.webp'} alt={post.data.title} />
+                    <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image)} alt={post.data.title} />
                   </div>
                   <div className="p-8">
                     <time>{post.data.date}</time> <br /> 
@@ -85,7 +85,7 @@ export default function Index({ posts }) {
                   </div>
                 </div>
               </div>
-              {index === 5 && <div className="flex flex-col text-center text-white bg-black p-8 justify-center pb-8 col-span-full rounded-xl overflow-hidden">
+              {index === 5 && <div className="flex flex-col text-center text-white bg-black p-8 justify-center pb-8 col-span-full rounded-xl overflow-hidden h-96">
                 <h3 className="text-xl sm:text-2xl md:text-3xl mb-8">
                   The best Developer & Programming news
                 </h3>
