@@ -29,7 +29,7 @@ export default class CustomDocument extends Document {
                     <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#fecd1a"></link>
                     <meta name="msapplication-TileColor" content="#fecd1a"></meta>
                     <meta name="theme-color" content="#fecd1a"></meta>
-                    <meta name="twitter:card" content="summary" key="twcard" />
+                    <meta name="twitter:card" content="summary_large_image" key="twcard" />
                     <meta name="twitter:creator" content="@devbyrayray" key="twhandle" />
                     <meta property="og:site_name" content="Dev By RayRay" key="ogsitename" />
                     <meta name="p:domain_verify" content="5f1bae4eb9e445e7e5e0c6e5f67dc5f1" />

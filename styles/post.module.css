@@ -1,0 +1,32 @@
+._container {
+    @apply container max-w-full md:max-w-7xl px-4 lg:grid lg:grid-cols-6 relative gap-8 m-auto;
+}
+._content {
+    @apply w-full lg:col-start-1 lg:col-end-5;
+}
+._header {
+    @apply px-12 py-8 bg-gray-100 rounded-t-3xl;
+}
+._title {
+    @apply text-black text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-tight;
+}
+._figure {
+    @apply overflow-hidden;
+}
+._image {
+    @apply h-56 w-full object-cover md:w-56;
+}
+._main {
+    @apply px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100;
+}
+
+/** Aside **/
+._aside {
+    @apply lg:col-start-5 lg:col-end-7
+}
+._aside_content {
+    @apply px-8 pt-8 pb-8 mb-8 rounded-3xl bg-gray-100
+}
+._aside_title {
+    @apply text-lg sm:text-xl md:text-2xl mb-4 mt-8
+}

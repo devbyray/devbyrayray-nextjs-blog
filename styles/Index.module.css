@@ -1,9 +1,9 @@
 .posts {
-    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center auto-rows-min;
+    @apply grid grid-cols-1 gap-8 items-center auto-rows-min;
 }
 
 .posts__container {
-    @apply container mx-auto px-4 mb-16 flex justify-center flex-col;
+    @apply container mx-auto max-w-3xl px-4 mb-16 flex justify-center flex-col;
 }
 
 .posts__heading {
@@ -11,11 +11,11 @@
 }
 
 .post__item {
-    @apply bg-gray-100 rounded-xl md:col-span-2 lg:col-span-1 overflow-hidden md:h-auto lg:h-full;
+    @apply bg-gray-100 rounded-xl overflow-hidden md:h-auto lg:h-full;
 }
 
 .post__content_wrapper {
-    @apply md:grid md:grid-cols-2 lg:grid-cols-1;
+    @apply grid sm:grid-cols-2 grid-cols-1;
 }
 
 .post__image {

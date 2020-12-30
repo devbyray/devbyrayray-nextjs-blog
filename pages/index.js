@@ -11,7 +11,7 @@ import { generateRss } from '../lib/generate-rss'
 import { generatePostsSitemap } from '../lib/generate-posts-sitemap'
 import Footer from '../components/footer'
 import Header from '../components/header'
-import { socialImage } from '../components/social-image'
+import { coverImage } from '../components/social-image'
 import { ArticleJsonLd } from 'next-seo';
 import { CloudwaysSquareGridItem } from '../components/ads/cloudways'
 import { GrammarlySquareGridItem } from '../components/ads/grammarly'
@@ -71,7 +71,7 @@ export default function Index({ posts }) {
                       href={`/posts/[slug]`}
                     >
                       <a>
-                      <Image width={1800} height={1100} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={socialImage(post.data.title, post.data.description, post.data.image)} alt={post.data.title} />
+                        <Image width={1410} height={1099} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={coverImage(post.data.image)} alt={post.data.title} />
                       </a>
                     </Link>
                   </div>
@@ -85,6 +85,7 @@ export default function Index({ posts }) {
                         <a>{post.data.title}</a>
                       </Link>
                     </strong>
+                    <p>{post.data.description}</p>
 
                   </div>
                 </div>
@@ -137,3 +138,4 @@ export function getStaticProps() {
 
   return { props: { posts } }
 }
+

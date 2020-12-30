@@ -105,7 +105,7 @@ export default function PostPage({ source, frontMatter }) {
             <h1 className={styles._title}>
               {frontMatter.title}
             </h1>
-            <nav>
+            {/* <nav>
               <strong>Tags</strong>
               <p>
                 {frontMatter.tags && frontMatter.tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>{tag}</a></Link></span>,)}
@@ -114,7 +114,7 @@ export default function PostPage({ source, frontMatter }) {
               <p>
                 {frontMatter.categories && frontMatter.categories.map((category, index) => <span key={index}>{index > 0 && ", "} <Link href={`/category/${encodeURIComponent(category.replace(' ', '-').toLowerCase())}`}><a>{category}</a></Link></span>,)}
               </p>
-            </nav>
+            </nav> */}
           </header>
           <figure className={styles._figure}>
             <Image

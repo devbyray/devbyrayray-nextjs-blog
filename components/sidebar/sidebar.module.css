@@ -1,0 +1,9 @@
+._header {
+    @apply flex flex-col justify-center items-center mb-12
+}
+._image {
+    @apply w-32 h-32 flex justify-center items-center mb-8 rounded-full bg-white relative
+}
+._text {
+    @apply text-lg
+}

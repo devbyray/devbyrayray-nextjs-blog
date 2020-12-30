@@ -3,7 +3,10 @@
 }
 
 .grid__item {
-    @apply bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden 2xl:mb-8 md:col-span-full h-full;
+    @apply bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden 2xl:mb-8 md:col-span-full h-full md:h-auto;
+}
+.content__ad {
+    @apply bg-white rounded-xl p-8 flex items-center justify-center overflow-hidden mb-8 h-full;
 }
 
 .link {
