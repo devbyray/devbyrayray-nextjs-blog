@@ -110,6 +110,6 @@ export async function getStaticPaths() {
             // String variant:
             '/tag/first-post',
         ],
-        fallback: true,
+        fallback: false,
     }
 }
