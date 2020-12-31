@@ -126,7 +126,7 @@ export function getStaticProps() {
       filePath,
       slug: filePath.replace(/\.mdx?$/, '')
     }
-  }).filter((postItem) => postItem.data.published).reverse()
+  }).filter((postItem) => (postItem.data.published !== undefined || postItem.data.published === true)).reverse()
 
   const rss = generateRss(posts)
   fs.writeFileSync('./public/rss.xml', rss);
@@ -137,5 +137,10 @@ export function getStaticProps() {
 
 
   return { props: { posts } }
+}
+
+function createSlug(filePath) {
+  const onlyNumbers = filePath.match(/[\d\W+]{1,4}\-/g)
+
 }
 

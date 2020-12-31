@@ -6,7 +6,15 @@ const config = {
         loader: 'cloudinary',
         path: 'https://res.cloudinary.com/raymons/image/fetch/',
     },
-
+    async redirects() {
+        return [
+            {
+                source: '/type-script-s-new-top-level-await/',
+                destination: '/post/2020-06-22-typescripts-new-top-level-await',
+                permanent: true,
+            },
+        ]
+    },
 }
 
 module.exports = config

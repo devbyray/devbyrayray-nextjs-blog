@@ -19,6 +19,9 @@ export const SOCIAL_IMAGE = {
 
 
 export const socialImage = (title, desc, image, template = '') => {
+    if (!desc) {
+        desc = ''
+    }
     const newTitle = title.length > 80 ? `${title.substring(0, 80)}...` : title
     const newDesc = desc.length > 80 ? `${desc.substring(0, 80)}...` : desc
     if (template) {
