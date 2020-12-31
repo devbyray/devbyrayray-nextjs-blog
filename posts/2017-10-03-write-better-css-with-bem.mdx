@@ -1,7 +1,7 @@
 ---
 ID: 983
 title: How to write better CSS with BEM
-author: Raymon S
+author: RayRay
 excerpt:   It is very important to have readable
   CSS, for your teammates and yourself. In
   my opinion BEM is the way to writer
@@ -21,7 +21,8 @@ If you like a visual example of how I would change my already CSS developed to t
 
 If you are more a person to read, please follow the text below
 
-https://youtu.be/ah1qRTWVVjY
+<Youtube url="https://youtu.be/ah1qRTWVVjY" />
+
 <h2><b>Video notes</b></h2>
 <b>Example website</b>
 
@@ -42,17 +43,20 @@ Let's get into the code !
 When you learn to write CSS, it would be something simulair to this:
 
 <b>HTML</b>
+
+```html
+<nav>
+   <ul>
+    <li><a>Home</a></li>
+    <li><a>About</a></li>
+    <li><a>Blog</a></li>
+  </ul>
+</nav>
 ```
-&lt;nav&gt;
-   &lt;ul&gt;
-    &lt;li&gt;&lt;a&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a&gt;Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-```
+
 <b>CSS</b>
-```
+
+```css
 nav {
   height: 60px;
   max-width: 1024px;
@@ -73,14 +77,17 @@ nav ul li a {
   padding: .5em 1em;
 }
 ```
+
 <b>Analysing the HTML &amp; CSS</b>
 
 If you analyse the HTML and CSS we see the following.
+
 <ul>
  	<li>Structure with only elements</li>
  	<li>No class names</li>
  	<li>Multi level selectors</li>
 </ul>
+
 <b>Problems you will discover with writing HTML &amp; CSS like this!</b>
 
 When I started with Frontend Development, this was the way I was told to write it.
@@ -89,6 +96,7 @@ Maybe you won’t see the problem, but at the end of this blog you will know it 
 
 The problems you will discover with this (in the video you will see it):
 <ul>
+
  	<li>If you will use the same HTML somewhere else, things will be messy if you change it here, because it will reflect everywhere! So it’s not scalable.</li>
  	<li>To overwrite the styling you will have to write very specific selectors with multiple levels or even whorse, use !important to overwrite.</li>
  	<li>This will cause a lot of bugs with big CSS files.</li>
@@ -98,17 +106,20 @@ The problems you will discover with this (in the video you will see it):
 When I had a few years of experience in Frontend Development my HTML &amp; CSS started looking like this:
 
 <b>HTML</b>
+
+```html
+<nav class=“navigation”>
+   <ul>
+    <li><a>Home</a></li>
+    <li><a>About</a></li>
+    <li><a>Blog</a></li>
+  </ul>
+</nav>
 ```
-&lt;nav class=“navigation”&gt;
-   &lt;ul&gt;
-    &lt;li&gt;&lt;a&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a&gt;Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-```
+
 <b>CSS</b>
-```
+
+```css
 .navigation {
   height: 60px;
   max-width: 1024px;
@@ -129,21 +140,27 @@ When I had a few years of experience in Frontend Development my HTML &amp; CSS s
   padding: .5em 1em;
 }
 ```
+
 <b>Analysing the HTML &amp; CSS</b>
 
 If you analyse the more optimised HTML and CSS we see the following.
+
 <ul>
  	<li>The CSS selectors are shorter</li>
  	<li>The CSS selectors have a less specifity</li>
  	<li>The CSS selectors contains some more context, but not the context that BEM could give.</li>
 </ul>
+
 When I was at the point of Developing this, it was quite optimised for me, I thought . But it took me a few years to find out that I needed some more optimisation. Because there were still a few issues.
+
 <ul>
  	<li>If i needed to overwrite styling, it was still needed to add a few layers to my selectors by making it more specific.</li>
  	<li>Sometimes when working with CSS libraries/frameworks I still needed to use !important sometimes .</li>
  	<li>The selectors were not that self-explaining.</li>
 </ul>
+
 <h2><b>Step 3: Using BEM to write better HTML &amp; CSS</b></h2>
+
 When I discovered that browsers are reading selectors different than humans, it was like “what? huh?” . This was so new for me! I discovered that my CSS selectors were not that good as I thought.
 
 So when searching for methods to take action and make the CSS selectors better, I discovered BEM. In the video, you can check out how I apply BEM on the CSS and HTML on an example website.
@@ -151,17 +168,20 @@ So when searching for methods to take action and make the CSS selectors better, 
 In this example you can see how the HTMl &amp; CSS according to BEM will look like.
 
 <b>HTML</b>
+
+```html
+<nav class=“main-nav”>
+  <ul class=“main-nav__list”>
+    <li class=“main-nav__list-item”><a class=“main-nav__link-item”>Home</a></li>
+    <li class=“main-nav__list-item”><a class=“main-nav__link-item”>About</a></li>
+    <li class=“main-nav__list-item”><a class=“main-nav__link-item main-nav__link-item—active”>Blog</a></li>
+  </ul>
+</nav>
 ```
-&lt;nav class=“main-nav”&gt;
-  &lt;ul class=“main-nav__list”&gt;
-    &lt;li class=“main-nav__list-item”&gt;&lt;a class=“main-nav__link-item”&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=“main-nav__list-item”&gt;&lt;a class=“main-nav__link-item”&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=“main-nav__list-item”&gt;&lt;a class=“main-nav__link-item main-nav__link-item—active”&gt;Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-```
+
 <b>CSS</b>
-```
+
+```css
 .main-nav {
   height: 60px;
   max-width: 1024px;
@@ -188,6 +208,7 @@ In this example you can see how the HTMl &amp; CSS according to BEM will look li
   background: grey;
 }
 ```
+
 <b>Analysing the HTML &amp; CSS</b>
 
 If you analyse the HTML &amp; CSS you will discover a class names on every element. Class names that are self-describing. You don’t need to look to a website to read where this component stands on page.
@@ -195,23 +216,16 @@ If you analyse the HTML &amp; CSS you will discover a class names on every eleme
 It declares for itself that it is the main navigation. All the list items and links will also directly give context for you and your team who are working on the same code.
 
 Let’s check out if you fix the problems we saw before.
+
 <ul>
  	<li>Now you can copy the HTML and it will stay intact. If you want to re-use the HTML, change .main-nav for “footer-nav” and you won’t see any inherited styling from the main-navigation. So this is perfectly scalable.</li>
  	<li>If you want to overwrite the styling of 1 or multiple elements, you only have to add another class name, just that simple!</li>
  	<li>Especially when you use a CSS pre-processor your Development structure will have a good architecture.</li>
  	<li>The CSS selectors and class names are self-describing. So it is easy to find now. It gives a lot more context than before.</li>
 </ul>
+
 <em><strong>Updated</strong>: 04-10-2017 on 14:27</em>
 <h2>Other BEM example's</h2>
-If your not convinced by my example why you should use BEM, and that is now problem! Please check out the <a href="https://seesparkbox.com/foundry/bem_by_example">site of Sparkbox</a>, there is a very detailed and practical example of how you can use BEM in your development. (<a href="https://www.reddit.com/r/css/comments/73zu80/how_to_write_better_css_with_bem/">I got this tip from one of the comments on Reddit</a>!
+If your not convinced by my example why you should use BEM, and that is no problem! Please check out the <a href="https://seesparkbox.com/foundry/bem_by_example">site of Sparkbox</a>, there is a very detailed and practical example of how you can use BEM in your development. (<a href="https://www.reddit.com/r/css/comments/73zu80/how_to_write_better_css_with_bem/">I got this tip from one of the comments on Reddit</a>!
 <h2>If you need help</h2>
-If you need any help with turining your CSS into the BEM structure, please let me know in the comments or on Messenger &#x1f609;!
-
-<script src="//widget.manychat.com/493241460881733.js" async="async">
-</script>
-<div class="mcwidget-embed" data-widget-id="528016"></div>
-<h2>Follow us on:</h2>
-Follow us on Medium: <a href="https://medium.com/mr-frontend-community" data-href="https://medium.com/mr-frontend-community">https://medium.com/mr-frontend-community
-</a>Follow us on Twitter: <a href="https://twitter.com/frontendmr" data-href="https://twitter.com/frontendmr">https://twitter.com/frontendmr
-</a>Follow us on Facebook: <a href="http://facebook.com/mrfrontendcommunity/" data-href="http://facebook.com/mrfrontendcommunity/">http://facebook.com/mrfrontendcommunity/</a>
-Follow us on Instagram: <a href="http://instagram.com/mrfrontend" data-href="http://instagram.com/mrfrontend">@mrfrontend</a>
+If you need any help with turning your CSS into the BEM structure, please let me know in the comments or on Messenger 😉!
