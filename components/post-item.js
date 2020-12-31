@@ -4,11 +4,13 @@ import Image from 'next/image'
 
 import { coverImage } from './social-image'
 
-export function PostItem(post) {
+export function PostItem({ post }) {
     return (
-        <div className={styles.post__item} key={post.filePath}>
+        <>
+            {!post && 'No post'}
+            {post && post.data && <div className={styles.post__item} key={post.filePath}>
             <div className={styles.post__content_wrapper}>
-                <div className={styles.post__image}>
+                    {post.data.image && <div className={styles.post__image}>
                     <Link
                         as={`/posts/${post.slug}`}
                         href={`/posts/[slug]`}
@@ -17,7 +19,8 @@ export function PostItem(post) {
                             <Image width={1410} height={1099} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={coverImage(post.data.image)} alt={post.data.title} />
                         </a>
                     </Link>
-                </div>
+                    </div>}
+
                 <div className={styles.post__content}>
                     <time>{post.data.date}</time> <br />
                     <strong>
@@ -32,6 +35,7 @@ export function PostItem(post) {
 
                 </div>
             </div>
-        </div>
+            </div>}
+        </>
     )
 }

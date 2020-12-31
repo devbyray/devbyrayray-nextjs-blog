@@ -16,10 +16,12 @@ import { ArticleJsonLd } from 'next-seo';
 import { CloudwaysSquareGridItem } from '../components/ads/cloudways'
 import { GrammarlySquareGridItem } from '../components/ads/grammarly'
 import { NameCheapSquareGridItem } from '../components/ads/namecheap'
+import { PostItem } from '../components/post-item'
 
 import styles from '../styles/Index.module.css'
+import { Sidebar } from '../components/sidebar/sidebar'
 
-export default function Index({ posts }) {
+export default function Index({ posts, amount, tags }) {
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
 
@@ -57,57 +59,40 @@ export default function Index({ posts }) {
         description="Building awesome projects with HTML, CSS, JavaScript and a lot more."
       />
       <Header header={true} />
-      <div className={styles.posts__container}>
-        <div className={styles.posts}>
 
-          {posts.map((post, index) => (
-            <>
-              {index === 0 && <h2 className={styles.posts__heading}>Newest posts</h2>}
-              <div className={styles.post__item} key={post.filePath}>
-                <div className={styles.post__content_wrapper}>
-                  <div className={styles.post__image}>
-                    <Link
-                      as={`/posts/${post.slug}`}
-                      href={`/posts/[slug]`}
-                    >
-                      <a>
-                        <Image width={1410} height={1099} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={coverImage(post.data.image)} alt={post.data.title} />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className={styles.post__content}>
-                    <time>{post.data.date}</time> <br /> 
-                    <strong>
-                      <Link
-                        as={`/posts/${post.slug}`}
-                        href={`/posts/[slug]`}
-                      >
-                        <a>{post.data.title}</a>
-                      </Link>
-                    </strong>
-                    <p>{post.data.description}</p>
+      <div className={styles._container}>
+        <div className={styles._content}>
+          <div className={styles.posts}>
 
-                  </div>
-                </div>
-              </div>
-              {index === 5 && <div className={styles.dailydev__banner}>
-                <h3 className={styles.dailydev__title}>
-                  The best Developer & Programming news
+            {tags && <section className="bg-white p-8 rounded-xl">
+              <h2 className="text-xl sm:text-2xl md:text-3xl -mt-2">Tags</h2>
+              {tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>#{tag}</a></Link></span>,)}
+            </section>}
+
+            {posts.map((post, index) => (
+              <>
+                {index === 0 && <h2 className={styles.posts__heading}>Posts ({amount})</h2>}
+                <PostItem post={post} key={index}></PostItem>
+                {index === 5 && <div className={styles.dailydev__banner}>
+                  <h3 className={styles.dailydev__title}>
+                    The best Developer & Programming news
                 </h3>
-                <hr className={styles.dailydev__hr} />
-                <a className="block" href="https://api.daily.dev/get?r=devbyrayray" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/raymons/image/upload/v1609161827/devbyrayray/blog/daily-dev.webp" width="1300" height="642" loading="lazy" />
-                </a>
-              </div>}
-              {index === 5 && <h2 className={styles.posts__heading}>Archive</h2>}
+                  <hr className={styles.dailydev__hr} />
+                  <a className="block" href="https://api.daily.dev/get?r=devbyrayray" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/raymons/image/upload/v1609161827/devbyrayray/blog/daily-dev.webp" width="1300" height="642" loading="lazy" />
+                  </a>
+                </div>}
+                {index === 5 && <h2 className={styles.posts__heading}>Archive</h2>}
 
-              {index % 10 === 0 && index > 7 && <div className={styles.posts__ad_item}><CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem></div>}
-              {index % 12 === 0 && index > 6 && <div className={styles.posts__ad_item}><GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem></div>}
-              {index % 15 === 0 && index > 6 && <>
-                <div className={styles.posts__ad_item}><NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem></div>
-              </>}
-            </>
-          ))}
+                {index % 10 === 0 && index > 7 && <div className={styles.posts__ad_item}><CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem></div>}
+                {index % 12 === 0 && index > 6 && <div className={styles.posts__ad_item}><GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem></div>}
+                {index % 15 === 0 && index > 6 && <>
+                  <div className={styles.posts__ad_item}><NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem></div>
+                </>}
+              </>
+            ))}
+          </div>
         </div>
+        <Sidebar />
       </div>
       <Footer />
     </Layout>
@@ -115,10 +100,20 @@ export default function Index({ posts }) {
 }
 
 export function getStaticProps() {
+  const tags = [];
+
   const posts = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const { content, data } = matter(source)
     data.date = formatDate(data.date)
+
+    if (data.hasOwnProperty('tags') && Array.isArray(data.tags)) {
+      data.tags.forEach(tag => {
+        if (!tags.includes(tag)) {
+          tags.push(tag)
+        }
+      })
+    }
 
     return {
       content,
@@ -126,7 +121,7 @@ export function getStaticProps() {
       filePath,
       slug: filePath.replace(/\.mdx?$/, '')
     }
-  }).filter((postItem) => postItem.data.published).reverse()
+  }).filter((postItem) => postItem.data.hasOwnProperty('published') || postItem.data.published === true).reverse()
 
   const rss = generateRss(posts)
   fs.writeFileSync('./public/rss.xml', rss);
@@ -134,8 +129,8 @@ export function getStaticProps() {
   const postSitemap = generatePostsSitemap(posts)
 
   fs.writeFileSync("./public/sitemap-posts.xml", postSitemap, "utf8");
+  console.log("🚀 ~ tags", tags)
 
-
-  return { props: { posts } }
+  return { props: { posts, amount: posts.length, tags } }
 }
 

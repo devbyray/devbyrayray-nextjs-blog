@@ -18,12 +18,13 @@ import { useRouter } from 'next/router'
 
 import styles from '../../styles/Index.module.css'
 import { PostItem } from '../../components/post-item'
+import { Sidebar } from '../../components/sidebar/sidebar'
 
 export default function Tag(props) {
     const router = useRouter()
     const { tag } = router.query
     const { tags } = props
-    console.log("🚀 ~ file: [tag].js ~ line 26 ~ Tag ~ tags", tags.length)
+    // console.log("🚀 ~ file: [tag].js ~ line 26 ~ Tag ~ tags", tags.length)
 
 
     const date = new Date()
@@ -61,15 +62,21 @@ export default function Tag(props) {
                 description="Building awesome projects with HTML, CSS, JavaScript and a lot more."
             />
             <Header header={true} />
-            <div className={styles.posts__container}>
+            <div className={styles._container}>
+                <h2 className={styles.posts__heading}>Tag: <em>{tag} ({tags?.length || 0}</em>)</h2>
+            </div>
+            <div className={styles._container}>
+                <div className={styles._content}>
+
                 <div className={styles.posts}>
-                    <strong>Tag: {tag}</strong>
-                    {tags?.map((post, index) => {
+                        {tags && tags?.map((post, index) => {
                         return (
                             <PostItem post={post}></PostItem>
                         )
                     })}
                 </div>
+                </div>
+                <Sidebar />
             </div>
             <Footer />
         </Layout>

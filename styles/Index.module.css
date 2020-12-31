@@ -6,6 +6,14 @@
     @apply container mx-auto max-w-3xl px-4 mb-16 flex justify-center flex-col;
 }
 
+._container {
+    @apply container max-w-full md:max-w-7xl px-4 lg:grid lg:grid-cols-6 relative gap-8 m-auto;
+}
+._content {
+    @apply w-full lg:col-start-1 lg:col-end-5 mb-16;
+}
+
+
 .posts__heading {
     @apply text-xl sm:text-2xl md:text-3xl col-span-full text-white;
 }
