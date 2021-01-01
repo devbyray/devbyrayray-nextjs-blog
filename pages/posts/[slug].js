@@ -54,14 +54,16 @@ const components = {
 }
 
 function headingID(str) {
+  console.log('headingID: ', str)
   if (typeof str === "string") {
-    let newString = str.trim().replace(/[^a-zA-Z]+/g, '-')
+    let newString = str.trim().replace(/[^a-zA-Z0-9]+/g, '-')
     let modString = newString.startsWith('-') ? newString.substr(1) : newString
-
-    if (modString.endsWith('-')) {
-      modString = newString.substr(0, -1)
+    
+    if (modString.lastIndexOf('-') === modString.length - 1) {
+      modString = newString.slice(0, -1)
     }
-
+    
+    console.log('modString: ', modString)
     return modString.toLowerCase()
   } else {
     return str
