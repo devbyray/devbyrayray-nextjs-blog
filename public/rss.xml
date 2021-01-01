@@ -18,9 +18,9 @@
 
   <item>
     <guid>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</guid>
-    <title>Get, Add or Remove One or More JavaScript HTML Elements</title>
+    <title>Get, Add or Remove HTML Elements with JavaScript</title>
     <link>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</link>
-    <description>The amount of tools we can use right now to build websites is mindblowing</description>
+    <description>Maniupulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post I will show you how easy it is!</description>
     <pubDate>Mon, 21 Dec 2020 23:00:00 GMT</pubDate>
   </item>
 
@@ -472,5 +472,217 @@
     <pubDate>Fri, 03 Jan 2020 23:00:00 GMT</pubDate>
   </item>
 
+<<<<<<< Updated upstream
+=======
+  <item>
+    <guid>https://byrayray.dev/post/2018-03-00-lazy-loading-images-intersection-observer</guid>
+    <title>Lazy-loading images with the Intersection Observer</title>
+    <link>https://byrayray.dev/post/2018-03-00-lazy-loading-images-intersection-observer</link>
+    <description></description>
+    <pubDate>Thu, 29 Mar 2018 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-20-git-101-step-4-merging-branches-merge-conflicts-cherry-pick</guid>
+    <title>Git 101 - STEP 4: merging branches, merge conflicts &amp; cherry-pick</title>
+    <link>https://byrayray.dev/post/2017-12-20-git-101-step-4-merging-branches-merge-conflicts-cherry-pick</link>
+    <description></description>
+    <pubDate>Tue, 19 Dec 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-15-how-to-spice-up-your-technical-skills-during-the-end-of-2017-hollidays</guid>
+    <title>How to spice up your technical skills during the end of 2017 hollidays!
+</title>
+    <link>https://byrayray.dev/post/2017-12-15-how-to-spice-up-your-technical-skills-during-the-end-of-2017-hollidays</link>
+    <description></description>
+    <pubDate>Thu, 14 Dec 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-12-git-101-step-3-branches</guid>
+    <title>Git 101 – Step 3: branches</title>
+    <link>https://byrayray.dev/post/2017-12-12-git-101-step-3-branches</link>
+    <description></description>
+    <pubDate>Mon, 11 Dec 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-08-screw-new-years-resolutions-web-developer-work-hard-play-hard</guid>
+    <title>Screw New Years resolutions as a web developer! (Work Hard, Play hard)
+</title>
+    <link>https://byrayray.dev/post/2017-12-08-screw-new-years-resolutions-web-developer-work-hard-play-hard</link>
+    <description></description>
+    <pubDate>Thu, 07 Dec 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-05-git-101-step-2-add-stage-commit-push</guid>
+    <title>Git 101 &#8211; Step 2: add, stage, commit &#038; push</title>
+    <link>https://byrayray.dev/post/2017-12-05-git-101-step-2-add-stage-commit-push</link>
+    <description></description>
+    <pubDate>Mon, 04 Dec 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-12-01-top-5-things-junior-developers-forget-applying-new-job</guid>
+    <title>Top 5 things most junior developers forget, before applying a (new) job!
+</title>
+    <link>https://byrayray.dev/post/2017-12-01-top-5-things-junior-developers-forget-applying-new-job</link>
+    <description></description>
+    <pubDate>Thu, 30 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-28-git-101-step-1-setup-create-repo-local-and-remote-repository</guid>
+    <title>Git 101 &#8211; Step 1: setup, create repo local and remote repository</title>
+    <link>https://byrayray.dev/post/2017-11-28-git-101-step-1-setup-create-repo-local-and-remote-repository</link>
+    <description></description>
+    <pubDate>Mon, 27 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-24-black-friday-discount-web-dev-news-vuejs-frontend-love-conference-2018</guid>
+    <title>Black Friday Discount , Web Dev news, VueJS &#038; Frontend Love Conference 2018</title>
+    <link>https://byrayray.dev/post/2017-11-24-black-friday-discount-web-dev-news-vuejs-frontend-love-conference-2018</link>
+    <description></description>
+    <pubDate>Thu, 23 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-21-start-building-simple-portfolio-website-junior-developer</guid>
+    <title>Start building a simple Portfolio Website for a Junior Developer
+</title>
+    <link>https://byrayray.dev/post/2017-11-21-start-building-simple-portfolio-website-junior-developer</link>
+    <description></description>
+    <pubDate>Mon, 20 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-17-vuejs-conference-frontend-love-conference-web-development-news</guid>
+    <title>VueJS Conference, Frontend Love Conference, Web Development News
+</title>
+    <link>https://byrayray.dev/post/2017-11-17-vuejs-conference-frontend-love-conference-web-development-news</link>
+    <description></description>
+    <pubDate>Thu, 16 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-14-introduction-ssr-nextjs-nodejs-reactjs-nuxtjs-vuejs</guid>
+    <title>Introduction to SSR with NextJS and NuxtJS
+</title>
+    <link>https://byrayray.dev/post/2017-11-14-introduction-ssr-nextjs-nodejs-reactjs-nuxtjs-vuejs</link>
+    <description></description>
+    <pubDate>Mon, 13 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-10-mr-frontend-podcast-4-start-blogging-junior-developer</guid>
+    <title>Mr Frontend Podcast #4 &#8211; How and why should start blogging as Junior Developer</title>
+    <link>https://byrayray.dev/post/2017-11-10-mr-frontend-podcast-4-start-blogging-junior-developer</link>
+    <description></description>
+    <pubDate>Thu, 09 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-07-javascript-basics-create-private-public-functions-javascript-module-pattern</guid>
+    <title>JavaScript Basics: How to create private &#038; public functions in JavaScript with the Module Pattern</title>
+    <link>https://byrayray.dev/post/2017-11-07-javascript-basics-create-private-public-functions-javascript-module-pattern</link>
+    <description></description>
+    <pubDate>Mon, 06 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-11-03-5-tips-landing-first-junior-web-development-job</guid>
+    <title>5 tips for landing your first Junior Web Development job!
+</title>
+    <link>https://byrayray.dev/post/2017-11-03-5-tips-landing-first-junior-web-development-job</link>
+    <description></description>
+    <pubDate>Thu, 02 Nov 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-31-javascript-basics-return-value-function-vanilla-javascript</guid>
+    <title>JavaScript Basics: How to return a value from a function in Vanilla JavaScript</title>
+    <link>https://byrayray.dev/post/2017-10-31-javascript-basics-return-value-function-vanilla-javascript</link>
+    <description></description>
+    <pubDate>Mon, 30 Oct 2017 23:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-27-mr-frontend-podcast-2-whatwho-is-mr-frontend-and-3-tips-for-beginner-developers</guid>
+    <title>&#x1f3a7; Mr Frontend Podcast #2: What/Who is Mr Frontend and 3 tips for beginner developers!</title>
+    <link>https://byrayray.dev/post/2017-10-27-mr-frontend-podcast-2-whatwho-is-mr-frontend-and-3-tips-for-beginner-developers</link>
+    <description></description>
+    <pubDate>Thu, 26 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-24-javascript-basics-add-remove-elements-vanilla-javascript</guid>
+    <title>JavaScript basics: How to add and remove elements with Vanilla JavaScript</title>
+    <link>https://byrayray.dev/post/2017-10-24-javascript-basics-add-remove-elements-vanilla-javascript</link>
+    <description></description>
+    <pubDate>Mon, 23 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-20-mr-frontend-podcast-1-javascript-framework-war</guid>
+    <title>&#x1f3a7; Mr Frontend Podcast #1 &#8211; The JavaScript Framework War</title>
+    <link>https://byrayray.dev/post/2017-10-20-mr-frontend-podcast-1-javascript-framework-war</link>
+    <description></description>
+    <pubDate>Thu, 19 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-17-2-ways-get-child-elements-javascript</guid>
+    <title>JavaScript basics: 2 ways to get child elements with JavaScript</title>
+    <link>https://byrayray.dev/post/2017-10-17-2-ways-get-child-elements-javascript</link>
+    <description></description>
+    <pubDate>Mon, 16 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-13-jquery-will-not-help-you-learn-javascript</guid>
+    <title>jQuery does not help you learn JavaScript
+</title>
+    <link>https://byrayray.dev/post/2017-10-13-jquery-will-not-help-you-learn-javascript</link>
+    <description></description>
+    <pubDate>Thu, 12 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-10-javascript-basics-select-one-or-multiple-html-elements</guid>
+    <title>JavaScript basics: Select one or multiple HTML elements</title>
+    <link>https://byrayray.dev/post/2017-10-10-javascript-basics-select-one-or-multiple-html-elements</link>
+    <description></description>
+    <pubDate>Mon, 09 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-06-think-imposter-syndrome-developer-perspective</guid>
+    <title>How I think about the Imposter Syndrome from a Developer perspective
+</title>
+    <link>https://byrayray.dev/post/2017-10-06-think-imposter-syndrome-developer-perspective</link>
+    <description></description>
+    <pubDate>Thu, 05 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-10-03-write-better-css-with-bem</guid>
+    <title>How to write better CSS with BEM</title>
+    <link>https://byrayray.dev/post/2017-10-03-write-better-css-with-bem</link>
+    <description></description>
+    <pubDate>Mon, 02 Oct 2017 22:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <guid>https://byrayray.dev/post/2017-09-29-3-ways-to-loop-over-object-properties-with-vanilla-javascript</guid>
+    <title>3 ways to loop over Object properties with Vanilla JavaScript (ES6 included)</title>
+    <link>https://byrayray.dev/post/2017-09-29-3-ways-to-loop-over-object-properties-with-vanilla-javascript</link>
+    <description></description>
+    <pubDate>Thu, 28 Sep 2017 22:00:00 GMT</pubDate>
+  </item>
+
+>>>>>>> Stashed changes
     </channel>
   </rss>
