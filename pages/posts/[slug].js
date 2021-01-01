@@ -39,11 +39,11 @@ const components = {
     <img className="" loading="lazy" src={props?.src} alt={props?.alt} />
   ),
   h1: (props) => <h1 className="text-2xl sm:text-3xl md:text-4xl" {...props} />,
-  h2: (props) => <h2 className="text-xl sm:text-2xl md:text-3xl" {...props} />,
-  h3: (props) => <h3 className="text-lg sm:text-xl md:text-2xl" {...props} />,
-  h4: (props) => <h4 className="text-md sm:text-lg md:text-xl" {...props} />,
-  h5: (props) => <h5 className="text-md sm:text-lg md:text-xl" {...props} />,
-  h6: (props) => <h6 className="text-md sm:text-lg md:text-xl" {...props} />,
+  h2: (props) => <h2 id={headingID(props.children)} className="text-xl sm:text-2xl md:text-3xl" {...props} />,
+  h3: (props) => <h3 id={headingID(props.children)} className="text-lg sm:text-xl md:text-2xl" {...props} />,
+  h4: (props) => <h4 id={headingID(props.children)} className="text-md sm:text-lg md:text-xl" {...props} />,
+  h5: (props) => <h5 id={headingID(props.children)} className="text-md sm:text-lg md:text-xl" {...props} />,
+  h6: (props) => <h6 id={headingID(props.children)} className="text-md sm:text-lg md:text-xl" {...props} />,
   blockquote: (props) => <blockquote className="pr-8 pl-12 pt-8 pb-4 mb-8 text-white italic leading-8 text-xl" {...props} />,
   Youtube,
   GrammarlySquareGridItem,
@@ -51,6 +51,22 @@ const components = {
   NameCheapSquare2,
   NameCheapSquare,
   NameCheapContentAd
+}
+
+function headingID(str) {
+  if (typeof str === "string") {
+    let newString = str.trim().replace(/[^a-zA-Z]+/g, '-')
+    let modString = newString.startsWith('-') ? newString.substr(1) : newString
+
+    if (modString.endsWith('-')) {
+      modString = newString.substr(0, -1)
+    }
+
+    console.log('h2: ', modString)
+    return modString.toLowerCase()
+  } else {
+    return str
+  }
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -106,6 +122,7 @@ export default function PostPage({ source, frontMatter }) {
             <h1 className={styles._title}>
               {frontMatter.title}
             </h1>
+            <p className="text-xl italic">{frontMatter.description}</p>
             <nav>
               <strong>Tags</strong>
               <p>
