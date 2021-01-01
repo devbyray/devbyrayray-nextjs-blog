@@ -16,7 +16,7 @@ import { GrammarlySquareGridItem } from '../../../components/ads/grammarly'
 import { NameCheapSquareGridItem } from '../../../components/ads/namecheap'
 import { useRouter } from 'next/router'
 
-import styles from '../../styles/Index.module.css'
+import styles from '../../../styles/Index.module.css'
 import { PostItem } from '../../../components/post-item'
 import { Sidebar } from '../../../components/sidebar/sidebar'
 
