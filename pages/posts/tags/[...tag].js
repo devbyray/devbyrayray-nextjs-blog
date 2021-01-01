@@ -3,22 +3,22 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Head from 'next/head'
 import path from 'path'
-import Layout from '../../components/Layout'
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
+import Layout from '../../../components/Layout'
+import { postFilePaths, POSTS_PATH } from '../../../utils/mdxUtils'
 import Image from 'next/image'
-import { formatDate } from '../../lib/index'
-import Footer from '../../components/footer'
-import Header from '../../components/header'
-import { coverImage } from '../../components/social-image'
+import { formatDate } from '../../../lib/index'
+import Footer from '../../../components/footer'
+import Header from '../../../components/header'
+import { coverImage } from '../../../components/social-image'
 import { ArticleJsonLd } from 'next-seo';
-import { CloudwaysSquareGridItem } from '../../components/ads/cloudways'
-import { GrammarlySquareGridItem } from '../../components/ads/grammarly'
-import { NameCheapSquareGridItem } from '../../components/ads/namecheap'
+import { CloudwaysSquareGridItem } from '../../../components/ads/cloudways'
+import { GrammarlySquareGridItem } from '../../../components/ads/grammarly'
+import { NameCheapSquareGridItem } from '../../../components/ads/namecheap'
 import { useRouter } from 'next/router'
 
 import styles from '../../styles/Index.module.css'
-import { PostItem } from '../../components/post-item'
-import { Sidebar } from '../../components/sidebar/sidebar'
+import { PostItem } from '../../../components/post-item'
+import { Sidebar } from '../../../components/sidebar/sidebar'
 
 export default function Tag(props) {
     const router = useRouter()
@@ -99,6 +99,8 @@ export async function getStaticPaths() {
     const tags = getTags(currentTag)
 
     const paths = tags.map((post, index) => post.slug)
+    console.log("🚀 ~ file: [tag].js ~ line 102 ~ getStaticPaths ~ paths", paths)
+
     return {
         paths,
         fallback: false,
