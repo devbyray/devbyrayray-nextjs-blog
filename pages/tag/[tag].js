@@ -71,7 +71,7 @@ export default function Tag(props) {
                 <div className={styles.posts}>
                         {tags && tags?.map((post, index) => {
                         return (
-                            <PostItem post={post}></PostItem>
+                            <PostItem key={index} post={post}></PostItem>
                         )
                     })}
                 </div>
@@ -83,33 +83,40 @@ export default function Tag(props) {
     )
 }
 
+let currentTag = null;
+
 export function getStaticProps(ctx) {
     const { tag } = ctx.params
-    const tags = postFilePaths.map((filePath) => {
-        const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-        const { content, data } = matter(source)
-        data.date = formatDate(data.date)
 
-        return {
-            content,
-            data,
-            filePath,
-            slug: filePath.replace(/\.mdx?$/, '')
-        }
-    }).filter((postItem) => findTagsInPost(tag, postItem.data.tags) && postItem.data.published)
+    currentTag = tag
 
+    const tags = getTags(currentTag)
 
     return { props: { tags } }
 }
 
-const findTagsInPost = (tag, tags) => tags.map((item) => item.toLowerCase()).includes(tag)
-
 export async function getStaticPaths() {
+    const tags = getTags(currentTag)
+
+    const paths = tags.map((post, index) => post.slug)
     return {
-        paths: [
-            // String variant:
-            '/tag/first-post',
-        ],
+        paths,
         fallback: true,
     }
 }
+
+const getTags = (tag) => postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+    const { content, data } = matter(source)
+    data.date = formatDate(data.date)
+
+    return {
+        content,
+        data,
+        filePath,
+        slug: filePath.replace(/\.mdx?$/, '')
+    }
+}).filter((postItem) => findTagsInPost(tag, postItem.data.tags) && postItem.data.published)
+
+const findTagsInPost = (tag, tags) => tags.map((item) => item.toLowerCase()).includes(tag)
+
