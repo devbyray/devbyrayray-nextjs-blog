@@ -5,6 +5,7 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import CustomLink from '../components/CustomLink'
 import Youtube from '../components/Youtube'
 import Head from 'next/head'
+import remarkSlug from 'remark-slug'
 
 
 
@@ -60,7 +61,7 @@ export async function getMdxProps(params, contentPath) {
     mdxOptions: {
       remarkPlugins: [[require('remark-prism'), {
         transformInlineCode: true,
-      }]],
+      }], remarkSlug],
       rehypePlugins: [],
     },
     scope: data,
