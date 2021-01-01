@@ -62,7 +62,6 @@ function headingID(str) {
       modString = newString.substr(0, -1)
     }
 
-    console.log('h2: ', modString)
     return modString.toLowerCase()
   } else {
     return str
