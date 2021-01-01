@@ -101,7 +101,7 @@ export async function getStaticPaths() {
     const paths = tags.map((post, index) => post.slug)
     return {
         paths,
-        fallback: true,
+        fallback: false,
     }
 }
 
