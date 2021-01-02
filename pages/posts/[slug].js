@@ -65,6 +65,8 @@ export default function PostPage({ source, frontMatter }) {
     frontMatter.image,
   )
 
+  console.log('imageUrl: ', imageUrl)
+
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'full',

@@ -18,9 +18,9 @@
 
   <item>
     <guid>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</guid>
-    <title>Get, Add or Remove One or More JavaScript HTML Elements</title>
+    <title>Get, Add or Remove HTML Elements with JavaScript</title>
     <link>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</link>
-    <description>The amount of tools we can use right now to build websites is mindblowing</description>
+    <description>Manipulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post, I will show you how easy it is!</description>
     <pubDate>Mon, 21 Dec 2020 23:00:00 GMT</pubDate>
   </item>
 
@@ -473,17 +473,9 @@
   </item>
 
   <item>
-    <guid>https://byrayray.dev/post/2018-09-08</guid>
-    <title>Upgrade to Angular 8 — Within 10 Minutes</title>
-    <link>https://byrayray.dev/post/2018-09-08</link>
-    <description></description>
-    <pubDate>Sun, 28 Jan 2018 23:00:00 GMT</pubDate>
-  </item>
-
-  <item>
-    <guid>https://byrayray.dev/post/2018-03-00</guid>
+    <guid>https://byrayray.dev/post/2018-03-00-lazy-loading-images-intersection-observer</guid>
     <title>Lazy-loading images with the Intersection Observer</title>
-    <link>https://byrayray.dev/post/2018-03-00</link>
+    <link>https://byrayray.dev/post/2018-03-00-lazy-loading-images-intersection-observer</link>
     <description></description>
     <pubDate>Thu, 29 Mar 2018 22:00:00 GMT</pubDate>
   </item>
@@ -682,9 +674,9 @@
   </item>
 
   <item>
-    <guid>https://byrayray.dev/post/2017-09-29</guid>
-    <title>&#x1f4f9; 3 ways to loop over Object properties with Vanilla JavaScript (ES6 included)</title>
-    <link>https://byrayray.dev/post/2017-09-29</link>
+    <guid>https://byrayray.dev/post/2017-09-29-3-ways-to-loop-over-object-properties-with-vanilla-javascript</guid>
+    <title>3 ways to loop over Object properties with Vanilla JavaScript (ES6 included)</title>
+    <link>https://byrayray.dev/post/2017-09-29-3-ways-to-loop-over-object-properties-with-vanilla-javascript</link>
     <description></description>
     <pubDate>Thu, 28 Sep 2017 22:00:00 GMT</pubDate>
   </item>

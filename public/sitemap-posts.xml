@@ -353,11 +353,9 @@
     <lastmod>2020-01-03T23:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://devbyrayray/post/2018-09-08</loc>
-    <lastmod>2018-01-28T23:00:00.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://devbyrayray/post/2018-03-00</loc>
+    <loc
+      >https://devbyrayray/post/2018-03-00-lazy-loading-images-intersection-observer</loc
+    >
     <lastmod>2018-03-29T22:00:00.000Z</lastmod>
   </url>
   <url>
@@ -495,7 +493,9 @@
     <lastmod>2017-10-02T22:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://devbyrayray/post/2017-09-29</loc>
+    <loc
+      >https://devbyrayray/post/2017-09-29-3-ways-to-loop-over-object-properties-with-vanilla-javascript</loc
+    >
     <lastmod>2017-09-28T22:00:00.000Z</lastmod>
   </url>
 </urlset>
