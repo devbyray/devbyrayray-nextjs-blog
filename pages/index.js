@@ -76,7 +76,7 @@ export default function Index({ posts }) {
                     </Link>
                   </div>
                   <div className={styles.post__content}>
-                    <time>{post.data.date}</time> <br /> 
+                    <time>{post.data.date}</time> <br />
                     <strong>
                       <Link
                         as={`/posts/${post.slug}`}
@@ -85,7 +85,7 @@ export default function Index({ posts }) {
                         <a>{post.data.title}</a>
                       </Link>
                     </strong>
-                    <p>{post.data.description}</p>
+                    <p>{shortenDescription(post.data.description)}</p>
 
                   </div>
                 </div>
@@ -112,6 +112,16 @@ export default function Index({ posts }) {
       <Footer />
     </Layout>
   )
+}
+
+function shortenDescription(str) {
+  console.log("🚀 ~ file: index.js ~ line 118 ~ shortenDescription ~ str", str && str.length)
+  let newStr = str
+  if (str && str.length > 110) {
+    newStr = str.slice(0, 110)
+    newStr += "..."
+  }
+  return newStr
 }
 
 export function getStaticProps() {
