@@ -136,7 +136,7 @@ export function getStaticProps() {
       filePath,
       slug: filePath.replace(/\.mdx?$/, '')
     }
-  }).filter((postItem) => (postItem.data.published !== undefined || postItem.data.published === true)).reverse()
+  }).filter((postItem) => (postItem.data.published === true)).reverse()
 
   const rss = generateRss(posts)
   fs.writeFileSync('./public/rss.xml', rss);
