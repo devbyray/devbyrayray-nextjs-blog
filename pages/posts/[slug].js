@@ -127,7 +127,7 @@ export default function PostPage({ source, frontMatter }) {
             <nav>
               <strong>Tags</strong>
               <p>
-                {frontMatter?.tags && frontMatter.tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>{tag}</a></Link></span>,)}
+                {frontMatter?.tags && frontMatter.tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/posts/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>{tag}</a></Link></span>,)}
               </p>
               <strong>Category</strong>
               <p>
