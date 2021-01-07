@@ -52,15 +52,9 @@ const components = {
   NameCheapContentAd
 }
 
-export default function PostPage({ source, frontMatter, imageUrl }) {
+export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
   const router = useRouter()
   const content = hydrate(source, { components })
-
-  const coverUrl = coverImage(
-    frontMatter.image,
-  )
-
-  console.log('imageUrl: ', imageUrl)
 
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', {
@@ -189,6 +183,10 @@ export const getStaticProps = async ({ params }) => {
     data.image,
   )
 
+  const coverUrl = coverImage(
+    data.image,
+  )
+
   const mdxSource = await renderToString(content, {
     components,
     // Optionally pass remark/rehype plugins
@@ -210,7 +208,8 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
-      imageUrl
+      imageUrl,
+      coverUrl
     },
   }
 }
