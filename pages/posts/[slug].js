@@ -52,15 +52,10 @@ const components = {
   NameCheapContentAd
 }
 
-export default function PostPage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter, imageUrl }) {
   const router = useRouter()
   const content = hydrate(source, { components })
 
-  const imageUrl = socialImage(
-    frontMatter.title,
-    frontMatter.description,
-    frontMatter.image,
-  )
   const coverUrl = coverImage(
     frontMatter.image,
   )
@@ -188,6 +183,12 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source)
   data.date = formatDate(data.date)
 
+  const imageUrl = socialImage(
+    data.title,
+    data.description,
+    data.image,
+  )
+
   const mdxSource = await renderToString(content, {
     components,
     // Optionally pass remark/rehype plugins
@@ -209,6 +210,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      imageUrl
     },
   }
 }
