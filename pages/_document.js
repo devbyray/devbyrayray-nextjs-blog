@@ -56,6 +56,7 @@ export default class CustomDocument extends Document {
                                     `,
                                 }}
                             />
+                            <script data-ad-client="ca-pub-0395200862879086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         </Fragment>
                     )}
                 </Head>
