@@ -35,6 +35,12 @@ export default class CustomDocument extends Document {
                     <meta http-equiv="Accept-CH" content="DPR" />
                     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+                    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+                    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+                    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" />
+                    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+                    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap" />
 
                     {/* We only want to add the scripts if in production */}

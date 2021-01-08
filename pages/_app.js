@@ -14,18 +14,25 @@ Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 function addScript(url, dataAttr = null) {
     const script = document.createElement("script");
     script.src = url;
-    script.async = true;
+    script.defer = true;
     if (dataAttr) {
         const { attr, value } = dataAttr
         script.setAttribute(attr, value)
     }
     document.body.appendChild(script);
 }
+function addLink(url, rel) {
+    const link = document.createElement("link");
+    link.href = url;
+    link.rel = rel;
+    document.body.appendChild(link);
+}
 
 export function App({ Component, pageProps }) {
     useEffect(() => {
         addScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { attr: 'data-ad-client', value: 'ca-pub-0395200862879086' })
         addScript(`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`)
+        addLink(`https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap`, 'stylesheet')
 
         console.log('useEffect')
     })
