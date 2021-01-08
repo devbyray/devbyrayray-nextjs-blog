@@ -108,10 +108,8 @@ export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
             </nav> */}
           </header>
           <figure className={styles._figure}>
-            <Image
+            <img
               width={1410} height={1100}
-              unoptimized={true}
-              layout="responsive"
               loading="lazy"
 
               src={
