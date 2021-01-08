@@ -9,19 +9,27 @@ import Image from 'next/image'
 import { formatDate } from '../lib/index'
 import { generateRss } from '../lib/generate-rss'
 import { generatePostsSitemap } from '../lib/generate-posts-sitemap'
-import Footer from '../components/footer'
 import Header from '../components/header'
 import { coverImage } from '../components/social-image'
 import { ArticleJsonLd } from 'next-seo';
-import { CloudwaysSquareGridItem } from '../components/ads/cloudways'
-import { GrammarlySquareGridItem } from '../components/ads/grammarly'
-import { NameCheapSquareGridItem } from '../components/ads/namecheap'
+import dynamic from "next/dynamic";
+
+const CloudwaysSquareGridItem = dynamic(import('../components/ads/cloudways').then((mod) => mod.CloudwaysSquareGridItem))
+const GrammarlySquareGridItem = dynamic(import('../components/ads/grammarly').then((mod) => mod.GrammarlySquareGridItem))
+const NameCheapSquareGridItem = dynamic(import('../components/ads/namecheap').then((mod) => mod.NameCheapSquareGridItem))
+const Footer = dynamic(import('../components/footer'))
 
 import styles from '../styles/Index.module.css'
+import { useEffect } from 'react'
+import { lazyloadImages } from '../lib/lazy'
 
 export default function Index({ posts }) {
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date)
+
+  useEffect(() => {
+    lazyloadImages()
+  })
 
   // console.log('posts: ', posts)
 
@@ -71,7 +79,12 @@ export default function Index({ posts }) {
                       href={`/posts/[slug]`}
                     >
                       <a>
-                        <img width={600} height={392} loading="lazy" className={styles.post__img} src={coverImage(post.data.image, 600)} alt={post.data.title} srcset={`${coverImage(post.data.image, 400)} 400w, ${coverImage(post.data.image, 600)} 600w`} sizes="(max-width: 600px) 400px, 800px" />
+                        {/* <img width={600} height={392} loading="lazy" className={styles.post__img} data-lazy="true" alt={post.data.title} srcset={`${coverImage(post.data.image, 400)} 400w, ${coverImage(post.data.image, 600)} 600w`} sizes="(max-width: 600px) 400px, 800px" data-large={coverImage(post.data.image, 600)}
+                          data-small={coverImage(post.data.image, 600, true)} /> */}
+                        <div data-classes={styles.post__img} data-lazy="true" alt={post.data.title} data-large={coverImage(post.data.image, 600)}
+                          data-small={coverImage(post.data.image, 600, true)} >
+                          <div className="spacer"></div>
+                        </div>
                       </a>
                     </Link>
                   </div>

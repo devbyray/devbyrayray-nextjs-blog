@@ -57,10 +57,12 @@ export const socialImage = (title, desc, image, template = '') => {
     return `${domain}/${imageLayer},${imageFallback}/${rest}`
 }
 
-export const coverImage = (image, size = 900) => {
+export const coverImage = (image, size = 900, lazy = false) => {
     const validImage = !image || !image.startsWith('devbyrayray') || image.includes('medium') ? 'devbyrayray/blog/blog-code-fallback' : image
 
-    return `https://res.cloudinary.com/raymons/image/upload/c_scale,f_auto,q_70,w_${size}/v1609097377/${validImage}`
+    const lazyImage = lazy ? `c_scale,f_auto,q_10,w_10` : `c_scale,f_auto,q_70,w_${size}`
+
+    return `https://res.cloudinary.com/raymons/image/upload/${lazyImage}/v1609097377/${validImage}`
 
 }
 

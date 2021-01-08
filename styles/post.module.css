@@ -13,8 +13,8 @@
 ._figure {
     @apply overflow-hidden;
 }
-._image {
-    @apply h-56 w-full object-cover;
+._figure img {
+    @apply h-72 w-full object-cover;
 }
 ._main {
     @apply px-8 pt-16 pb-12 -mt-5 mb-8 rounded-b-3xl bg-gray-100;

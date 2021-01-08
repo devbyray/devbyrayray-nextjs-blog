@@ -41,7 +41,9 @@ export default class CustomDocument extends Document {
                     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" />
                     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
                     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap" />
+                    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+                    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
+                    <link rel="stylesheet" href={'https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap'} />
 
                     {/* We only want to add the scripts if in production */}
                     {isProduction && (

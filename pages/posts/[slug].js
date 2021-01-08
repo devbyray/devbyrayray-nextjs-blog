@@ -9,21 +9,28 @@ import Image from 'next/image'
 import path from 'path'
 import CustomLink from '../../components/CustomLink'
 import Layout from '../../components/Layout'
-import Footer from '../../components/footer'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 import Header from '../../components/header'
 import { formatDate } from '../../lib/index'
-import { GrammarlySquareGridItem } from '../../components/ads/grammarly'
 import { socialImage, coverImage } from '../../components/social-image'
 import { useRouter } from 'next/router'
-import getShareImage from '@jlengstorf/get-share-image'
-import Youtube from '../../components/Youtube'
 import { BlogJsonLd, LogoJsonLd } from 'next-seo'
 import { AmazonImage } from '../../components/ads/amazon-image'
 import { SidebarHeader } from '../../components/sidebar/header'
-import AdWrapper from '../../components/sidebar/ad-wrapper'
-import { NameCheapSquare2, NameCheapSquare, NameCheapSquareGridItem, NameCheapContentAd } from '../../components/ads/namecheap'
+
+
+const Youtube = dynamic(import('../../components/Youtube'))
+const GrammarlySquareGridItem = dynamic(import('../../components/ads/grammarly').then((mod) => mod.GrammarlySquareGridItem))
+const NameCheapSquare2 = dynamic(import('../../components/ads/namecheap').then((mod) => mod.NameCheapSquare2))
+const NameCheapSquare = dynamic(import('../../components/ads/namecheap').then((mod) => mod.NameCheapSquare))
+const NameCheapSquareGridItem = dynamic(import('../../components/ads/namecheap').then((mod) => mod.NameCheapSquareGridItem))
+const NameCheapContentAd = dynamic(import('../../components/ads/namecheap').then((mod) => mod.NameCheapContentAd))
+const Footer = dynamic(import('../../components/footer'))
+
+
 import styles from '../../styles/post.module.css'
+import { useEffect } from 'react'
+import { lazyloadImages } from '../../lib/lazy'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -57,9 +64,14 @@ export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
   const content = hydrate(source, { components })
 
   const date = new Date()
+  const imageClass = styles.post__img
   const latestUpdate = new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'full',
   }).format(date)
+
+  useEffect(() => {
+    lazyloadImages()
+  })
 
   return (
     <Layout>
@@ -108,7 +120,7 @@ export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
             </nav> */}
           </header>
           <figure className={styles._figure}>
-            <img
+            {/* <img
               width={1410} height={1100}
               loading="lazy"
 
@@ -117,7 +129,12 @@ export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
               }
               alt={frontMatter.title}
               className={styles._image}
-            />
+            /> */}
+
+            <div data-class={`${imageClass}`} data-lazy="true" alt={frontMatter.title} data-large={coverImage(frontMatter.image, 600)}
+              data-small={coverImage(frontMatter.image, 600, true)} >
+              <div className="spacer"></div>
+            </div>
           </figure>
           <main className={styles._main}>
             {content}
