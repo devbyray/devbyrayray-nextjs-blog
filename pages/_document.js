@@ -33,6 +33,9 @@ export default class CustomDocument extends Document {
                     <meta property="og:site_name" content="Dev By RayRay" key="ogsitename" />
                     <meta name="p:domain_verify" content="5f1bae4eb9e445e7e5e0c6e5f67dc5f1" />
                     <meta http-equiv="Accept-CH" content="DPR" />
+                    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap" />
 
                     {/* We only want to add the scripts if in production */}
                     {isProduction && (

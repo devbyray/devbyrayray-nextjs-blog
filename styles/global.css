@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap');
-
 :root {
 	--color-darkgray: #1e2128;
 	--color-darkgrey-border: #2b3038;
