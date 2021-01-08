@@ -58,11 +58,11 @@ function headingID(str) {
   if (typeof str === "string") {
     let newString = str.trim().replace(/[^a-zA-Z0-9]+/g, '-')
     let modString = newString.startsWith('-') ? newString.substr(1) : newString
-    
+
     if (modString.lastIndexOf('-') === modString.length - 1) {
       modString = newString.slice(0, -1)
     }
-    
+
     console.log('modString: ', modString)
     return modString.toLowerCase()
   } else {
@@ -70,18 +70,9 @@ function headingID(str) {
   }
 }
 
-export default function PostPage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter, imageUrl, coverUrl }) {
   const router = useRouter()
   const content = hydrate(source, { components })
-
-  const imageUrl = socialImage(
-    frontMatter.title,
-    frontMatter.description,
-    frontMatter.image,
-  )
-  const coverUrl = coverImage(
-    frontMatter.image,
-  )
 
   const date = new Date()
   const latestUpdate = new Intl.DateTimeFormat('en-GB', {
@@ -119,27 +110,20 @@ export default function PostPage({ source, frontMatter }) {
       <div className={styles._container}>
         <div className={styles._content}>
           <header className={styles._header}>
-            <strong><time>{frontMatter.date}</time></strong>
+            <nav>
+              <p>
+                {frontMatter?.tags && frontMatter.tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/posts/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>#{tag}</a></Link></span>,)}
+              </p>
+            </nav>
             <h1 className={styles._title}>
               {frontMatter.title}
             </h1>
             <p className="text-xl italic">{frontMatter.description}</p>
-            <nav>
-              <strong>Tags</strong>
-              <p>
-                {frontMatter?.tags && frontMatter.tags.map((tag, index) => <span key={index}>{index > 0 && ", "} <Link href={`/posts/tag/${encodeURIComponent(tag.replace(' ', '-').toLowerCase())}`}><a>{tag}</a></Link></span>,)}
-              </p>
-              <strong>Category</strong>
-              <p>
-                {frontMatter?.categories && frontMatter.categories.map((category, index) => <span key={index}>{index > 0 && ", "} <Link href={`/category/${encodeURIComponent(category.replace(' ', '-').toLowerCase())}`}><a>{category}</a></Link></span>,)}
-              </p>
-            </nav>
+            <strong><time>{frontMatter.date}</time></strong>
           </header>
           <figure className={styles._figure}>
-            <Image
+            <img
               width={1410} height={1100}
-              unoptimized={true}
-              layout="responsive"
               loading="lazy"
 
               src={
@@ -167,6 +151,17 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source)
   data.date = formatDate(data.date)
 
+  const imageUrl = socialImage(
+    data.title,
+    data.description,
+    data.image,
+  )
+
+  const coverUrl = coverImage(
+    data.image,
+    900
+  )
+
   const mdxSource = await renderToString(content, {
     components,
     // Optionally pass remark/rehype plugins
@@ -188,6 +183,8 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      imageUrl,
+      coverUrl
     },
   }
 }

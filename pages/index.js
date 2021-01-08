@@ -99,6 +99,16 @@ export default function Index({ posts, amount, tags }) {
   )
 }
 
+function shortenDescription(str) {
+  console.log("🚀 ~ file: index.js ~ line 118 ~ shortenDescription ~ str", str && str.length)
+  let newStr = str
+  if (str && str.length > 110) {
+    newStr = str.slice(0, 110)
+    newStr += "..."
+  }
+  return newStr
+}
+
 export function getStaticProps() {
   const tags = [];
 
@@ -132,5 +142,10 @@ export function getStaticProps() {
   console.log("🚀 ~ tags", tags)
 
   return { props: { posts, amount: posts.length, tags } }
+}
+
+function createSlug(filePath) {
+  const onlyNumbers = filePath.match(/[\d\W+]{1,4}\-/g)
+
 }
 

@@ -24,7 +24,7 @@ export default function Tag(props) {
     const router = useRouter()
     const { tag } = router.query
     const { tags } = props
-    // console.log("🚀 ~ file: [tag].js ~ line 26 ~ Tag ~ tags", tags.length)
+    console.log("🚀 ~ file: [tag].js ~ line 26 ~ Tag ~ tags", tags.length)
 
 
     const date = new Date()

@@ -20,7 +20,7 @@
     <guid>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</guid>
     <title>Get, Add or Remove HTML Elements with JavaScript</title>
     <link>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</link>
-    <description>Maniupulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post I will show you how easy it is!</description>
+    <description>Manipulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post, I will show you how easy it is!</description>
     <pubDate>Mon, 21 Dec 2020 23:00:00 GMT</pubDate>
   </item>
 
@@ -472,8 +472,6 @@
     <pubDate>Fri, 03 Jan 2020 23:00:00 GMT</pubDate>
   </item>
 
-<<<<<<< Updated upstream
-=======
   <item>
     <guid>https://byrayray.dev/post/2018-03-00-lazy-loading-images-intersection-observer</guid>
     <title>Lazy-loading images with the Intersection Observer</title>
@@ -683,6 +681,5 @@
     <pubDate>Thu, 28 Sep 2017 22:00:00 GMT</pubDate>
   </item>
 
->>>>>>> Stashed changes
     </channel>
   </rss>
