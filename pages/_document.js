@@ -1,8 +1,6 @@
 import { Fragment } from 'react'
 import Document, { Head, Main, NextScript, Html } from 'next/document'
 
-import { GA_TRACKING_ID } from '../lib/gtag'
-
 export default class CustomDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx)
@@ -22,26 +20,23 @@ export default class CustomDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png"></link>
-                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png"></link>
-                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"></link>
-                    <link rel="manifest" href="/static/site.webmanifest"></link>
-                    <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#fecd1a"></link>
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
+                    <link rel="manifest" href="/site.webmanifest"></link>
+                    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fecd1a"></link>
                     <meta name="msapplication-TileColor" content="#fecd1a"></meta>
                     <meta name="theme-color" content="#fecd1a"></meta>
                     <meta name="twitter:card" content="summary_large_image" key="twcard" />
                     <meta name="twitter:creator" content="@devbyrayray" key="twhandle" />
                     <meta property="og:site_name" content="Dev By RayRay" key="ogsitename" />
                     <meta name="p:domain_verify" content="5f1bae4eb9e445e7e5e0c6e5f67dc5f1" />
+                    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
 
                     {/* We only want to add the scripts if in production */}
                     {isProduction && (
                         <Fragment>
                             {/* Global Site Tag (gtag.js) - Google Analytics */}
-                            <script
-                                async
-                                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-                            />
                             <script
                                 dangerouslySetInnerHTML={{
                                     __html: `
@@ -56,7 +51,6 @@ export default class CustomDocument extends Document {
                                     `,
                                 }}
                             />
-                            <script data-ad-client="ca-pub-0395200862879086" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         </Fragment>
                     )}
                 </Head>
