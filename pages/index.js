@@ -71,7 +71,7 @@ export default function Index({ posts }) {
                       href={`/posts/[slug]`}
                     >
                       <a>
-                        <Image width={1410} height={1099} layout="responsive" unoptimized={true} loading="lazy" className="h-56 w-full object-cover md:w-56" src={coverImage(post.data.image)} alt={post.data.title} />
+                        <img width={600} height={392} loading="lazy" className={styles.post__img} src={coverImage(post.data.image, 600)} alt={post.data.title} srcset={`${coverImage(post.data.image, 400)} 400w, ${coverImage(post.data.image, 600)} 600w`} sizes="(max-width: 600px) 400px, 800px" />
                       </a>
                     </Link>
                   </div>

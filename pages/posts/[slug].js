@@ -183,6 +183,7 @@ export const getStaticProps = async ({ params }) => {
 
   const coverUrl = coverImage(
     data.image,
+    900
   )
 
   const mdxSource = await renderToString(content, {

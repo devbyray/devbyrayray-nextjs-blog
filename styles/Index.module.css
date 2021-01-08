@@ -11,7 +11,8 @@
 }
 
 .post__item {
-    @apply bg-gray-100 rounded-xl overflow-hidden md:h-auto lg:h-full;
+    @apply bg-gray-100 rounded-xl overflow-hidden h-auto md:max-h-56 lg:h-full ;
+    /* max-height: 276px; */
 }
 
 .post__content_wrapper {
@@ -20,6 +21,10 @@
 
 .post__image {
     @apply md:flex-shrink-0;
+}
+
+.post__img {
+    @apply w-full object-cover object-center h-72;
 }
 
 .post__content {

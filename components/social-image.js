@@ -57,25 +57,10 @@ export const socialImage = (title, desc, image, template = '') => {
     return `${domain}/${imageLayer},${imageFallback}/${rest}`
 }
 
-export const coverImage = (image, template) => {
-    COVER_IMAGE.imagePublicID = 'devbyrayray/blog/byrayray-blog-image-5'
-    COVER_IMAGE.imageWidth = '1410';
-    COVER_IMAGE.imageHeight = '1099';
+export const coverImage = (image, size = 900) => {
+    const validImage = !image || !image.startsWith('devbyrayray') || image.includes('medium') ? 'devbyrayray/blog/blog-code-fallback' : image
 
-    const url = getShareImage({
-        title: ' ',
-        ...COVER_IMAGE
-    });
-    const index = url.indexOf('load/')
-    const domain = url.substring(0, index + 5);
-    const rest = url.substring(index + 5)
-
-    const validImage = validateImage(image)
-
-    const imageFallback = `c_fill,d_${validImage},f_webp,g_north_west,h_890`
-    const imageLayer = `l_${validImage},w_1410,x_0`
-
-    return `${domain}/${imageLayer},${imageFallback}/${rest}`
+    return `https://res.cloudinary.com/raymons/image/upload/c_scale,f_auto,q_70,w_${size}/v1609097377/${validImage}`
 
 }
 
@@ -83,7 +68,7 @@ function validateImage(image) {
     if (!image) {
         return 'devbyrayray:blog:blog-code-fallback'
     }
-    const validImage = !image.startsWith('devbyrayray') ? 'devbyrayray:blog:blog-code-fallback' : image
+    const validImage = !image.startsWith('devbyrayray') || image.includes('medium') ? 'devbyrayray:blog:blog-code-fallback' : image
 
     return validImage
 }
