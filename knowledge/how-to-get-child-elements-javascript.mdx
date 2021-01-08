@@ -1,85 +1,97 @@
 ---
-title: How To Get HTML Child Elements With JavaScript
-description: The amount of tools we can use right now to build websites is mindblowing
+title: Get, Add or Remove HTML Elements with JavaScript
+description: Manipulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post, I will show you how easy it is!
 categories: ['JavaScript']
-published: true
+published: false
 tags: ['Beginner']
 image: https://miro.medium.com/max/1400/0*lKcwQ2biZcSro827
-date: ''
 ---
 
-## How to add and remove elements with Vanilla JavaScript
+Creating, getting, and removing HTML elements with JavaScript is super simple, as long as you know the methods you need to use.
 
-In the previous videos and blogs, I showed you a couple of things with <a href="https://byrayray.dev/posts/2017-10-javascript-basics-select-one-or-multiple-html-elements/" target="_blank" rel="noopener">getting 1 or more HTML elements via Vanilla JavaScript.</a> This time we are going to add and remove HTML elements to our page with Vanilla JavaScript. We are gonna use the createElement, createTextNode, appendChild &amp; removeChild methods for it.
+In this tutorial, I want to show you that only four methods are needed to create, get, and remove one or multiple HTML elements to the DOM.
 
-If your not a video person, please scroll down for the written version 😉
+- 1. Get access to one or more HTML elements
+- 2. Create one ore more HTML elements
+- 3. Add text to an HTML element
+- 4. Remove one or more HTML elements
 
-<Youtube url="https://youtu.be/ENTuadZmDJ8" />
+## 1. Get access to one or more HTML elements
 
+Before we can create HTML elements via JavaScript, we need to know how to access the existing HTML elements.
 
-<h2>Add element to body</h2>
-First, let’s add an HTML element to our page via Vanilla JavaScript.
+We have several DOM methods, but I will show you two that are the easiest to understand.
 
-You create an element with the method <code>createElement</code>. Then create a text inside of it with the method<code>createTextNode</code>.
+We have the `querySelector()` and `querySelectorAll()` methods to get access to the HTML elements. The first is for getting a single element, and the second is for getting multiple elements.
 
-Combine them with the method <code>appendChild</code>. After that, use the same method to add the div to the body.
+## 2. Create one or more HTML elements
 
-Check the example code below!
+First, let’s add an HTML element to our page via JavaScript.
 
-<strong>HTML</strong>
+Creating an HTML element can be done via `createElement`. This method creates the element in memory. 
+
+```javascript
+const divElement = document.createElement('div')
+const ulElement = document.createElement('ul')
+const liElement = document.createElement('li')
+const spanElement = document.createElement('span')
+const imageElement = document.createElement('image')
+const linkElement = document.createElement('a')
 ```
-&lt;div id="wrapper"&gt;&lt;span&gt;Mr Frontend&lt;/span&gt; does JavaScript&lt;/div&gt;```
-<strong>JavaScript</strong>
+
+To add the HTML element to the DOM, you have to use the `appendChild` method.
+
+We have a completely empty HTML page with only the `<html>` and `<body>` tags. And we want to add our HTML elements to the `<body>` tag. We have to access that element via the `querySelector` method.
+
+```javascript
+// Get access to the HTML body element
+const body = document.querySelector('body')
+
+// Create a list of HTML elements
+const divElement = document.createElement('div')
+const ulElement = document.createElement('ul')
+const liElement = document.createElement('li')
+const spanElement = document.createElement('span')
+const imageElement = document.createElement('image')
+const linkElement = document.createElement('a')
+
+// Add HTML elements to the body tag
+body.appendChild(divElement)
+body.appendChild(ulElement)
+body.appendChild(liElement)
+body.appendChild(spanElement)
+body.appendChild(imageElement)
+body.appendChild(linkElement)
 ```
-var divElement = document.createElement('div');
 
-var divText = document.createTextNode('Mr Frontend');
+Now all the elements are created in the HTML. With the `createElement` and `appendChild` method. If you check the inspector you will see it.
 
-divElement.appendChild(divText);
+## 3. Add text to an HTML element
 
-document.querySelector('body').appendChild(divElement);```
-If you want to see this code working, please check the <a class="jsbin-embed" href="http://jsbin.com/busocuh/2/embed?html,js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
-<h2>Add element to parent div</h2>
-If you want to add a new element to an already existing element than you have to target that element instead of the body.
 
-Check the example code below!
+## 4. Remove one or more HTML elements
 
-<strong>JavaScript</strong>
-```
-var divElement = document.createElement('div');
 
-var divText = document.createTextNode('Mr Frontend');
-
-divElement.appendChild(divText);
-
-document.querySelector('#wrapper').appendChild(divElement);
-```
-If you want to see this code working, please check the <a class="jsbin-embed" href="http://jsbin.com/vidoroc/2/embed?html,js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
-<h2>Remove element</h2>
-We also want to remove some HTML elements from our page.
-
-It works very simple. Just target a parent element or the body, then use the method<code>removeChild</code> to remove your HTML element.
-
-Check the example code below!
-
-<strong>HTML</strong>
-```
-&lt;div id="wrapper"&gt;&lt;span class="mrfrontend"&gt;Mr Frontend&lt;/span&gt; does JavaScript&lt;/div&gt;```
-<strong>JavaScript</strong>
-```
-var paragraph1 = document.querySelector('#p1'); 
-var divElement = document.querySelector('#div1'); 
-
-divElement.removeChild(paragraph1);
-```
-If you want to see this code working, please check the <a class="jsbin-embed" href="http://jsbin.com/nowulit/2/embed?html,js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
-<h2>Resources W3Schools</h2>
-
-```
 <ul>
- 	<li><a href="https://www.w3schools.com/jsref/met_document_createtextnode.asp">createTextNode</a></li>
- 	<li><a href="https://www.w3schools.com/jsref/met_document_createelement.asp">createElement</a></li>
- 	<li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">appendChild</a></li>
- 	<li><a href="https://www.w3schools.com/jsref/met_node_removechild.asp">removeChild</a></li>
+  <li>
+    <a href="https://www.w3schools.com/jsref/met_document_createtextnode.asp">
+      createTextNode
+    </a>
+  </li>
+  <li>
+    <a href="https://www.w3schools.com/jsref/met_document_createelement.asp">
+      createElement
+    </a>
+  </li>
+  <li>
+    <a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">
+      appendChild
+    </a>
+  </li>
+  <li>
+    <a href="https://www.w3schools.com/jsref/met_node_removechild.asp">
+      removeChild
+    </a>
+  </li>
 </ul>
-```
+

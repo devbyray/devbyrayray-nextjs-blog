@@ -12,11 +12,12 @@ Creating, getting, and removing HTML elements with JavaScript is super simple, a
 
 In this tutorial, I want to show you that only four methods are needed to create, get, and remove one or multiple HTML elements to the DOM.
 
-- Get access to one or more HTML elements
-- Create one ore more HTML elements
-- Remove one or more HTML elements
+- 1. Get access to one or more HTML elements
+- 2. Create one ore more HTML elements
+- 3. Add text to an HTML element
+- 4. Remove one or more HTML elements
 
-## Get access to one or more HTML elements
+## 1. Get access to one or more HTML elements
 
 Before we can create HTML elements via JavaScript, we need to know how to access the existing HTML elements.
 
@@ -24,7 +25,7 @@ We have several DOM methods, but I will show you two that are the easiest to und
 
 We have the `querySelector()` and `querySelectorAll()` methods to get access to the HTML elements. The first is for getting a single element, and the second is for getting multiple elements.
 
-## Create one or more HTML elements
+## 2. Create one or more HTML elements
 
 First, let’s add an HTML element to our page via JavaScript.
 
@@ -43,7 +44,7 @@ To add the HTML element to the DOM, you have to use the `appendChild` method.
 
 We have a completely empty HTML page with only the `<html>` and `<body>` tags. And we want to add our HTML elements to the `<body>` tag. We have to access that element via the `querySelector` method.
 
-“`javascript
+```javascript
 // Get access to the HTML body element
 const body = document.querySelector('body')
 
@@ -63,6 +64,14 @@ body.appendChild(spanElement)
 body.appendChild(imageElement)
 body.appendChild(linkElement)
 ```
+
+Now all the elements are created in the HTML. With the `createElement` and `appendChild` method. If you check the inspector you will see it.
+
+## 3. Add text to an HTML element
+
+
+## 4. Remove one or more HTML elements
+
 
 <ul>
   <li>
@@ -87,310 +96,3 @@ body.appendChild(linkElement)
   </li>
 </ul>
 
-## get child elements with JavaScript
-
-> If you like watching a video? Please check it below. The video resources are at the bottom of this page.
-
-<Youtube url="https://youtu.be/m3YCD9tifoA" />
-
-In jQuery, it is super easy to get the child elements of a parent HTML element.  The best way to show this is with actual HTML.
-
-```html
-<header class="product__list-header"><h2>Webshop</h2></header>
-<section class="product__list">
-  <div class="product__item">
-    <img
-      src="http://lorempixel.com/400/200/food"
-      class="product__image"
-      alt="Food"
-    />
-    <span class="product__price">500</span>
-  </div>
-  <div class="product__item fun__class">
-    <img
-      src="https://lorempixel.com/400/200/food"
-      class="product__image"
-      alt="Food"
-    />
-    <span class="product__price">500</span>
-  </div>
-  <div class="product__item">
-    <img
-      src="https://lorempixel.com/400/200/food"
-      class="product__image"
-      alt="Food"
-    />
-    <span class="product__price">500</span>
-  </div>
-  <div class="product__item">
-    <img
-      src="https://lorempixel.com/400/200/food"
-      class="product__image"
-      alt="Food"
-    />
-    <span class="product__price">500</span>
-  </div>
-  <div class="product__item">
-    <img
-      src="https://lorempixel.com/400/200/food"
-      class="product__image"
-      alt="Food"
-    />
-    <span class="product__price">500</span>
-  </div>
-</section>
-```
-
-### 1. element.children
-The first way to get the child elements is with the `children` property of an `element`. _If you want to check out what kind of properties the DOM Element Object has for you, check it
-on [W3schools](https://www.w3schools.com/jsref/dom_obj_all.asp). That is one of my favorite websites to check JavaScript examples & documentation.
-
-<strong>JavaScript</strong>
-
-```
-var productList = document.querySelector('.product__list').children;
-console.log('productList: ', productList);
-```
-
-In the console log, you will find a.`HTMLCollection` Check the property `__proto__`, and you will find out that he is not an Array.
-
-Loop over the children
-
-The `children` property will return a.`HTMLCollection`, so you can loop over it with the For-loop.
-
-```javascript
-const productList = document.querySelector('.product__list')
-for (childElement of productList) {
-  console.log('childElement: ', childElement);
-}
-```
-If you check the console, you will see all the child elements. This is how you loop through all of them.
-
-> Check my <a href="http://jsbin.com/kidijef/edit?html,js,output" rel="noopener">element.children jsbin example</a>.
-
-### 2. document.querySelectorAll
-If you know which elements are in a parent element, you can adjust the selector to:.`.product__list .product__item`. With this selector, you target all the product items inside the product list.
-
-If you don’t know which elements are in the parent element, I recommend the previous method with the `children` property. Then you will be sure to get all the child elements back.
-
-The `document.querySelectorAll()` returns a `NodeList`. It looks like an `Array`, but it isn’t. Use the example below to check your console.
-
-```
-var productList = document.querySelectorAll('.product__list .product__item');
-console.log('productList: ', productList);
-```
-
-Just like the HTMLCollection, you can use the For-loop to loop over each element in the NodeList.
-
-```
-for (i = 0; i &lt; productList.length; i++) {
-  console.log('product: ', productList[i]);
-}
-```
-
-> Check my <a href="http://jsbin.com/pewado/1/edit?html,js,output" rel="noopener">querySelectorAll jsbin example</a>.
-
-### element.children VS querySelectorAll
-Now is the question, which one do you use?
-
-** You know the child elements **
-
-In this case, you know what child elements there are in the parent element. This is an ideal situation to use the `document.querySelectorAll` method.
-
-`querySelectorAll` is a much faster way to target multiple child elements. Because it doesn’t matter how many elements there are.
-
-<strong>You don’t know the child elements</strong>
-
-In this case, you don’t know what child elements you can expect, or there are multiple cases possible. In this situation, you need the. `element.children`. All the elements inside the parent element will come back with the DOM Element Object.
-
-## Find other JavaScript posts
-
-- [What to build after a JavaScript course?](https://mrfrontend.org/2019/07/what-to-build-after-a-javascript-course)
-
-<h2>Video resources</h2>
-<ul>
-  <li>
-    <a
-      href="https://www.w3schools.com/jsref/met_document_queryselector.asp"
-      rel="noopener"
-    >
-      document.querySelector
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp"
-      rel="noopener"
-    >
-      document.querySelectorAll
-    </a>
-  </li>
-  <li>
-    <a href="https://www.w3schools.com/jsref/dom_obj_all.asp" rel="noopener">
-      HTML DOM Element Object
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.w3schools.com/jsref/prop_element_children.asp"
-      rel="noopener"
-    >
-      element.children
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.w3schools.com/jsref/prop_html_classname.asp"
-      rel="noopener"
-    >
-      element.className
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.w3schools.com/jsref/prop_element_classlist.asp"
-      rel="noopener"
-    >
-      element.classList
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://blog.mrfrontend.org/2017/10/jquery-will-not-help-you-learn-javascript/"
-      rel="noopener"
-    >
-      jQuery is not gonna help you learn JavaScript
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://blog.mrfrontend.org/2017/10/write-better-css-with-bem/"
-      rel="noopener"
-    >
-      How to write better CSS with BEM
-    </a>
-  </li>
-  <li>
-    <a href="http://lorempixel.com/" rel="noopener">
-      Image Placeholder LorumPixel
-    </a>
-  </li>
-</ul>
-
-## Select on or multiple HTML elements
-
-If you search StackOverflow for selecting HTML elements on a page, you will get thousands of jQuery examples.
-
-But you don't need jQuery for this. JavaScript in general is easy enough. I want to show you how get one or multiple elements with the <strong>querySelector()</strong> and <strong>querySelectorAll()</strong> methods.
-
-So let’s dive into the code &#x1f44d;
-
-If you are more a fan of reading than watching a video about the <em>querySelector()</em> than scroll down to read it &#x1f609;
-
-<Youtube url="https://youtu.be/cLsTHYS7" />
-
-<h2>
-  <b>The querySelector() methods</b>
-</h2>
-You can use both the querySelector methods to search for one or more elements via
-a:
-
-<strong>class</strong>
-```javascript
-    document.querySelector('.class__name')
-```
-
-<strong>ID</strong>
-
-```javascript
-    document.querySelector('#ID__name')
-```
-
-<strong>attribute</strong>
-
-```javascript
-    document.querySelector('input[type="text"]')
-```
-
-<strong>data-attribute</strong>
-
-```javascript
-    document.querySelector('header[data-info="product-header"]')
-```
-
-
-The `querySelectors` work both similar! And if you are familiar with jQuery than you have no problem with
-this;
-<h2>
-  <b>How to select 1 element on the page with JavaScript</b>
-</h2>
-To select one single element on a HTML page you need the <em>
-  document.querySelector()
-</em>
-! Just put a condition as a parameter and the DOM will be searched for the
-element.
-
-For example, we want to find the header with a class "<strong>header\_\_main</strong>". (as you maybe notice, I used the <a href="https://byrayray.dev/2017-10-03-write-better-css-with-bem/">template from the BEM video</a>).
-
-```javascript
-document.querySelector('.header__main')
-```
-
-The `document.querySelector` is gonna returns the first element on the page that matches the selector.
-
-The element is a NodeList Object. You can find a lot of information of your element in this Object. For example: style, height, width, classnames, data-attributes, child elements, and a whole lot more!
-
-If you want to use the height or width from the element you need to do it like this.
-
-```javascript
-const headerElement = document.querySelector('.header__main')
-const headerHeight = headerElement.clientHeight;
-const headerWidth = headerElement.clientWidth;
-```
-
-<h2>
-  <b>How to get multiple elements on the page</b>
-</h2>
-To select multiple elements on a HTML page you need the <em>
-  `document.querySelectorAll()`
-</em>
-! Put your selector in and you will get all the elements.
-
-The `document.querySelectorAll` is gonna return all the elements on the page that matches the selector as a `NodeList` Object.
-
-For example, you have a navigation. But in the JavaScript you want to have access to all the `<li>` elements. Than the `querySelectorAll()` method comes to the rescue!
-
-<strong>HTML</strong>
-
-```html
-<nav class=“main-nav”>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Blog</a></li>
-  </ul>
-</nav>
-```
-
-<strong>JavaScript</strong>
-
-```javascript
-var navElements = document.querySelectorAll('.main-nav li');
-navElements.forEach(function(navElement) {
-  console.log('navElement: ', navElement);
-})
-```
-
-I discovered that not all the browsers will accept the <strong>forEach()</strong> method on a NodeList Object. So it is saver to choose for the
-
-<strong>for-loop</strong>.
-
-```javascript
-var navElements = document.querySelectorAll('.main-nav li');
-
-for (var i = 0; i &lt; navElements.length; i++) {
-  console.log('navElements[i]: ', navElements[i].clientHeight);
-}
-```
-
-This NodeList Object looks similar to an Array, but there is a difference. Read on Quora what the <a href="https://www.quora.com/What-is-the-difference-between-a-NodeList-and-an-Array" target="_blank" rel="noopener">difference is between a NodeList Object and an Array</a>.
