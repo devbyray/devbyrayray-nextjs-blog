@@ -71,6 +71,13 @@ const config = {
             },
         ]
     },
+    webpack: () => {
+
+    },
+    webpack: (config, options) => {
+        config.externals = { canvas: {} }
+        return config
+    },
 }
 
 module.exports = config
