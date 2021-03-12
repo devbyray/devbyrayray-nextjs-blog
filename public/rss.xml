@@ -17,14 +17,6 @@
   </item>
 
   <item>
-    <guid>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</guid>
-    <title>Get, Add or Remove HTML Elements with JavaScript</title>
-    <link>https://byrayray.dev/post/2020-12-22-javascript-get-add-remove-elements-html</link>
-    <description>Manipulating the HTML DOM is easy with JavaScript methods querySelector and querySelectorAll. In this post, I will show you how easy it is!</description>
-    <pubDate>Mon, 21 Dec 2020 23:00:00 GMT</pubDate>
-  </item>
-
-  <item>
     <guid>https://byrayray.dev/post/2020-12-21-nextjs-jamstack-getting-started</guid>
     <title>How To Build and Deploy a JAM-stack Website Fast With NextJS — in 5 steps</title>
     <link>https://byrayray.dev/post/2020-12-21-nextjs-jamstack-getting-started</link>
