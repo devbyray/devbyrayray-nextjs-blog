@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "npx next -- -p 3002",
     "dev:watch": "npx next-remote-watch ./posts",
-    "build": "npx next build && npx next export",
+    "build": "npx next build",
     "build:profile": "next build --profile",
     "start": "npx next start"
   },
