@@ -103,21 +103,7 @@ export default function Index({ posts }) {
                   </div>
                 </div>
               </div>
-              {index === 5 && <div className={styles.dailydev__banner}>
-                <h3 className={styles.dailydev__title}>
-                  The best Developer & Programming news
-                </h3>
-                <hr className={styles.dailydev__hr} />
-                <a className="block" href="https://api.daily.dev/get?r=devbyrayray" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/raymons/image/upload/v1609161827/devbyrayray/blog/daily-dev.webp" width="1300" height="642" loading="lazy" />
-                </a>
-              </div>}
               {index === 5 && <h2 className={styles.posts__heading}>Archive</h2>}
-
-              {index % 10 === 0 && index > 7 && <div className={styles.posts__ad_item}><CloudwaysSquareGridItem key={99998} ></CloudwaysSquareGridItem></div>}
-              {index % 12 === 0 && index > 6 && <div className={styles.posts__ad_item}><GrammarlySquareGridItem height={48} key={9999}></GrammarlySquareGridItem></div>}
-              {index % 15 === 0 && index > 6 && <>
-                <div className={styles.posts__ad_item}><NameCheapSquareGridItem key={99997}></NameCheapSquareGridItem></div>
-              </>}
             </>
           ))}
         </div>
