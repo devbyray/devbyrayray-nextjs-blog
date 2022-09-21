@@ -44,27 +44,37 @@ export default class CustomDocument extends Document {
                     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
                     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
                     <link rel="stylesheet" href={'https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway&display=swap'} />
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166352508-1"></script>
+                    <script>
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+
+                      gtag('config', 'UA-166352508-1');
+                    </script>
+
 
                     {/* We only want to add the scripts if in production */}
-                    {isProduction && (
-                        <Fragment>
-                            {/* Global Site Tag (gtag.js) - Google Analytics */}
-                            <script
-                                dangerouslySetInnerHTML={{
-                                    __html: `
-                                        window.dataLayer = window.dataLayer || [];
-                                        function gtag(){dataLayer.push(arguments);}
-                                        gtag('js', new Date());
-                                        gtag('set', 'transport', 'beacon');
+//                     {isProduction && (
+//                         <Fragment>
+//                             {/* Global Site Tag (gtag.js) - Google Analytics */}
+//                             <script
+//                                 dangerouslySetInnerHTML={{
+//                                     __html: `
+//                                         window.dataLayer = window.dataLayer || [];
+//                                         function gtag(){dataLayer.push(arguments);}
+//                                         gtag('js', new Date());
+//                                         gtag('set', 'transport', 'beacon');
 
-                                        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
-                                        gtag('create', '${GA_TRACKING_ID}', 'auto');
-                                        gtag('send', 'pageview');
-                                    `,
-                                }}
-                            />
-                        </Fragment>
-                    )}
+//                                         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
+//                                         gtag('create', '${GA_TRACKING_ID}', 'auto');
+//                                         gtag('send', 'pageview');
+//                                     `,
+//                                 }}
+//                             />
+//                         </Fragment>
+//                     )}
                 </Head>
                 <body>
                     <Main />
